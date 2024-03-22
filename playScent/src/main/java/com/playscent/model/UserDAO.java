@@ -18,10 +18,11 @@ public class UserDAO {
 			int cnt = 0;
 			try { cnt = sqlSession.insert("joinMember", userDto);
 			} catch (Exception e) {
-				// TODO: handle exception
+		
 			}finally {
 				sqlSession.close();
 			}
+			
 			return cnt;
 		}
 	

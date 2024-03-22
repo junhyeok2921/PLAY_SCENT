@@ -17,6 +17,7 @@ import javax.servlet.http.HttpServletResponse;
 import com.google.gson.Gson;
 import com.google.gson.JsonObject;
 import com.playscent.model.NaverUserInfo;
+import com.playscent.model.UserDAO;
 
 
 @WebServlet("/JoinService")
@@ -129,14 +130,20 @@ public class JoinService extends HttpServlet {
 	        
 	        //NaverUserInfo DTO객체 생성해서 넣어준다.
 	        NaverUserInfo userDto = new NaverUserInfo(user_age,user_email,user_gender,user_id,user_mobile,user_name,user_nick);
-
+	        UserDAO dao = new UserDAO();
+	        int result = dao.insertUserInfo(userDto);  // 유저저보 저장 기능.
 	        
+	        if(result > 0) {
+	        	response.sendRedirect("wellcome.html");
+	        }else {
+	        	
+	        }
 	    } catch (Exception e) {
 	        System.out.println(e);
 	    }
 	    
 
-	    response.sendRedirect("wellcome.html");
+	    
 	}
 
 }
