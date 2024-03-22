@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE configuration
+  PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+  "https://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+	<!-- DTO별명 지어주기 -->
+	<!-- 2. mybatis-config.xml만들기 : mybatis의 환경설정 담당(중요한 파일) -->
+	<!-- 3. db.properties 만들기 : db연결정보들을 가지고 있는 파일 -> 공백 주의할 것 -->
+	<typeAliases>
+		<typeAlias type="com.playscent.model.NaverUserInfo" alias="NaverUserInfo" />
+	</typeAliases>
+	
+	
+	<environments default="development">
+		<environment id="development">
+			<transactionManager type="JDBC" />
+			<dataSource type="POOLED">
+				<property name="driver" value="oracle.jdbc.driver.OracleDriver" />
+				<property name="url" value="jdbc:oracle:thin:@project-db-campus.smhrd.com:1523:xe" />
+				<property name="username" value="mp_21K_bigdata22_p2_3" />
+				<property name="password" value="smhrd3" />
+			</dataSource>
+		</environment>
+	</environments>
+
+	<!-- SQL 문장을 연결할수 있는 mappers -->
+	<mappers>
+		<mapper resource="com/playscent/db/UserMapper.xml"/>
+	</mappers>
+</configuration>

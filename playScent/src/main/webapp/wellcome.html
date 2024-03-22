@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>welcome-message</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Bebas Neue">
+    <style>
+        body {
+            background-color: rgba(245, 245, 245, 1);
+            font-family: 'Bebas Neue', sans-serif;
+            text-shadow: 4px 4px 4px #aaa;
+            overflow: hidden;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .welcome-message {
+            color: rgba(30, 88, 120, 1);
+            text-align: center;
+            font-size: 48px;
+            letter-spacing: 0.5em;
+            text-decoration: none;
+            /* 밑줄 제거 */
+            transition: font-size 0.3s ease;
+            /* 부드러운 전환 효과 */
+        }
+
+        .welcome-message:hover {
+            font-size: 74px;
+            /* 마우스를 올렸을 때 글자 크기 */
+        }
+    </style>
+</head>
+
+<body>
+    <div class="welcome-message">
+        <a href="https://www.google.co.kr/?hl=ko" class="welcome-message">PLAY SCENT 회원가입<br> 축하드립니다.</a>
+    </div>
+</body>
+
+</html>
