@@ -23,7 +23,7 @@ public class SqlSessionManager {
 	static {
 		try {
 			// mybatis 환경설정 파일 경로 
-			String resource = "com/smhrd/database/mybatis-config.xml";
+			String resource = "com/playscent/db/mybatis-config.xml";
 			
 			// xml파일을 읽어내기 위해 inputStream 여는 것!
 			InputStream inputStream = Resources.getResourceAsStream(resource);

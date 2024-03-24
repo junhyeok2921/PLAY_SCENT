@@ -9,6 +9,7 @@ public class NaverUserInfo {
 	private String mobile;
 	private String name;
 	private String nickname;
+	private String profile_image;
 	
 	// 디폴트 생성자.
 	public NaverUserInfo() {		
@@ -19,7 +20,7 @@ public class NaverUserInfo {
 	
 	
 	public NaverUserInfo(String age, String email, String gender, String id, String mobile, String name,
-			String nickname) {
+			String nickname, String profile_image) {
 		this.age = age;
 		this.email = email;
 		this.gender = gender;
@@ -27,6 +28,7 @@ public class NaverUserInfo {
 		this.mobile = mobile;
 		this.name = name;
 		this.nickname = nickname;
+		this.profile_image = profile_image;
 	}
 
 
@@ -74,6 +76,12 @@ public class NaverUserInfo {
 	}
 	public void setNickname(String nickname) {
 		this.nickname = nickname;
+	}
+	public String getProfile_image() {
+		return profile_image;
+	}
+	public void setProfile_image(String profile_image) {
+		this.profile_image = profile_image;
 	}
 	
 	

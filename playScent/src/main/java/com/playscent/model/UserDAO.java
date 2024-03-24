@@ -6,7 +6,7 @@ import com.playscent.db.SqlSessionManager;
 
 
 public class UserDAO {
-	// 세션을 생성해 줄 수 있는 Factory 생성
+	   // 세션을 생성해 줄 수 있는 Factory 생성
 		SqlSessionFactory sqlSessionFactory = SqlSessionManager.getSqlSession();
 		
 		// connection, close, sql문 실행...

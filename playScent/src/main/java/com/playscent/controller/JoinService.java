@@ -4,28 +4,27 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.io.PrintWriter;
+import java.io.UnsupportedEncodingException;
 import java.net.HttpURLConnection;
 import java.net.URL;
 import java.net.URLEncoder;
 
-import javax.servlet.ServletException;
-import javax.servlet.annotation.WebServlet;
-import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import com.google.gson.Gson;
 import com.google.gson.JsonObject;
+import com.playscent.frontcontroller.command;
 import com.playscent.model.NaverUserInfo;
 import com.playscent.model.UserDAO;
 
 
-@WebServlet("/JoinService")
-public class JoinService extends HttpServlet {
-	private static final long serialVersionUID = 1L;
-
-
-	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+/*@WebServlet("/JoinService")*/
+public class JoinService implements command {
+	
+	@Override
+	public String execute(HttpServletRequest request, HttpServletResponse response) {
+	
 		// callback.jsp에서 토큰, 유저정보 받지 말고 어차피 서블릿으로 데이터 전송할꺼 
 		// 서블릿에서 callback리다이렉트를 만들어서 여기서 토큰, 유저정보를 받아라!.
 		
@@ -33,7 +32,13 @@ public class JoinService extends HttpServlet {
 	    String clientSecret = "WFGVa5C3AU";//애플리케이션 클라이언트 시크릿값";
 	    String code = request.getParameter("code");
 	    String state = request.getParameter("state");
-	    String redirectURI = URLEncoder.encode("http://localhost:8082/playScent/JoinService", "UTF-8");
+	    String redirectURI = "";
+	    
+		try {
+			redirectURI = URLEncoder.encode("http://localhost:8082/playScent/JoinService.do", "UTF-8");
+		} catch (UnsupportedEncodingException e) {
+			e.printStackTrace();
+		}
 	    String apiURL = "https://nid.naver.com/oauth2.0/token?grant_type=authorization_code"
 	        + "&client_id=" + clientId
 	        + "&client_secret=" + clientSecret
@@ -86,7 +91,10 @@ public class JoinService extends HttpServlet {
 	    String token = accessToken;// 네아로 접근 토큰 값";
 	    String header = "Bearer " + token; // Bearer 다음에 공백 추가
 	    StringBuffer response2 = null;  // 전역으로 빼줌.
-	    PrintWriter out = response.getWriter();
+	    PrintWriter out = null;
+	    
+		try { out = response.getWriter();
+		} catch (IOException e){ e.printStackTrace(); }
 	    
 	    try {
 	        String apiURL2 = "https://openapi.naver.com/v1/nid/me";
@@ -124,26 +132,28 @@ public class JoinService extends HttpServlet {
 	        String user_name = jsonObject.getAsJsonObject("response").get("name").getAsString();
 	        String user_email=jsonObject.getAsJsonObject("response").get("email").getAsString();
 	        String user_mobile=jsonObject.getAsJsonObject("response").get("mobile").getAsString();
+	        String user_profile=jsonObject.getAsJsonObject("response").get("profile_image").getAsString();
 	       
 	        out.print(user_name);
 	        System.out.println("3차 : " + user_name);
 	        
 	        //NaverUserInfo DTO객체 생성해서 넣어준다.
-	        NaverUserInfo userDto = new NaverUserInfo(user_age,user_email,user_gender,user_id,user_mobile,user_name,user_nick);
+	        NaverUserInfo userDto = new NaverUserInfo(user_age,user_email,user_gender,user_id,user_mobile,user_name,user_nick,user_profile);
 	        UserDAO dao = new UserDAO();
 	        int result = dao.insertUserInfo(userDto);  // 유저저보 저장 기능.
 	        
 	        if(result > 0) {
-	        	response.sendRedirect("wellcome.html");
+	          // response.sendRedirect(wellcome.html);
+	          return "wellcome.html";
 	        }else {
-	        	
+	        //	return "Login.jsp";
 	        }
 	    } catch (Exception e) {
 	        System.out.println(e);
 	    }
 	    
-
 	    
+		return null;
 	}
 
 }
