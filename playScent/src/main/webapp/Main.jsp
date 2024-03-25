@@ -142,13 +142,13 @@
                         </li>
                         <li>
                             <div class="img_exh">
-                                <img src="imges/mmm1.png" alt="">
+                                <img src="https://d2gfz7wkiigkmv.cloudfront.net/pickin/2/1/2/sOBOdnVUSsWNegw74VOTsQ" alt="">
                             </div>
                             <a href="none">시트러스</a>    
                         </li>
                         <li>
                             <div class="img_exh">
-                                <img src="imges/mmm1.png" alt="">
+                                <img src="https://dimg.donga.com/ugc/CDB/SHINDONGA/Article/5c/7e/18/31/5c7e18310a00d2738de6.jpg" alt="">
                             </div>
                             <a href="none">우디</a>    
                         </li>
@@ -176,40 +176,7 @@
                 </div>            
         </div>
 
-    <!---------------------기획전 edn ---------------------------->
-
-      <div id="only_moblie">
-            <ul class="moblie_lineband">
-                <li><a href="#none">
-                    <img src="imges/ur11.png" alt="">
-                </a></li>
-                <li><a href="#none">
-                    <img src="imges/ur11.png" alt="">
-                </a></li>
-                <li><a href="#none">
-                    <img src="imges/ur11.png" alt="">
-                </a></li>
-            </ul>
-
-            <div class="ranking_slide">
-                <div class="slide_title">이슈머 랭킹</div>
-
-                <div class="rank_box cf">
-                    <span class="r_number">1</span>                         
-                    
-                    <div class="ranker_info_box cf">
-                        <span class="ranker_info">유**</span>
-                        <span class="ranker_info"> 01031****50</span>
-                        <span class="ranker_info op1">P</span>
-                        <span class="ranker_info">56,103</span>
-                    </div>
-                    <div class="n_arrow">
-                        <img src="imges/nm77.png" style="width: 13px; height: 9px;" alt="">
-                    </div>
-                </div>   
-            </div>
-      </div>
-        
+    <!---------------------기획전 edn ---------------------------->       
 
         <div id="ex_container" class="cf">
             <div class="jinhee_nct">
@@ -225,9 +192,9 @@
                 </ul>
 
                 <ul id="product_jin">
-                    <li><a href="#none">
+                    <li><a href="PerfumeDetail.jsp">
                         <div class="product_img">
-                            <img class="jinhee_img" src="https://lh3.googleusercontent.com/proxy/rkc04nnnZ0bm_01htLpU3DREbBxKCfzbRlNZCT5DZQRNMEn5_Xfm-aPFKPb96pZ_DjbiE3rueSr208pyUL8c05Tz4hvXZBbRSx8zEm2iVUM46FYlQVKe_DNPPNv8pg" alt="">
+                            <img class="jinhee_img" src="https://www.newstap.co.kr/news/photo/202209/173599_281311_1556.jpg" alt="">
                         </div>
 
                         <h3 class="per_brand">구딸파리 </h3>
@@ -243,7 +210,7 @@
                     </a></li>
                     <li><a href="#none">
                         <div class="product_img">
-                            <img class="jinhee_img" src="https://lh3.googleusercontent.com/proxy/rkc04nnnZ0bm_01htLpU3DREbBxKCfzbRlNZCT5DZQRNMEn5_Xfm-aPFKPb96pZ_DjbiE3rueSr208pyUL8c05Tz4hvXZBbRSx8zEm2iVUM46FYlQVKe_DNPPNv8pg" alt="">
+                            <img class="jinhee_img" src="https://lh3.googleusercontent.com/proxy/jeN1OGWBrdQsNPOUnSFjS3yce7EgJ_1KSsXYb59yW16mbpA-rPCnkqDZkbvqZg0K20UZbVnBvv4r3qW9JA4fDNsfr0Jw9x9Q_76rwDeq9dYvfq3ApXJiseQs66wUEA" alt="">
                         </div>
 
                         <h3 class="per_brand">구딸파리</h3>
@@ -259,7 +226,7 @@
                     </a></li>
                     <li><a href="#none">
                         <div class="product_img">
-                            <img class="jinhee_img" src="https://lh3.googleusercontent.com/proxy/rkc04nnnZ0bm_01htLpU3DREbBxKCfzbRlNZCT5DZQRNMEn5_Xfm-aPFKPb96pZ_DjbiE3rueSr208pyUL8c05Tz4hvXZBbRSx8zEm2iVUM46FYlQVKe_DNPPNv8pg" alt="">
+                            <img class="jinhee_img" src="https://lh3.googleusercontent.com/proxy/jeN1OGWBrdQsNPOUnSFjS3yce7EgJ_1KSsXYb59yW16mbpA-rPCnkqDZkbvqZg0K20UZbVnBvv4r3qW9JA4fDNsfr0Jw9x9Q_76rwDeq9dYvfq3ApXJiseQs66wUEA" alt="">
                         </div>
 
                         <h3 class="per_brand">구딸파리 </h3>
@@ -275,7 +242,7 @@
                     </a></li>
                     <li><a href="#none">
                         <div class="product_img">
-                            <img class="jinhee_img" src="https://lh3.googleusercontent.com/proxy/rkc04nnnZ0bm_01htLpU3DREbBxKCfzbRlNZCT5DZQRNMEn5_Xfm-aPFKPb96pZ_DjbiE3rueSr208pyUL8c05Tz4hvXZBbRSx8zEm2iVUM46FYlQVKe_DNPPNv8pg" alt="">
+                            <img class="jinhee_img" src="https://lh3.googleusercontent.com/proxy/jeN1OGWBrdQsNPOUnSFjS3yce7EgJ_1KSsXYb59yW16mbpA-rPCnkqDZkbvqZg0K20UZbVnBvv4r3qW9JA4fDNsfr0Jw9x9Q_76rwDeq9dYvfq3ApXJiseQs66wUEA" alt="">
                         </div>
 
                         <h3 class="per_brand">구딸파리 </h3>
@@ -307,7 +274,7 @@
                 <ul id="product_jin">
                     <li><a href="#none">
                         <div class="product_img">
-                            <img class="jinhee_img" src="https://lh3.googleusercontent.com/proxy/rkc04nnnZ0bm_01htLpU3DREbBxKCfzbRlNZCT5DZQRNMEn5_Xfm-aPFKPb96pZ_DjbiE3rueSr208pyUL8c05Tz4hvXZBbRSx8zEm2iVUM46FYlQVKe_DNPPNv8pg" alt="">
+                            <img class="jinhee_img" src="https://lh3.googleusercontent.com/proxy/jeN1OGWBrdQsNPOUnSFjS3yce7EgJ_1KSsXYb59yW16mbpA-rPCnkqDZkbvqZg0K20UZbVnBvv4r3qW9JA4fDNsfr0Jw9x9Q_76rwDeq9dYvfq3ApXJiseQs66wUEA" alt="">
                         </div>
 
                         <h3 class="per_brand">구딸파리 </h3>
@@ -323,7 +290,7 @@
                     </a></li>
                     <li><a href="#none">
                         <div class="product_img">
-                            <img class="jinhee_img" src="https://lh3.googleusercontent.com/proxy/rkc04nnnZ0bm_01htLpU3DREbBxKCfzbRlNZCT5DZQRNMEn5_Xfm-aPFKPb96pZ_DjbiE3rueSr208pyUL8c05Tz4hvXZBbRSx8zEm2iVUM46FYlQVKe_DNPPNv8pg" alt="">
+                            <img class="jinhee_img" src="https://lh3.googleusercontent.com/proxy/jeN1OGWBrdQsNPOUnSFjS3yce7EgJ_1KSsXYb59yW16mbpA-rPCnkqDZkbvqZg0K20UZbVnBvv4r3qW9JA4fDNsfr0Jw9x9Q_76rwDeq9dYvfq3ApXJiseQs66wUEA" alt="">
                         </div>
 
                         <h3 class="per_brand">구딸파리</h3>
@@ -339,7 +306,7 @@
                     </a></li>
                     <li><a href="#none">
                         <div class="product_img">
-                            <img class="jinhee_img" src="https://lh3.googleusercontent.com/proxy/rkc04nnnZ0bm_01htLpU3DREbBxKCfzbRlNZCT5DZQRNMEn5_Xfm-aPFKPb96pZ_DjbiE3rueSr208pyUL8c05Tz4hvXZBbRSx8zEm2iVUM46FYlQVKe_DNPPNv8pg" alt="">
+                            <img class="jinhee_img" src="https://lh3.googleusercontent.com/proxy/jeN1OGWBrdQsNPOUnSFjS3yce7EgJ_1KSsXYb59yW16mbpA-rPCnkqDZkbvqZg0K20UZbVnBvv4r3qW9JA4fDNsfr0Jw9x9Q_76rwDeq9dYvfq3ApXJiseQs66wUEA" alt="">
                         </div>
 
                         <h3 class="per_brand">구딸파리 </h3>
@@ -355,7 +322,7 @@
                     </a></li>
                     <li><a href="#none">
                         <div class="product_img">
-                            <img class="jinhee_img" src="https://lh3.googleusercontent.com/proxy/rkc04nnnZ0bm_01htLpU3DREbBxKCfzbRlNZCT5DZQRNMEn5_Xfm-aPFKPb96pZ_DjbiE3rueSr208pyUL8c05Tz4hvXZBbRSx8zEm2iVUM46FYlQVKe_DNPPNv8pg" alt="">
+                            <img class="jinhee_img" src="https://lh3.googleusercontent.com/proxy/jeN1OGWBrdQsNPOUnSFjS3yce7EgJ_1KSsXYb59yW16mbpA-rPCnkqDZkbvqZg0K20UZbVnBvv4r3qW9JA4fDNsfr0Jw9x9Q_76rwDeq9dYvfq3ApXJiseQs66wUEA" alt="">
                         </div>
 
                         <h3 class="per_brand">구딸파리 </h3>
@@ -387,7 +354,7 @@
                 <ul id="product_jin">
                     <li><a href="#none">
                         <div class="product_img">
-                            <img class="jinhee_img" src="https://lh3.googleusercontent.com/proxy/rkc04nnnZ0bm_01htLpU3DREbBxKCfzbRlNZCT5DZQRNMEn5_Xfm-aPFKPb96pZ_DjbiE3rueSr208pyUL8c05Tz4hvXZBbRSx8zEm2iVUM46FYlQVKe_DNPPNv8pg" alt="">
+                            <img class="jinhee_img" src="https://lh3.googleusercontent.com/proxy/jeN1OGWBrdQsNPOUnSFjS3yce7EgJ_1KSsXYb59yW16mbpA-rPCnkqDZkbvqZg0K20UZbVnBvv4r3qW9JA4fDNsfr0Jw9x9Q_76rwDeq9dYvfq3ApXJiseQs66wUEA" alt="">
                         </div>
 
                         <h3 class="per_brand">구딸파리 </h3>
@@ -403,7 +370,7 @@
                     </a></li>
                     <li><a href="#none">
                         <div class="product_img">
-                            <img class="jinhee_img" src="https://lh3.googleusercontent.com/proxy/rkc04nnnZ0bm_01htLpU3DREbBxKCfzbRlNZCT5DZQRNMEn5_Xfm-aPFKPb96pZ_DjbiE3rueSr208pyUL8c05Tz4hvXZBbRSx8zEm2iVUM46FYlQVKe_DNPPNv8pg" alt="">
+                            <img class="jinhee_img" src="https://lh3.googleusercontent.com/proxy/jeN1OGWBrdQsNPOUnSFjS3yce7EgJ_1KSsXYb59yW16mbpA-rPCnkqDZkbvqZg0K20UZbVnBvv4r3qW9JA4fDNsfr0Jw9x9Q_76rwDeq9dYvfq3ApXJiseQs66wUEA" alt="">
                         </div>
 
                         <h3 class="per_brand">구딸파리</h3>
@@ -419,7 +386,7 @@
                     </a></li>
                     <li><a href="#none">
                         <div class="product_img">
-                            <img class="jinhee_img" src="https://lh3.googleusercontent.com/proxy/rkc04nnnZ0bm_01htLpU3DREbBxKCfzbRlNZCT5DZQRNMEn5_Xfm-aPFKPb96pZ_DjbiE3rueSr208pyUL8c05Tz4hvXZBbRSx8zEm2iVUM46FYlQVKe_DNPPNv8pg" alt="">
+                            <img class="jinhee_img" src="https://lh3.googleusercontent.com/proxy/jeN1OGWBrdQsNPOUnSFjS3yce7EgJ_1KSsXYb59yW16mbpA-rPCnkqDZkbvqZg0K20UZbVnBvv4r3qW9JA4fDNsfr0Jw9x9Q_76rwDeq9dYvfq3ApXJiseQs66wUEA" alt="">
                         </div>
 
                         <h3 class="per_brand">구딸파리 </h3>
@@ -435,7 +402,7 @@
                     </a></li>
                     <li><a href="#none">
                         <div class="product_img">
-                            <img class="jinhee_img" src="https://lh3.googleusercontent.com/proxy/rkc04nnnZ0bm_01htLpU3DREbBxKCfzbRlNZCT5DZQRNMEn5_Xfm-aPFKPb96pZ_DjbiE3rueSr208pyUL8c05Tz4hvXZBbRSx8zEm2iVUM46FYlQVKe_DNPPNv8pg" alt="">
+                            <img class="jinhee_img" src="https://lh3.googleusercontent.com/proxy/jeN1OGWBrdQsNPOUnSFjS3yce7EgJ_1KSsXYb59yW16mbpA-rPCnkqDZkbvqZg0K20UZbVnBvv4r3qW9JA4fDNsfr0Jw9x9Q_76rwDeq9dYvfq3ApXJiseQs66wUEA" alt="">
                         </div>
 
                         <h3 class="per_brand">구딸파리 </h3>
@@ -465,7 +432,7 @@
                 <ul id="product_jin">
                     <li><a href="#none">
                         <div class="product_img">
-                            <img class="jinhee_img" src="https://lh3.googleusercontent.com/proxy/rkc04nnnZ0bm_01htLpU3DREbBxKCfzbRlNZCT5DZQRNMEn5_Xfm-aPFKPb96pZ_DjbiE3rueSr208pyUL8c05Tz4hvXZBbRSx8zEm2iVUM46FYlQVKe_DNPPNv8pg" alt="">
+                            <img class="jinhee_img" src="https://lh3.googleusercontent.com/proxy/jeN1OGWBrdQsNPOUnSFjS3yce7EgJ_1KSsXYb59yW16mbpA-rPCnkqDZkbvqZg0K20UZbVnBvv4r3qW9JA4fDNsfr0Jw9x9Q_76rwDeq9dYvfq3ApXJiseQs66wUEA" alt="">
                         </div>
 
                         <h3 class="per_brand">구딸파리 </h3>
@@ -481,7 +448,7 @@
                     </a></li>
                     <li><a href="#none">
                         <div class="product_img">
-                            <img class="jinhee_img" src="https://lh3.googleusercontent.com/proxy/rkc04nnnZ0bm_01htLpU3DREbBxKCfzbRlNZCT5DZQRNMEn5_Xfm-aPFKPb96pZ_DjbiE3rueSr208pyUL8c05Tz4hvXZBbRSx8zEm2iVUM46FYlQVKe_DNPPNv8pg" alt="">
+                            <img class="jinhee_img" src="https://lh3.googleusercontent.com/proxy/jeN1OGWBrdQsNPOUnSFjS3yce7EgJ_1KSsXYb59yW16mbpA-rPCnkqDZkbvqZg0K20UZbVnBvv4r3qW9JA4fDNsfr0Jw9x9Q_76rwDeq9dYvfq3ApXJiseQs66wUEA" alt="">
                         </div>
 
                         <h3 class="per_brand">구딸파리</h3>
@@ -497,7 +464,7 @@
                     </a></li>
                     <li><a href="#none">
                         <div class="product_img">
-                            <img class="jinhee_img" src="https://lh3.googleusercontent.com/proxy/rkc04nnnZ0bm_01htLpU3DREbBxKCfzbRlNZCT5DZQRNMEn5_Xfm-aPFKPb96pZ_DjbiE3rueSr208pyUL8c05Tz4hvXZBbRSx8zEm2iVUM46FYlQVKe_DNPPNv8pg" alt="">
+                            <img class="jinhee_img" src="https://lh3.googleusercontent.com/proxy/jeN1OGWBrdQsNPOUnSFjS3yce7EgJ_1KSsXYb59yW16mbpA-rPCnkqDZkbvqZg0K20UZbVnBvv4r3qW9JA4fDNsfr0Jw9x9Q_76rwDeq9dYvfq3ApXJiseQs66wUEA" alt="">
                         </div>
 
                         <h3 class="per_brand">구딸파리 </h3>
@@ -513,7 +480,7 @@
                     </a></li>
                     <li><a href="#none">
                         <div class="product_img">
-                            <img class="jinhee_img" src="https://lh3.googleusercontent.com/proxy/rkc04nnnZ0bm_01htLpU3DREbBxKCfzbRlNZCT5DZQRNMEn5_Xfm-aPFKPb96pZ_DjbiE3rueSr208pyUL8c05Tz4hvXZBbRSx8zEm2iVUM46FYlQVKe_DNPPNv8pg" alt="">
+                            <img class="jinhee_img" src="https://lh3.googleusercontent.com/proxy/jeN1OGWBrdQsNPOUnSFjS3yce7EgJ_1KSsXYb59yW16mbpA-rPCnkqDZkbvqZg0K20UZbVnBvv4r3qW9JA4fDNsfr0Jw9x9Q_76rwDeq9dYvfq3ApXJiseQs66wUEA" alt="">
                         </div>
 
                         <h3 class="per_brand">구딸파리 </h3>
@@ -542,7 +509,7 @@
                 <ul id="product_jin">
                     <li><a href="#none">
                         <div class="product_img">
-                            <img class="jinhee_img" src="https://lh3.googleusercontent.com/proxy/rkc04nnnZ0bm_01htLpU3DREbBxKCfzbRlNZCT5DZQRNMEn5_Xfm-aPFKPb96pZ_DjbiE3rueSr208pyUL8c05Tz4hvXZBbRSx8zEm2iVUM46FYlQVKe_DNPPNv8pg" alt="">
+                            <img class="jinhee_img" src="https://lh3.googleusercontent.com/proxy/jeN1OGWBrdQsNPOUnSFjS3yce7EgJ_1KSsXYb59yW16mbpA-rPCnkqDZkbvqZg0K20UZbVnBvv4r3qW9JA4fDNsfr0Jw9x9Q_76rwDeq9dYvfq3ApXJiseQs66wUEA" alt="">
                         </div>
 
                         <h3 class="per_brand">구딸파리 </h3>
@@ -558,7 +525,7 @@
                     </a></li>
                     <li><a href="#none">
                         <div class="product_img">
-                            <img class="jinhee_img" src="https://lh3.googleusercontent.com/proxy/rkc04nnnZ0bm_01htLpU3DREbBxKCfzbRlNZCT5DZQRNMEn5_Xfm-aPFKPb96pZ_DjbiE3rueSr208pyUL8c05Tz4hvXZBbRSx8zEm2iVUM46FYlQVKe_DNPPNv8pg" alt="">
+                            <img class="jinhee_img" src="https://lh3.googleusercontent.com/proxy/jeN1OGWBrdQsNPOUnSFjS3yce7EgJ_1KSsXYb59yW16mbpA-rPCnkqDZkbvqZg0K20UZbVnBvv4r3qW9JA4fDNsfr0Jw9x9Q_76rwDeq9dYvfq3ApXJiseQs66wUEA" alt="">
                         </div>
 
                         <h3 class="per_brand">구딸파리</h3>
@@ -574,7 +541,7 @@
                     </a></li>
                     <li><a href="#none">
                         <div class="product_img">
-                            <img class="jinhee_img" src="https://lh3.googleusercontent.com/proxy/rkc04nnnZ0bm_01htLpU3DREbBxKCfzbRlNZCT5DZQRNMEn5_Xfm-aPFKPb96pZ_DjbiE3rueSr208pyUL8c05Tz4hvXZBbRSx8zEm2iVUM46FYlQVKe_DNPPNv8pg" alt="">
+                            <img class="jinhee_img" src="https://lh3.googleusercontent.com/proxy/jeN1OGWBrdQsNPOUnSFjS3yce7EgJ_1KSsXYb59yW16mbpA-rPCnkqDZkbvqZg0K20UZbVnBvv4r3qW9JA4fDNsfr0Jw9x9Q_76rwDeq9dYvfq3ApXJiseQs66wUEA" alt="">
                         </div>
 
                         <h3 class="per_brand">구딸파리 </h3>
@@ -590,7 +557,7 @@
                     </a></li>
                     <li><a href="#none">
                         <div class="product_img">
-                            <img class="jinhee_img" src="https://lh3.googleusercontent.com/proxy/rkc04nnnZ0bm_01htLpU3DREbBxKCfzbRlNZCT5DZQRNMEn5_Xfm-aPFKPb96pZ_DjbiE3rueSr208pyUL8c05Tz4hvXZBbRSx8zEm2iVUM46FYlQVKe_DNPPNv8pg" alt="">
+                            <img class="jinhee_img" src="https://lh3.googleusercontent.com/proxy/jeN1OGWBrdQsNPOUnSFjS3yce7EgJ_1KSsXYb59yW16mbpA-rPCnkqDZkbvqZg0K20UZbVnBvv4r3qW9JA4fDNsfr0Jw9x9Q_76rwDeq9dYvfq3ApXJiseQs66wUEA" alt="">
                         </div>
 
                         <h3 class="per_brand">구딸파리 </h3>

@@ -145,7 +145,7 @@ public class JoinService implements command {
 	        
 
 	        HttpSession session = request.getSession();
-		    if(!checkE){ // false일 경우 db에 저장된 아이디가 없으므로 이 조건에서 db에 네이버유저 정보를 저장시킨다.
+		    if(checkE == false){ // false일 경우 db에 저장된 아이디가 없으므로 이 조건에서 db에 네이버유저 정보를 저장시킨다.
 		    	//NaverUserInfo DTO객체 생성해서 넣어준다.
 		        NaverUserInfo userDto = new NaverUserInfo(user_age,user_email,user_gender,user_id,user_mobile,user_name,user_nick,user_profile);
 		        

@@ -40,7 +40,7 @@ public class UserDAO {
 			try { 
 			   checkE = sqlSession.selectOne("joinMember", user_id);
 			} catch (Exception e) {
-				
+				e.printStackTrace();
 			}finally {
 				sqlSession.close();
 			}
