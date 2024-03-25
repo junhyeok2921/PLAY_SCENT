@@ -11,6 +11,27 @@ public class CartDAO {
 	
 	// connection, close, sql문 실행...
 	SqlSession sqlSession = sqlSessionFactory.openSession(true);
+	
+	
+	
+	
+	// 장바구니 추가 기능
+	public int addCart(SelectedProductDTO dto) {
+		int cnt = 0;
+		
+		try {
+			cnt = sqlSession.insert("addCart", dto);
+		} catch (Exception e) {
+			
+		}finally {
+			sqlSession.close();
+		}
+		
+		return cnt;
+	}
+	
+	
+	
 
 
 }

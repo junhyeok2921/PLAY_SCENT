@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.playscent.db.CartMapper">
+
+	<!-- 장바구니 선택한상품정보 저장할 mapper sql -->
+	<insert id="addCart" parameterType="SelectedProductDTO">
+		insert into favorite_info values(#{fav_ind}, #{mem_id}, #{pf_inx}, #{pf_count}, sysdate)
+	</insert>
+
+</mapper>

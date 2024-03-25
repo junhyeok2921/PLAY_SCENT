@@ -8,6 +8,7 @@
 	<!-- 3. db.properties 만들기 : db연결정보들을 가지고 있는 파일 -> 공백 주의할 것 -->
 	<typeAliases>
 		<typeAlias type="com.playscent.model.NaverUserInfo" alias="NaverUserInfo" />
+		<typeAlias type="com.playscent.model.SelectedProductDTO" alias="SelectedProductDTO" />
 	</typeAliases>
 	
 	
@@ -26,5 +27,6 @@
 	<!-- SQL 문장을 연결할수 있는 mappers -->
 	<mappers>
 		<mapper resource="com/playscent/db/UserMapper.xml"/>
+		<mapper resource="com/playscent/db/CartMapper.xml"/>
 	</mappers>
 </configuration>
