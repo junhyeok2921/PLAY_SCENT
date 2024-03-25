@@ -13,7 +13,7 @@ public class UserDAO {
 		// 네이버 로그인 유저정보 저장 기능.
 		public int insertUserInfo(NaverUserInfo userDto) {
 			// connection, close, sql문 실행...
-			// 모든 메서드마다 아래 이문장이 꼭 들어가야함!!ㄴ
+			// 모든 메서드마다 아래 이문장이 꼭 들어가야함!!
 			SqlSession sqlSession = sqlSessionFactory.openSession(true);
 			int cnt = 0;
 			

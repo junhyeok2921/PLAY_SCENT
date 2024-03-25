@@ -11,6 +11,7 @@ import java.net.URLEncoder;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import com.google.gson.Gson;
 import com.google.gson.JsonObject;
@@ -143,6 +144,7 @@ public class JoinService implements command {
 	        boolean checkE = dao.checkId(user_id); // db,에 저장된 네이버id값이 있는지 체크.
 	        
 
+	        HttpSession session = request.getSession();
 		    if(!checkE){ // false일 경우 db에 저장된 아이디가 없으므로 이 조건에서 db에 네이버유저 정보를 저장시킨다.
 		    	//NaverUserInfo DTO객체 생성해서 넣어준다.
 		        NaverUserInfo userDto = new NaverUserInfo(user_age,user_email,user_gender,user_id,user_mobile,user_name,user_nick,user_profile);
@@ -151,12 +153,14 @@ public class JoinService implements command {
 		        System.out.println(result);
 		        if(result > 0) {
 		        	System.out.println("회원갑입 성공! db저장 완료!");
+		        	session.setAttribute("user_id", user_id);
 		          // response.sendRedirect(wellcome.html);
 		          return "wellcome.html"; // 회원가입 환영 페이지
 		        } else { System.out.println("다시 로그인 하세요!~"); return "Main.jsp"; }
 			
 		    } else { // 이미 db에 저장된 회원일 경우.
 		    	System.out.println("이미 회원 이십니다!.");
+		    	session.setAttribute("user_id", user_id);
 		    	return "Main.jsp";
 		    }		
 	        

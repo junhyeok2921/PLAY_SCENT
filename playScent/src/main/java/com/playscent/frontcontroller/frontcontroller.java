@@ -40,10 +40,13 @@ public class frontcontroller extends HttpServlet {
 		if (result.equals("/JoinService.do")) { // naver로그인 기능
 			service = new JoinService();
 		} 
+		else if (result.equals("/AddCart.do")) { 
+			//service = new AddCart(); 
+		}
 		
 		// 새로 추가된 서블릿파일이 있다면 여기 .equals("") 안에 서블릿 url 넣으세요!.
 		/*
-		 * else if (result.equals("/JoinService.do")) { service = new JoinService(); }
+		 
 		 * else if (result.equals("/LogoutService.do")) { service = new LogoutService();
 		 * } else if (result.equals("/UpdateService.do")) { service = new
 		 * UpdateService(); } else if (result.equals("/DeleteService.do")) { service =
