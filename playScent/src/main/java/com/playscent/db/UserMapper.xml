@@ -4,7 +4,41 @@
 
 	<!-- 네이버 로그인 유저정보 저장할 매퍼 sql -->
 	<insert id="joinMember" parameterType="NaverUserInfo">
-		<!-- insert into web_member values(#{email}, #{pw}, #{tel}, #{address})  sql수정해야함.  -->
+		<!-- insert into MEMBER_INFO values(#{email}, #{pw}, #{tel}, #{address}) 
+			sql수정해야함. -->
 	</insert>
+
+
+<!--리뷰 매퍼  -->
+
+	<insert id="sendReview"
+		parameterType="com.playscent.model.ReveiwDTO">
+
+		<!-- insert into REVIEW_INFO
+		values(num_message.nextval,"123","testtest@naver.com",#{contents},sysdate,#{rate}) -->
+		
+		insert into REVIEW_INFO values(REVIEW_INFO_SEQ.NEXTVAL,'23','Ef-8R3fBQ9V7oNLNfOv7gHjUqXb9k7pn6QkITa77XvE',#{REVIEW_CONTENT},sysdate,#{REVIEW_STAR})
+		
+		
+
+	</insert>
+
+
+	<select id="showReview" parameterType="String"
+		resultType="com.playscent.model.ReveiwDTO">
+
+		select * from REVIEW_INFO
+
+	</select>
+	
+	<delete id="deleteReview">
+	delete from REVIEW_INFO where REVIEW_IDX = #{REVIEW_IDX}
+</delete>
+
+<delete id="deleteReviewAll" parameterType="String" >
+delete from REVIEW_INFO where MEM_ID=#{MEM_ID}
+</delete>
+
+
 
 </mapper>
