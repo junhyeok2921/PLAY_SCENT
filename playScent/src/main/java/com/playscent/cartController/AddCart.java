@@ -22,7 +22,7 @@ public class AddCart implements command {
 		// 향수 식별자번호가 날라 올것이다.
 		String perfume_idx = (String)request.getParameter("pfIdx");
 		String perfume = (String)request.getParameter("quantity");
-		int perfume_count = Integer.parseInt(perfume); // 숫자로 변환.ㄴ
+		int perfume_count = Integer.parseInt(perfume); // 숫자로 변환.
 		
 		//회원 아이디 가져오기.
 		 HttpSession session = request.getSession();
