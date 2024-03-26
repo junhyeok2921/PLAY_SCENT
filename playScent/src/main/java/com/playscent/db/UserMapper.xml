@@ -4,9 +4,19 @@
 
 	<!-- 네이버 로그인 유저정보 저장할 매퍼 sql -->
 	<insert id="joinMember" parameterType="NaverUserInfo">
+<<<<<<< HEAD
 		<!-- insert into MEMBER_INFO values(#{email}, #{pw}, #{tel}, #{address}) 
 			sql수정해야함. -->
+=======
+	   insert into MEMBER_INFO values(#{id},#{name},#{age},#{email},#{mobile},#{gender}, sysdate,'bronze',#{profile_image})  
+>>>>>>> branch 'main' of https://github.com/2023-SMHRD-KDT-AI-16/PLAY_SCENT.git
 	</insert>
+	
+    <!-- 네이버 id가 저자되어 잇는지 검사 -->
+	<select id="idCheck" parameterType="String" resultType="boolean">
+		select case when count(*)>0 then 1 else 0 end result
+		from MEMBER_INFO where id=#{user_id}
+	</select>
 
 
 <!--리뷰 매퍼  -->
