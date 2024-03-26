@@ -1,5 +1,7 @@
 package com.playscent.model;
 
+import java.util.ArrayList;
+
 import org.apache.ibatis.session.SqlSession;
 import org.apache.ibatis.session.SqlSessionFactory;
 
@@ -14,7 +16,7 @@ public class CartDAO {
 		// connection, close, sql문 실행...
 		// 모든 메서드마다 아래 이문장이 꼭 들어가야함!!
 		SqlSession sqlSession = sqlSessionFactory.openSession(true);
-
+ 
 		int cnt = 0;
 
 		try {
@@ -48,5 +50,56 @@ public class CartDAO {
 
 		return CartPerfume; // CartPerfumeDTO 뱉어냄.
 	}
+	
+	
+	// 현재 회원의 저장된 장바구니 모든 정보 가져오기.
+	public ArrayList<CartDTO> allCartList(String user_id) {
+		// 쿼리를 실행 했을때 결과과 없을 수도 있으므로.
+		// 전체 테이블중 이부분만 확인할수 있는 selectOne() 사용!.
+		SqlSession sqlSession = sqlSessionFactory.openSession(true);  //세션 열어줌.
+		ArrayList<CartDTO> AllCartList = new ArrayList<CartDTO>();
+		System.out.println("cartDAO 안에 들어옴. ");
+		// 현재 회원의 저장된 장바구니 모든 정보 가져오기.
+		try {
+			AllCartList = (ArrayList)sqlSession.selectList("allCartList", user_id); // 리턴이 selectList => List 형태로 뱉어줌.
+			
+		} catch(Exception e){
+			e.printStackTrace();
+		} finally {
+			sqlSession.close(); // 빌려온 sqlSession반납해준다. 세션문 닫아준다.
+		}		
+
+		return AllCartList;
+	}
+	
+	
+	// 장바구니 해당상품만 삭제 기능.
+	public int deleteCart(int fav_idx) {
+		// connection, close, sql문 실행...
+		// 모든 메서드마다 아래 이문장이 꼭 들어가야함!!
+		SqlSession sqlSession = sqlSessionFactory.openSession(true);
+		int cnt = 0;
+
+		try {
+			cnt = sqlSession.delete("deleteCart", fav_idx);
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			sqlSession.close(); // 세션문 닫아주고.
+		}
+
+		return cnt;
+	}
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 
 }

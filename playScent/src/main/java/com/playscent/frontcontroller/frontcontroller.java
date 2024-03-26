@@ -9,6 +9,8 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import com.playscent.cartController.AddCart;
+import com.playscent.cartController.DeleteCart;
+import com.playscent.cartController.OrderCart;
 import com.playscent.controller.JoinService;
 
 @WebServlet("*.do")
@@ -40,10 +42,13 @@ public class frontcontroller extends HttpServlet {
 
 		if (result.equals("/JoinService.do")) { // naver로그인 기능
 			service = new JoinService();
-		} 
-		else if (result.equals("/AddCart.do")) { 
+		} else if (result.equals("/AddCart.do")) { // 장바구니 상품추가 기능.
 			service = new AddCart(); 
-		}
+		} else if (result.equals("/DeleteCart.do")) { // 장바구니 해당상품 삭제기능.
+			service = new DeleteCart();
+		} else if (result.equals("/OrderCart.do")) { 
+			service = new OrderCart();
+	    }
 		
 		// 새로 추가된 서블릿파일이 있다면 여기 .equals("") 안에 서블릿 url 넣으세요!.
 		/*

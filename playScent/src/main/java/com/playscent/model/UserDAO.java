@@ -30,15 +30,15 @@ public class UserDAO {
 	
 		
 		//회원 아이디 있는 체크 기능.
-		public boolean checkId (String user_id) {
+		public int checkId (String user_id) {
 			// connection, close, sql문 실행... 
 			// 모든 메서드마다 아래 이문장이 꼭 들어가야함!!
 			SqlSession sqlSession = sqlSessionFactory.openSession(true);
 			
-			boolean checkE = false;
+			int checkE = 0;
 			
 			try { 
-			   checkE = sqlSession.selectOne("joinMember", user_id);
+			   checkE = sqlSession.selectOne("idCheck", user_id);
 			} catch (Exception e) {
 				e.printStackTrace();
 			}finally {

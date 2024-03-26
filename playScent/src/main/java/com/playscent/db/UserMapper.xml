@@ -7,10 +7,10 @@
 	   insert into MEMBER_INFO values(#{id},#{name},#{age},#{email},#{mobile},#{gender}, sysdate,'bronze',#{profile_image})  
 	</insert>
 	
-    <!-- 네이버 id가 저자되어 잇는지 검사 -->
-	<select id="idCheck" parameterType="String" resultType="boolean">
-		select case when count(*)>0 then 1 else 0 end result
-		from MEMBER_INFO where id=#{user_id}
+    <!-- 네이버 id가 저장되어 잇는지 검사 -->
+	<select id="idCheck" parameterType="String" resultType="int">
+		select case when count(*)>0 then 1 else 0 end result   <!-- result는 컬럼 별명이됨.  -->
+		from MEMBER_INFO where mem_id=#{user_id}
 	</select>
 
 </mapper>
