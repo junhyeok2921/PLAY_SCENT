@@ -8,11 +8,10 @@ public class CartDTO {
 
 	//생성자
 	
-	public CartDTO(String user_id, int perfume_idx, int perfume_count, String created_at) {
+	public CartDTO(String user_id, int perfume_idx, int perfume_count) {
 		this.user_id = user_id;
 		this.perfume_idx = perfume_idx;
 		this.perfume_count = perfume_count;
-		this.created_at = created_at;
 	}
 
 	// getter, setter

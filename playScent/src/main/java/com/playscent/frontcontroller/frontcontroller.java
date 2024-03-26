@@ -8,6 +8,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import com.playscent.cartController.AddCart;
 import com.playscent.controller.JoinService;
 
 @WebServlet("*.do")
@@ -41,7 +42,7 @@ public class frontcontroller extends HttpServlet {
 			service = new JoinService();
 		} 
 		else if (result.equals("/AddCart.do")) { 
-			//service = new AddCart(); 
+			service = new AddCart(); 
 		}
 		
 		// 새로 추가된 서블릿파일이 있다면 여기 .equals("") 안에 서블릿 url 넣으세요!.

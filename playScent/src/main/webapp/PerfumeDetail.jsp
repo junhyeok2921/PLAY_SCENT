@@ -10,8 +10,8 @@
 
 
 	<%
-	String user_id = (String) session.getAttribute("user_id");
-	System.out.println(user_id);
+	 String user_id = (String) session.getAttribute("user_id");
+	 System.out.println(user_id);
 	%>
 
 	<div>
@@ -33,7 +33,8 @@
 	
 	const quantity = document.querySelector(".quantity").textContent;
 	const goCart = () => {
-		window.location.replace("/AddCart.do?pfIdx=30&quantity="+ quantity);
+		// 먼저 서버 서블릿으로 이동후 서버에서 향수 데이터 찾아서 request객체 셋팅후 cart페이지로 간다.
+		window.location.replace("AddCart.do?pfIdx=30&quantity="+ quantity);
 	};
 	
 	/* let idinp = document.querySelector('#idinp'); */

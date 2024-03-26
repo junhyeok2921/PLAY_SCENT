@@ -3,8 +3,17 @@
 <mapper namespace="com.playscent.db.CartMapper">
 
 	<!-- 장바구니 선택한상품정보 저장할 mapper sql -->
-	<insert id="addCart" parameterType="SelectedProductDTO">
-		insert into favorite_info values(#{fav_ind}, #{mem_id}, #{pf_inx}, #{pf_count}, sysdate)
+	<insert id="addCart" parameterType="CartDTO">
+		insert into FAVORITE_INFO values(FAVORITE_INFO_SEQ.NEXTVAL,#{user_id},#{perfume_idx},#{perfume_count},sysdate)
 	</insert>
+	
+	<!-- 장바구니에 담길 향수제품 정보 -->
+	<select id="selectPerfume"  resultType="CartPerfumeDTO">
+	 	select PF_NAME,PF_PRICE,PF_BRAND,PF_GENDERS,PF_ACCORDS,PF_IMAGE from PERFUME_INFO where PF_IDX=#{perfumeIDX}
+	</select>
+	
+	
+	
+	
 
 </mapper>
