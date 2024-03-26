@@ -8,6 +8,9 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import com.playscent.Reviewcontroller.ReviewDelete;
+import com.playscent.Reviewcontroller.ReviewService;
+
 import com.playscent.cartController.AddCart;
 import com.playscent.cartController.DeleteCart;
 import com.playscent.cartController.OrderCart;
@@ -39,16 +42,25 @@ public class frontcontroller extends HttpServlet {
 		request.setCharacterEncoding("UTF-8");
 		String moveURL = null;
 		command service = null; // 인터페이스로 업캐스팅으로 받을거임.
-
+		System.out.println(result);
 		if (result.equals("/JoinService.do")) { // naver로그인 기능
 			service = new JoinService();
-		} else if (result.equals("/AddCart.do")) { // 장바구니 상품추가 기능.
+		} else if(result.equals("/ReviewService.do")) {
+			service = new ReviewService();
+			System.out.println("요청 서블릿3차: "+service);
+		}
+		else if(result.equals("/ReviewDelete.do")) {
+			service = new ReviewDelete();
+			System.out.println("요청 서블릿4차: "+service);
+		} 
+		else if (result.equals("/AddCart.do")) { 
 			service = new AddCart(); 
 		} else if (result.equals("/DeleteCart.do")) { // 장바구니 해당상품 삭제기능.
 			service = new DeleteCart();
 		} else if (result.equals("/OrderCart.do")) { 
 			service = new OrderCart();
 	    }
+
 		
 		// 새로 추가된 서블릿파일이 있다면 여기 .equals("") 안에 서블릿 url 넣으세요!.
 		/*
