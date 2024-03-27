@@ -1,0 +1,46 @@
+@charset "UTF-8";
+
+ul,
+li {
+	list-style: none;
+}
+
+#scent_wrap {
+	width: 100%;
+	height: 100vh;
+	background-color: grey;
+}
+
+#scent_wrap .title {
+	width: 100%;
+	text-align: center;
+	line-height: 30px;
+	color: white;
+	font-size: 18px;
+}
+
+#scent_wrap #scentIMGbox {
+	max-width: 630px;
+	height: 70%;
+	background-color: #1E3B4A;
+	margin: auto;
+	position: relative;
+	top: 50%;
+	transform: translateY(-50%);
+	border-radius: 15px;
+}
+
+#scentIMGbox .sc_imgFrame{
+	width: 98%;
+	background: darkgray;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-around;
+	margin: 0 auto;	
+	padding: 0;
+}
+#scentIMGbox .sc_imgFrame li{
+	width: 49%;
+	background-color: red;
+	
+}

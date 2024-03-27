@@ -18,7 +18,6 @@ public class CartDAO {
 		SqlSession sqlSession = sqlSessionFactory.openSession(true);
  
 		int cnt = 0;
-
 		try {
 			cnt = sqlSession.insert("addCart", cdto);
 		} catch (Exception e) {
@@ -92,7 +91,24 @@ public class CartDAO {
 	}
 	
 	
-	
+	// 주문 결제 테이블에 최종 주문할 목록 저장.
+	public int totalOrderAdd(OrderPfDTO ordto) {
+		 System.out.println("결제 db저장 메서드 들어옴.");
+		// connection, close, sql문 실행...
+		// 모든 메서드마다 아래 이문장이 꼭 들어가야함!!
+		SqlSession sqlSession = sqlSessionFactory.openSession(true);
+ 
+		int cnt = 0;
+		try {
+			cnt = sqlSession.insert("totalOrderAdd", ordto);
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			sqlSession.close();
+		}
+
+		return cnt;
+	}
 	
 	
 	
