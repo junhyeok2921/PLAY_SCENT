@@ -14,7 +14,5 @@ public class ReveiwDTO {
 	private String REVIEW_CONTENT;
 	private String REVIEWED_AT;
 	private String REVIEW_STAR;
-	
-	
 
 }
