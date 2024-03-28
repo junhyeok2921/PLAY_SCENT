@@ -48,6 +48,11 @@ public class OrderCart implements command {
 		ordDTO.setRecipient_phone(userInfo.getMemPhone()); // 전화.
 		// 향수 식별자는 아래 for문에서 넣어주자.
 
+		// 최종 주문/결제 창으로 넘어가기전 기존에 테이블에 저장된 모든주문기록 삭제후 새로 주문할 목록 저장하기 위해. 테이블 모든데이터 삭제메서드 호출.
+		int row = cdao.deleteAllOrder();
+		if(row > 0){System.out.println("주문창 가기전 order테이블 데이터 삭제완료.");
+		} else { System.out.println("order테이블 데이터 삭제실패!!."); }
+		
 		// 수량만 담을 arr일 예정 근데 안쓸거같다.
 	    ArrayList<Integer> quanList = new ArrayList<Integer>(); 
 	    

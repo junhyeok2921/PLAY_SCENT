@@ -105,6 +105,7 @@ public class CartDAO {
 
 		return cnt;
 	}
+	
 
 	// 주문 결제 테이블에 최종 주문할 목록 저장.
 	public int totalOrderAdd(OrderPfDTO ordto) {
@@ -124,5 +125,22 @@ public class CartDAO {
 
 		return cnt;
 	}
+	
+	
+	// 최종 주문/결제 창으로 넘어갈때 기존에 테이블에 저장된 모든기록 삭제후 새로 주문할 목록 저장하기 위해. 테이블 모든 데이터 삭제기능.
+	public int deleteAllOrder() {
+		// 모든 메서드마다 아래 이문장이 꼭 들어가야함!!
+		SqlSession sqlSession = sqlSessionFactory.openSession(true);
+		
+		int cnt = 0;
+		try { cnt = sqlSession.delete("deleteAllOrder");
+		} catch (Exception e) { e.printStackTrace();
+		}finally { sqlSession.close(); }
+		
+		return cnt;
+	}
+	
+	
+	
 
 }
