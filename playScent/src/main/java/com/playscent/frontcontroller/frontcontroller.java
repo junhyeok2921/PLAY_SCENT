@@ -9,10 +9,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import com.playscent.Reviewcontroller.ReviewDelete;
-<<<<<<< HEAD
-=======
 import com.playscent.Reviewcontroller.ReviewService;
->>>>>>> branch 'main' of https://github.com/2023-SMHRD-KDT-AI-16/PLAY_SCENT.git
 import com.playscent.cartController.AddCart;
 import com.playscent.cartController.DeleteCart;
 import com.playscent.cartController.OrderCart;
@@ -48,10 +45,6 @@ public class frontcontroller extends HttpServlet {
 		System.out.println(result);
 		if (result.equals("/JoinService.do")) { // naver로그인 기능
 			service = new JoinService();
-<<<<<<< HEAD
-=======
-
->>>>>>> branch 'main' of https://github.com/2023-SMHRD-KDT-AI-16/PLAY_SCENT.git
 		}
 
 		else if (result.equals("/ReviewService.do")) {
