@@ -56,7 +56,12 @@ public class OrderCart implements command {
 	    		System.out.println("장바구니 식별자 AllCartList "+AllCartList.get(i).getFAV_IDX());
 	    		System.out.println("장바구니 식별자 favIdx_arr "+Integer.parseInt(ind));
 	    		if(AllCartList.get(i).getFAV_IDX() == Integer.parseInt(ind)) {
-	    			AllCartList.get(i).setPF_COUNT(Integer.parseInt(quan_arr[i])); // 수량 변경. 수량 변경 sql도 만들어주어야함.
+	    			AllCartList.get(i).setPF_COUNT(Integer.parseInt(quan_arr[i])); // DTO에 수량 변경 해줌.
+	    			// 장바구니 db에도 수량변경해주는 메서드 실행.
+	    			int cnt = cdao.updateQuantity(AllCartList.get(i)); 
+	    			if(cnt > 0) {
+	    			   System.out.println("수량 변경이 잘되었습니다.");
+	    			} else { System.out.println("수량 변경 실패입니다."); }
 	    			System.out.println("일치 주문번호"+(i)+" "+Integer.parseInt(ind));
 	    			System.out.println("주문수량 TEST"+(i)+" "+Integer.parseInt(quan_arr[i]));
 	    			
@@ -76,9 +81,11 @@ public class OrderCart implements command {
 	    		}
 	    	}
 	    }
-	    System.out.println("수량 리스트 "+quanList.get(0));
-	      System.out.println("수량 리스트 "+quanList.get(1));
-	      System.out.println("수량 리스트 "+quanList.get(2));
+		/*
+		 * System.out.println("수량 리스트 "+quanList.get(0));
+		 * System.out.println("수량 리스트 "+quanList.get(1));
+		 */
+	    //  System.out.println("수량 리스트 "+quanList.get(2));
 	    
 	    
 		return "TotalOrder.jsp";

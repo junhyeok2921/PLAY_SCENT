@@ -17,10 +17,10 @@
 		select * from FAVORITE_INFO where MEM_ID=#{user_id}
 	</select> 
 	
+	
 	<!-- 장바구니 해당 상품에서 수량 변경시 수정sql -->
 	<update id="updateQuantity" parameterType="CartDTO">
-		update FAVORITE_INFO set PF_COUNT=#{pw}, tel=#{tel}, address=#{address}
-		where PF_COUNT=#{email}
+		update FAVORITE_INFO set PF_COUNT=#{PF_COUNT} where PF_IDX=#{PF_IDX} and MEM_ID=#{MEM_ID}
 	</update>
 	
 	<!-- 고객이 선택한 상품만 삭제기능. -->
