@@ -194,7 +194,7 @@
                 <ul id="product_jin">
                 <% for(int i=0; i<4; i++){%>
                 	<li><a href="PerfumeDetail.jsp?pfIdx=">
-                        <div class="product_img">
+                        <div class="product_img" >
                             <img class="jinhee_img" src="https://www.newstap.co.kr/news/photo/202209/173599_281311_1556.jpg" alt="">
                         </div>
 
