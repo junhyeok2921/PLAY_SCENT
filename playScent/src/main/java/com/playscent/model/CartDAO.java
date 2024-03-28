@@ -7,6 +7,7 @@ import org.apache.ibatis.session.SqlSessionFactory;
 
 import com.playscent.db.SqlSessionManager;
 
+
 public class CartDAO {
 	// 세션을 생성해 줄 수 있는 Factory 생성
 	SqlSessionFactory sqlSessionFactory = SqlSessionManager.getSqlSession();
@@ -70,6 +71,14 @@ public class CartDAO {
 
 		return AllCartList;
 	}
+	
+	
+	// 장바구니에서 해당상품 수량 변경시 update기능\
+	/*
+	 * public int updateQuantity(Member updateMember) { int cnt = 0; try { cnt =
+	 * sqlSession.update("updateQuantity", updateMember); } catch (Exception e) { //
+	 * TODO: handle exception }finally { sqlSession.close(); } return cnt; }
+	 */
 	
 	
 	// 장바구니 해당상품만 삭제 기능.

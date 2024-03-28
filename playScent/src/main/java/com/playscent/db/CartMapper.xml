@@ -17,6 +17,12 @@
 		select * from FAVORITE_INFO where MEM_ID=#{user_id}
 	</select> 
 	
+	<!-- 장바구니 해당 상품에서 수량 변경시 수정sql -->
+	<update id="updateQuantity" parameterType="CartDTO">
+		update FAVORITE_INFO set PF_COUNT=#{pw}, tel=#{tel}, address=#{address}
+		where PF_COUNT=#{email}
+	</update>
+	
 	<!-- 고객이 선택한 상품만 삭제기능. -->
 	<delete id="deleteCart" >  <!-- parameterType="Integer"가 타입 안에 들어가는 Integer가 디폴트 따라서 생략해도 자동으로 Integer가 된다. 다른값들은 넣어줘야 한다!.-->
 		delete from FAVORITE_INFO where FAV_IDX=#{fav_idx}
@@ -27,5 +33,10 @@
 		insert into ORDER_INFO (MEM_ID,RECIPIENT_NAME,RECIPIENT_PHONE,PF_IDX,PF_NAME,PF_BRAND,PF_PRICE,PF_QUANTITY,PF_IMAGE) 
 		values(#{mem_id},#{recipient_name},#{recipient_phone},#{PF_IDX},#{PF_NAME},#{PF_BRAND},#{PF_PRICE},#{PF_QUANTITY},#{PF_IMAGE})
 	</insert>
+	
+	
+	
+	
+	
 
 </mapper>

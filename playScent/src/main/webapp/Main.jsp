@@ -192,7 +192,8 @@
                 </ul>
 
                 <ul id="product_jin">
-                    <li><a href="PerfumeDetail.jsp">
+                <% for(int i=0; i<4; i++){%>
+                	<li><a href="PerfumeDetail.jsp?pfIdx=">
                         <div class="product_img">
                             <img class="jinhee_img" src="https://www.newstap.co.kr/news/photo/202209/173599_281311_1556.jpg" alt="">
                         </div>
@@ -208,7 +209,9 @@
                            <h2 class="sale">42%</h2>
                         </div>         
                     </a></li>
-                    <li><a href="#none">
+                <%}%>
+                    
+                   <!--  <li><a href="#none">
                         <div class="product_img">
                             <img class="jinhee_img" src="https://lh3.googleusercontent.com/proxy/jeN1OGWBrdQsNPOUnSFjS3yce7EgJ_1KSsXYb59yW16mbpA-rPCnkqDZkbvqZg0K20UZbVnBvv4r3qW9JA4fDNsfr0Jw9x9Q_76rwDeq9dYvfq3ApXJiseQs66wUEA" alt="">
                         </div>
@@ -223,39 +226,8 @@
                             </div>
                            <h2 class="sale">42%</h2>
                         </div>         
-                    </a></li>
-                    <li><a href="#none">
-                        <div class="product_img">
-                            <img class="jinhee_img" src="https://lh3.googleusercontent.com/proxy/jeN1OGWBrdQsNPOUnSFjS3yce7EgJ_1KSsXYb59yW16mbpA-rPCnkqDZkbvqZg0K20UZbVnBvv4r3qW9JA4fDNsfr0Jw9x9Q_76rwDeq9dYvfq3ApXJiseQs66wUEA" alt="">
-                        </div>
-
-                        <h3 class="per_brand">구딸파리 </h3>
-                        <p>오 드 아드리앙 EDP</p>
-                        <p class="ptd">태양 아래 레몬 과실을 바구니에 툭 담아낼 때 퍼지는 아로마틱한 향기</p>
-
-                        <div class="product_price">
-                            <div class="ohjinhee_point">
-                                <h3 class="per_price">148,800원<span>189,800원</span></h3>
-                            </div>
-                           <h2 class="sale">42%</h2>
-                        </div>         
-                    </a></li>
-                    <li><a href="#none">
-                        <div class="product_img">
-                            <img class="jinhee_img" src="https://lh3.googleusercontent.com/proxy/jeN1OGWBrdQsNPOUnSFjS3yce7EgJ_1KSsXYb59yW16mbpA-rPCnkqDZkbvqZg0K20UZbVnBvv4r3qW9JA4fDNsfr0Jw9x9Q_76rwDeq9dYvfq3ApXJiseQs66wUEA" alt="">
-                        </div>
-
-                        <h3 class="per_brand">구딸파리 </h3>
-                        <p>오 드 아드리앙 EDP</p>
-                        <p class="ptd">태양 아래 레몬 과실을 바구니에 툭 담아낼 때 퍼지는 아로마틱한 향기</p>
-
-                        <div class="product_price">
-                            <div class="ohjinhee_point">
-                                <h3 class="per_price">148,800원<span>189,800원</span></h3>
-                            </div>
-                           <h2 class="sale">42%</h2>
-                        </div>         
-                    </a></li>
+                    </a></li> -->
+                   
                 </ul>
             </div>    
 
@@ -272,70 +244,24 @@
                 </ul>
 
                 <ul id="product_jin">
-                    <li><a href="#none">
-                        <div class="product_img">
-                            <img class="jinhee_img" src="https://lh3.googleusercontent.com/proxy/jeN1OGWBrdQsNPOUnSFjS3yce7EgJ_1KSsXYb59yW16mbpA-rPCnkqDZkbvqZg0K20UZbVnBvv4r3qW9JA4fDNsfr0Jw9x9Q_76rwDeq9dYvfq3ApXJiseQs66wUEA" alt="">
-                        </div>
-
-                        <h3 class="per_brand">구딸파리 </h3>
-                        <p>오 드 아드리앙 EDP</p>
-                        <p class="ptd">태양 아래 레몬 과실을 바구니에 툭 담아낼 때 퍼지는 아로마틱한 향기</p>
-
-                        <div class="product_price">
-                            <div class="ohjinhee_point">
-                                <h3 class="per_price">148,800원<span>189,800원</span></h3>
-                            </div>
-                           <h2 class="sale">42%</h2>
-                        </div>         
-                    </a></li>
-                    <li><a href="#none">
-                        <div class="product_img">
-                            <img class="jinhee_img" src="https://lh3.googleusercontent.com/proxy/jeN1OGWBrdQsNPOUnSFjS3yce7EgJ_1KSsXYb59yW16mbpA-rPCnkqDZkbvqZg0K20UZbVnBvv4r3qW9JA4fDNsfr0Jw9x9Q_76rwDeq9dYvfq3ApXJiseQs66wUEA" alt="">
-                        </div>
-
-                        <h3 class="per_brand">구딸파리</h3>
-                        <p>오 드 아드리앙 EDP</p>
-                        <p class="ptd">태양 아래 레몬 과실을 바구니에 툭 담아낼 때 퍼지는 아로마틱한 향기</p>
-
-                        <div class="product_price">
-                            <div class="ohjinhee_point">
-                                <h3 class="per_price">148,800원<span>189,800원</span></h3>
-                            </div>
-                           <h2 class="sale">42%</h2>
-                        </div>         
-                    </a></li>
-                    <li><a href="#none">
-                        <div class="product_img">
-                            <img class="jinhee_img" src="https://lh3.googleusercontent.com/proxy/jeN1OGWBrdQsNPOUnSFjS3yce7EgJ_1KSsXYb59yW16mbpA-rPCnkqDZkbvqZg0K20UZbVnBvv4r3qW9JA4fDNsfr0Jw9x9Q_76rwDeq9dYvfq3ApXJiseQs66wUEA" alt="">
-                        </div>
-
-                        <h3 class="per_brand">구딸파리 </h3>
-                        <p>오 드 아드리앙 EDP</p>
-                        <p class="ptd">태양 아래 레몬 과실을 바구니에 툭 담아낼 때 퍼지는 아로마틱한 향기</p>
-
-                        <div class="product_price">
-                            <div class="ohjinhee_point">
-                                <h3 class="per_price">148,800원<span>189,800원</span></h3>
-                            </div>
-                           <h2 class="sale">42%</h2>
-                        </div>         
-                    </a></li>
-                    <li><a href="#none">
-                        <div class="product_img">
-                            <img class="jinhee_img" src="https://lh3.googleusercontent.com/proxy/jeN1OGWBrdQsNPOUnSFjS3yce7EgJ_1KSsXYb59yW16mbpA-rPCnkqDZkbvqZg0K20UZbVnBvv4r3qW9JA4fDNsfr0Jw9x9Q_76rwDeq9dYvfq3ApXJiseQs66wUEA" alt="">
-                        </div>
-
-                        <h3 class="per_brand">구딸파리 </h3>
-                        <p>오 드 아드리앙 EDP</p>
-                        <p class="ptd">태양 아래 레몬 과실을 바구니에 툭 담아낼 때 퍼지는 아로마틱한 향기</p>
-
-                        <div class="product_price">
-                            <div class="ohjinhee_point">
-                                <h3 class="per_price">148,800원<span>189,800원</span></h3>
-                            </div>
-                           <h2 class="sale">42%</h2>
-                        </div>         
-                    </a></li>
+                    <% for(int i=0; i<4; i++){%>
+	                	<li><a href="PerfumeDetail.jsp?">
+	                        <div class="product_img">
+	                            <img class="jinhee_img" src="https://www.newstap.co.kr/news/photo/202209/173599_281311_1556.jpg" alt="">
+	                        </div>
+	
+	                        <h3 class="per_brand">구딸파리 </h3>
+	                        <p>오 드 아드리앙 EDP</p>
+	                        <p class="ptd">태양 아래 레몬 과실을 바구니에 툭 담아낼 때 퍼지는 아로마틱한 향기</p>
+	
+	                        <div class="product_price">
+	                            <div class="ohjinhee_point">
+	                                <h3 class="per_price">148,800원<span>189,800원</span></h3>
+	                            </div>
+	                           <h2 class="sale">42%</h2>
+	                        </div>         
+	                    </a></li>
+	                <%}%>
                 </ul>
             </div> 
 
@@ -352,70 +278,24 @@
                 </ul>
 
                 <ul id="product_jin">
-                    <li><a href="#none">
-                        <div class="product_img">
-                            <img class="jinhee_img" src="https://lh3.googleusercontent.com/proxy/jeN1OGWBrdQsNPOUnSFjS3yce7EgJ_1KSsXYb59yW16mbpA-rPCnkqDZkbvqZg0K20UZbVnBvv4r3qW9JA4fDNsfr0Jw9x9Q_76rwDeq9dYvfq3ApXJiseQs66wUEA" alt="">
-                        </div>
-
-                        <h3 class="per_brand">구딸파리 </h3>
-                        <p>오 드 아드리앙 EDP</p>
-                        <p class="ptd">태양 아래 레몬 과실을 바구니에 툭 담아낼 때 퍼지는 아로마틱한 향기</p>
-
-                        <div class="product_price">
-                            <div class="ohjinhee_point">
-                                <h3 class="per_price">148,800원<span>189,800원</span></h3>
-                            </div>
-                           <h2 class="sale">42%</h2>
-                        </div>         
-                    </a></li>
-                    <li><a href="#none">
-                        <div class="product_img">
-                            <img class="jinhee_img" src="https://lh3.googleusercontent.com/proxy/jeN1OGWBrdQsNPOUnSFjS3yce7EgJ_1KSsXYb59yW16mbpA-rPCnkqDZkbvqZg0K20UZbVnBvv4r3qW9JA4fDNsfr0Jw9x9Q_76rwDeq9dYvfq3ApXJiseQs66wUEA" alt="">
-                        </div>
-
-                        <h3 class="per_brand">구딸파리</h3>
-                        <p>오 드 아드리앙 EDP</p>
-                        <p class="ptd">태양 아래 레몬 과실을 바구니에 툭 담아낼 때 퍼지는 아로마틱한 향기</p>
-
-                        <div class="product_price">
-                            <div class="ohjinhee_point">
-                                <h3 class="per_price">148,800원<span>189,800원</span></h3>
-                            </div>
-                           <h2 class="sale">42%</h2>
-                        </div>         
-                    </a></li>
-                    <li><a href="#none">
-                        <div class="product_img">
-                            <img class="jinhee_img" src="https://lh3.googleusercontent.com/proxy/jeN1OGWBrdQsNPOUnSFjS3yce7EgJ_1KSsXYb59yW16mbpA-rPCnkqDZkbvqZg0K20UZbVnBvv4r3qW9JA4fDNsfr0Jw9x9Q_76rwDeq9dYvfq3ApXJiseQs66wUEA" alt="">
-                        </div>
-
-                        <h3 class="per_brand">구딸파리 </h3>
-                        <p>오 드 아드리앙 EDP</p>
-                        <p class="ptd">태양 아래 레몬 과실을 바구니에 툭 담아낼 때 퍼지는 아로마틱한 향기</p>
-
-                        <div class="product_price">
-                            <div class="ohjinhee_point">
-                                <h3 class="per_price">148,800원<span>189,800원</span></h3>
-                            </div>
-                           <h2 class="sale">42%</h2>
-                        </div>         
-                    </a></li>
-                    <li><a href="#none">
-                        <div class="product_img">
-                            <img class="jinhee_img" src="https://lh3.googleusercontent.com/proxy/jeN1OGWBrdQsNPOUnSFjS3yce7EgJ_1KSsXYb59yW16mbpA-rPCnkqDZkbvqZg0K20UZbVnBvv4r3qW9JA4fDNsfr0Jw9x9Q_76rwDeq9dYvfq3ApXJiseQs66wUEA" alt="">
-                        </div>
-
-                        <h3 class="per_brand">구딸파리 </h3>
-                        <p>오 드 아드리앙 EDP</p>
-                        <p class="ptd">태양 아래 레몬 과실을 바구니에 툭 담아낼 때 퍼지는 아로마틱한 향기</p>
-
-                        <div class="product_price">
-                            <div class="ohjinhee_point">
-                                <h3 class="per_price">148,800원<span>189,800원</span></h3>
-                            </div>
-                           <h2 class="sale">42%</h2>
-                        </div>         
-                    </a></li>
+                   <% for(int i=0; i<4; i++){%>
+	                	<li><a href="PerfumeDetail.jsp?">
+	                        <div class="product_img">
+	                            <img class="jinhee_img" src="https://www.newstap.co.kr/news/photo/202209/173599_281311_1556.jpg" alt="">
+	                        </div>
+	
+	                        <h3 class="per_brand">구딸파리 </h3>
+	                        <p>오 드 아드리앙 EDP</p>
+	                        <p class="ptd">태양 아래 레몬 과실을 바구니에 툭 담아낼 때 퍼지는 아로마틱한 향기</p>
+	
+	                        <div class="product_price">
+	                            <div class="ohjinhee_point">
+	                                <h3 class="per_price">148,800원<span>189,800원</span></h3>
+	                            </div>
+	                           <h2 class="sale">42%</h2>
+	                        </div>         
+	                    </a></li>
+	                <%}%>
                 </ul>
             </div>
 
@@ -430,70 +310,24 @@
                 </ul>
 
                 <ul id="product_jin">
-                    <li><a href="#none">
-                        <div class="product_img">
-                            <img class="jinhee_img" src="https://lh3.googleusercontent.com/proxy/jeN1OGWBrdQsNPOUnSFjS3yce7EgJ_1KSsXYb59yW16mbpA-rPCnkqDZkbvqZg0K20UZbVnBvv4r3qW9JA4fDNsfr0Jw9x9Q_76rwDeq9dYvfq3ApXJiseQs66wUEA" alt="">
-                        </div>
-
-                        <h3 class="per_brand">구딸파리 </h3>
-                        <p>오 드 아드리앙 EDP</p>
-                        <p class="ptd">태양 아래 레몬 과실을 바구니에 툭 담아낼 때 퍼지는 아로마틱한 향기</p>
-
-                        <div class="product_price">
-                            <div class="ohjinhee_point">
-                                <h3 class="per_price">148,800원<span>189,800원</span></h3>
-                            </div>
-                           <h2 class="sale">42%</h2>
-                        </div>         
-                    </a></li>
-                    <li><a href="#none">
-                        <div class="product_img">
-                            <img class="jinhee_img" src="https://lh3.googleusercontent.com/proxy/jeN1OGWBrdQsNPOUnSFjS3yce7EgJ_1KSsXYb59yW16mbpA-rPCnkqDZkbvqZg0K20UZbVnBvv4r3qW9JA4fDNsfr0Jw9x9Q_76rwDeq9dYvfq3ApXJiseQs66wUEA" alt="">
-                        </div>
-
-                        <h3 class="per_brand">구딸파리</h3>
-                        <p>오 드 아드리앙 EDP</p>
-                        <p class="ptd">태양 아래 레몬 과실을 바구니에 툭 담아낼 때 퍼지는 아로마틱한 향기</p>
-
-                        <div class="product_price">
-                            <div class="ohjinhee_point">
-                                <h3 class="per_price">148,800원<span>189,800원</span></h3>
-                            </div>
-                           <h2 class="sale">42%</h2>
-                        </div>         
-                    </a></li>
-                    <li><a href="#none">
-                        <div class="product_img">
-                            <img class="jinhee_img" src="https://lh3.googleusercontent.com/proxy/jeN1OGWBrdQsNPOUnSFjS3yce7EgJ_1KSsXYb59yW16mbpA-rPCnkqDZkbvqZg0K20UZbVnBvv4r3qW9JA4fDNsfr0Jw9x9Q_76rwDeq9dYvfq3ApXJiseQs66wUEA" alt="">
-                        </div>
-
-                        <h3 class="per_brand">구딸파리 </h3>
-                        <p>오 드 아드리앙 EDP</p>
-                        <p class="ptd">태양 아래 레몬 과실을 바구니에 툭 담아낼 때 퍼지는 아로마틱한 향기</p>
-
-                        <div class="product_price">
-                            <div class="ohjinhee_point">
-                                <h3 class="per_price">148,800원<span>189,800원</span></h3>
-                            </div>
-                           <h2 class="sale">42%</h2>
-                        </div>         
-                    </a></li>
-                    <li><a href="#none">
-                        <div class="product_img">
-                            <img class="jinhee_img" src="https://lh3.googleusercontent.com/proxy/jeN1OGWBrdQsNPOUnSFjS3yce7EgJ_1KSsXYb59yW16mbpA-rPCnkqDZkbvqZg0K20UZbVnBvv4r3qW9JA4fDNsfr0Jw9x9Q_76rwDeq9dYvfq3ApXJiseQs66wUEA" alt="">
-                        </div>
-
-                        <h3 class="per_brand">구딸파리 </h3>
-                        <p>오 드 아드리앙 EDP</p>
-                        <p class="ptd">태양 아래 레몬 과실을 바구니에 툭 담아낼 때 퍼지는 아로마틱한 향기</p>
-
-                        <div class="product_price">
-                            <div class="ohjinhee_point">
-                                <h3 class="per_price">148,800원<span>189,800원</span></h3>
-                            </div>
-                           <h2 class="sale">42%</h2>
-                        </div>         
-                    </a></li>
+                    <% for(int i=0; i<4; i++){%>
+	                	<li><a href="PerfumeDetail.jsp?">
+	                        <div class="product_img">
+	                            <img class="jinhee_img" src="https://www.newstap.co.kr/news/photo/202209/173599_281311_1556.jpg" alt="">
+	                        </div>
+	
+	                        <h3 class="per_brand">구딸파리 </h3>
+	                        <p>오 드 아드리앙 EDP</p>
+	                        <p class="ptd">태양 아래 레몬 과실을 바구니에 툭 담아낼 때 퍼지는 아로마틱한 향기</p>
+	
+	                        <div class="product_price">
+	                            <div class="ohjinhee_point">
+	                                <h3 class="per_price">148,800원<span>189,800원</span></h3>
+	                            </div>
+	                           <h2 class="sale">42%</h2>
+	                        </div>         
+	                    </a></li>
+	                <%}%>
                 </ul>
             </div> 
        		
@@ -507,70 +341,24 @@
                 </ul>
 
                 <ul id="product_jin">
-                    <li><a href="#none">
-                        <div class="product_img">
-                            <img class="jinhee_img" src="https://lh3.googleusercontent.com/proxy/jeN1OGWBrdQsNPOUnSFjS3yce7EgJ_1KSsXYb59yW16mbpA-rPCnkqDZkbvqZg0K20UZbVnBvv4r3qW9JA4fDNsfr0Jw9x9Q_76rwDeq9dYvfq3ApXJiseQs66wUEA" alt="">
-                        </div>
-
-                        <h3 class="per_brand">구딸파리 </h3>
-                        <p>오 드 아드리앙 EDP</p>
-                        <p class="ptd">태양 아래 레몬 과실을 바구니에 툭 담아낼 때 퍼지는 아로마틱한 향기</p>
-
-                        <div class="product_price">
-                            <div class="ohjinhee_point">
-                                <h3 class="per_price">148,800원<span>189,800원</span></h3>
-                            </div>
-                           <h2 class="sale">42%</h2>
-                        </div>         
-                    </a></li>
-                    <li><a href="#none">
-                        <div class="product_img">
-                            <img class="jinhee_img" src="https://lh3.googleusercontent.com/proxy/jeN1OGWBrdQsNPOUnSFjS3yce7EgJ_1KSsXYb59yW16mbpA-rPCnkqDZkbvqZg0K20UZbVnBvv4r3qW9JA4fDNsfr0Jw9x9Q_76rwDeq9dYvfq3ApXJiseQs66wUEA" alt="">
-                        </div>
-
-                        <h3 class="per_brand">구딸파리</h3>
-                        <p>오 드 아드리앙 EDP</p>
-                        <p class="ptd">태양 아래 레몬 과실을 바구니에 툭 담아낼 때 퍼지는 아로마틱한 향기</p>
-
-                        <div class="product_price">
-                            <div class="ohjinhee_point">
-                                <h3 class="per_price">148,800원<span>189,800원</span></h3>
-                            </div>
-                           <h2 class="sale">42%</h2>
-                        </div>         
-                    </a></li>
-                    <li><a href="#none">
-                        <div class="product_img">
-                            <img class="jinhee_img" src="https://lh3.googleusercontent.com/proxy/jeN1OGWBrdQsNPOUnSFjS3yce7EgJ_1KSsXYb59yW16mbpA-rPCnkqDZkbvqZg0K20UZbVnBvv4r3qW9JA4fDNsfr0Jw9x9Q_76rwDeq9dYvfq3ApXJiseQs66wUEA" alt="">
-                        </div>
-
-                        <h3 class="per_brand">구딸파리 </h3>
-                        <p>오 드 아드리앙 EDP</p>
-                        <p class="ptd">태양 아래 레몬 과실을 바구니에 툭 담아낼 때 퍼지는 아로마틱한 향기</p>
-
-                        <div class="product_price">
-                            <div class="ohjinhee_point">
-                                <h3 class="per_price">148,800원<span>189,800원</span></h3>
-                            </div>
-                           <h2 class="sale">42%</h2>
-                        </div>         
-                    </a></li>
-                    <li><a href="#none">
-                        <div class="product_img">
-                            <img class="jinhee_img" src="https://lh3.googleusercontent.com/proxy/jeN1OGWBrdQsNPOUnSFjS3yce7EgJ_1KSsXYb59yW16mbpA-rPCnkqDZkbvqZg0K20UZbVnBvv4r3qW9JA4fDNsfr0Jw9x9Q_76rwDeq9dYvfq3ApXJiseQs66wUEA" alt="">
-                        </div>
-
-                        <h3 class="per_brand">구딸파리 </h3>
-                        <p>오 드 아드리앙 EDP</p>
-                        <p class="ptd">태양 아래 레몬 과실을 바구니에 툭 담아낼 때 퍼지는 아로마틱한 향기</p>
-
-                        <div class="product_price">
-                            <div class="ohjinhee_point">
-                                <h3 class="per_price">148,800원<span>189,800원</span></h3>
-                            </div>
-                           <h2 class="sale">42%</h2>
-                        </div>         
-                    </a></li>
+                    <% for(int i=0; i<4; i++){%>
+	                	<li><a href="PerfumeDetail.jsp?">
+	                        <div class="product_img">
+	                            <img class="jinhee_img" src="https://www.newstap.co.kr/news/photo/202209/173599_281311_1556.jpg" alt="">
+	                        </div>
+	
+	                        <h3 class="per_brand">구딸파리 </h3>
+	                        <p>오 드 아드리앙 EDP</p>
+	                        <p class="ptd">태양 아래 레몬 과실을 바구니에 툭 담아낼 때 퍼지는 아로마틱한 향기</p>
+	
+	                        <div class="product_price">
+	                            <div class="ohjinhee_point">
+	                                <h3 class="per_price">148,800원<span>189,800원</span></h3>
+	                            </div>
+	                           <h2 class="sale">42%</h2>
+	                        </div>         
+	                    </a></li>
+	                <%}%>
                 </ul>
             </div> 
        
