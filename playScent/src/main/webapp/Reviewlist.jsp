@@ -8,7 +8,7 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
-
+<link rel="stylesheet" href="css/Review_style.css" type="text/css">
 <style>
 
 body {
@@ -50,10 +50,6 @@ a {
   color: #73685d;
 }
 
-
-
-
-  
  @media all and (max-width: 768px) {
     
   table, thead, tbody, th, td, tr {
@@ -97,9 +93,6 @@ a {
   }
   
   
-
-  
-  
   }
 
 </style>
@@ -139,9 +132,7 @@ a {
 						 --%>
 						
 						
-						<!--구분--------------------------------------------------------------  -->
-						
-						
+								
 						
 						<table class="review-table">
     <thead>
@@ -149,7 +140,8 @@ a {
         <th>게시글 번호</th>
         <th>평점(1/10)</th>
         <th>후기</th>
-        <th colspan='2'>등록일자</th>
+        <th>등록일자</th>
+        <th> </th>
 
     </tr>
     </thead>
@@ -161,7 +153,8 @@ a {
 								<td><%=rev.getREVIEW_STAR()%></td>
 								<td><%=rev.getREVIEW_CONTENT() %></td>
 								<td><%=rev.getREVIEWED_AT() %></td>	
-								<td><a href = "ReviewDelete.do?MEM_ID=<%=rev.getMEM_ID()%>">삭제</a></td>					
+								<td><a href = "ReviewDelete.do?MEM_ID=<%=rev.getMEM_ID()%>">삭제</a></td>
+													
 							</tr>
 							<%} %>
 							
@@ -172,15 +165,59 @@ a {
 						
 						
 						
+<!-- 구분선                             -->			
 						
 						
-						
-						
+<div id="review_modal">
+    <button class="modal-Btn">글쓰기</button>
+    <dialog class="modal">
+        
+	<h2>향수리뷰리뷰리뷰</h2>
+	<form action= "ReviewService.do" method= "POST">
+	<div class ="star_rating">
+	 <fieldset class="rate">
+                                <input type="radio" id="rating10" name="rating" value="10"><label for="rating10" title="5점"></label>
+                                <input type="radio" id="rating9" name="rating" value="9"><label class="half" for="rating9" title="4.5점"></label>
+                                <input type="radio" id="rating8" name="rating" value="8"><label for="rating8" title="4점"></label>
+                                <input type="radio" id="rating7" name="rating" value="7"><label class="half" for="rating7" title="3.5점"></label>
+                                <input type="radio" id="rating6" name="rating" value="6"><label for="rating6" title="3점"></label>
+                                <input type="radio" id="rating5" name="rating" value="5"><label class="half" for="rating5" title="2.5점"></label>
+                                <input type="radio" id="rating4" name="rating" value="4"><label for="rating4" title="2점"></label>
+                                <input type="radio" id="rating3" name="rating" value="3"><label class="half" for="rating3" title="1.5점"></label>
+                                <input type="radio" id="rating2" name="rating" value="2"><label for="rating2" title="1점"></label>
+                                <input type="radio" id="rating1" name="rating" value="1"><label class="half" for="rating1" title="0.5점"></label>
+								
+                            </fieldset><br>
+                            
+
+</div>
+
+<input type = "text" name = "contents" class="star_box" placeholder = "리뷰내용을 입력해주세요"><br>
+<input type = "hidden" name = "MEM_ID" VALUE = "Ef-8R3fBQ9V7oNLNfOv7gHjUqXb9k7pn6QkITa77XvE">
+<input type="submit" class="btn02" value="리뷰 등록">
 
 
+</form>
+        <form method="dialog">
+            <button>Close</button>
+        </form>
+    </dialog>
+</div>
+			 <!----------------------------- 모달창 끝----------------------------  -->
 
 </body>
 
+
+<script>
+
+const modalBtn = document.querySelector(".modal-Btn");
+const modal = document.querySelector(".modal");
+
+modalBtn.addEventListener("click", () => {
+    modal.showModal()
+})
+
+</script>
 
 
 

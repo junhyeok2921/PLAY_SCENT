@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+	<meta charset="UTF-8">
+	<title>설문조사</title>
+	<style>
+		a {
+			font-weight: bold;
+
+
+		}
+		
+
+		img {
+			display: block;
+
+			margin: auto;
+		}
+
+
+
+
+
+		.question {
+			position: relative;
+			top: 3.5px;
+		}
+
+		.container {
+			width: 300px;
+			border: 2px solid #000;
+			/* 테두리 설정 */
+			padding: 20px;
+			margin: 20px auto;
+			/* 페이지 중앙 정렬 */
+			border-radius: 15px;
+			/* 컨테이너 모서리 둥글게 */
+		}
+
+		.main-title {
+			text-align: center;
+
+		}
+
+		.season-title {
+			margin: 10px 0;
+			/* 위아래 마진 */
+			padding: 10px;
+			border: 1px solid #444;
+			/* 계절별 테두리 */
+			text-align: center;
+			/* 텍스트 중앙 정렬 */
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			cursor: pointer;
+			/* 커서 모양 변경 */
+			border-radius: 5px;
+			/* 질문 영역 모서리 둥글게 */
+			background-color: rgb(228, 242, 220);
+		}
+
+		.season {
+			margin: 10px 0;
+			/* 위아래 마진 */
+			padding: 10px;
+			border: 1px solid #444;
+			/* 계절별 테두리 */
+			text-align: center;
+			/* 텍스트 중앙 정렬 */
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			cursor: pointer;
+			/* 커서 모양 변경 */
+			border-radius: 5px;
+			/* 계절 선택 영역 모서리 둥글게 */
+		}
+
+		.season input[type="radio"] {
+			display: none;
+			/* 라디오 버튼 숨김 */
+		}
+
+		.season input[type="radio"]:checked+span {
+			background-color: lightblue;
+			/* 선택된 라벨의 배경색 변경 */
+			color: white;
+			/* 선택된 라벨의 텍스트 색상 변경 */
+		}
+
+		.season span {
+			display: block;
+			width: 100%;
+		}
+	</style>
+</head>
+
+<body>
+	<div class="container">
+			<h3 class="main-title">나만의 향수를 찾아서</h3>
+			<div class="mt-7 overflow-hidden">
+				<img src="https://png.pngtree.com/png-clipart/20230405/original/pngtree-perfume-line-icon-png-image_9028785.png"
+					style="max-width: 70%; height: auto;">
+			</div>
+			<div class="question">
+				<a>1.당신의 성별은?</a><br><br>
+				<input type='checkbox' name='perfume' value='leather,' /> 남자
+				<input type='checkbox' name='perfume' value='Amber,' /> 여자
+				<br>
+			</div>
+			<br>
+			<div class="question">
+				<a>2.당신이 좋아하는 계절은?</a><br><br>
+				<input type='checkbox' name='perfume' value='cotton,Fresh' /> 봄
+				<input type='checkbox' name='perfume' value='Juniper berry,Cedar' /> 여름
+				<input type='checkbox' name='perfume' value='smoky,spicy,Cardamom,Rose' /> 가을
+				<input type='checkbox' name='perfume' value='Lavender,musk,vanila,fig' /> 겨울
+				<br>
+			</div>
+			<br>
+			<div class="question">
+				<a>3.꽃이 좋나요 나무가 좋나요?</a><br><br>
+				<input type='checkbox' name='perfume' value='flower' /> 꽃
+				<input type='checkbox' name='perfume' value='Woody' /> 나무
+				<br>
+			</div>
+			<br>
+			<div class="question">
+				<a>4.달달한 디저트를 좋아하시나요?</a><br><br>
+				<input type='checkbox' name='perfume' value='Gourmand' /> 좋아해요
+				<input type='checkbox' name='perfume' value='Ginger,Grapefruit' /> 별로 안좋아해요
+				<br>
+			</div>
+			<br>
+			<div class="question">
+				<a>5.허브티와 커피 어느쪽이 좋으신가요 ? </a><br><br>
+				<input type='checkbox' name='perfume' value='leaf' /> 허브티
+				<input type='checkbox' name='perfume' value='Coffee,almond' /> 커피
+				<br>
+			</div>
+			<br>
+			<div class="question">
+				<a>6. 기대하던 연휴날 무엇을 하실건가요? </a><br><br>
+				<input type='checkbox' name='perfume' value='Patchouli,' /> 사람이 북적거리는 곳으로 여행가기
+				<br>
+				<input type='checkbox' name='perfume' value='Bergamot,Geranium' /> 집에서 편안하게 방콕하기
+				<br>
+			</div>
+			<br>
+			<div class="question">
+				<a>6.산과 바다중 어느곳이 더 좋으신가요? </a><br><br>
+				<input type='checkbox' name='perfume' value='Spicy,Earthy,Chypre,Green' /> 산
+				<input type='checkbox' name='perfume' value='Aquatic,Ambrox,Orange,Citrus' /> 바다
+				<br>
+			</div>
+
+			<div id='result'></div>
+
+			<div style="text-align: center; margin-top: 20px;">
+				<button onclick='getCheckboxValue()'>제출</button>
+
+	</div>
+</body>
+
+</html>
+
+
+
+<script>
+	function getCheckboxValue() {
+		// 선택된 목록 가져오기
+		const query = 'input[name="perfume"]:checked';
+		const selectedEls =
+			document.querySelectorAll(query);
+
+		// 선택된 목록에서 value 찾기
+		let result = '';
+		selectedEls.forEach((el) => {
+			result += el.value + ' ';
+		});
+
+		// 출력
+		document.getElementById('result').innerText
+			= result;
+		
+		<!--flask 서버로 데이터 전송-->
+		
+		window.location.replace('http://127.0.0.1:5000/?perfume='+result);
+		
+	}
+
+</script>
+
+
+
+</html>

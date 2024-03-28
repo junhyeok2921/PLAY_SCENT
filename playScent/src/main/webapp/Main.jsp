@@ -1,3 +1,7 @@
+<%@page import="java.text.DecimalFormat"%>
+<%@page import="com.playscent.model.PerfumeDTO"%>
+<%@page import="java.util.List"%>
+<%@page import="com.playscent.model.PerfumeDAO"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -25,6 +29,12 @@
 </head>
  
 <body>
+<%List<PerfumeDTO> perfumes = new PerfumeDAO().SweetsDAO();
+System.out.println(perfumes.get(0).getPF_IDX());
+DecimalFormat df = new DecimalFormat("###,###");
+
+
+%>
     <div id="jinheewrap">
         <header class="pc_header">
                 <ul class="jin_up">
@@ -76,7 +86,7 @@
 
         <div id="jinhee_pcnav">
                 <nav id="pc_nav">
-                    <div class="all_menu">
+                    <div class="all_menu">xx
                         <img src="imges/nm1.png" alt="">
                         <span>전체카테고리</span>
                     </div>     
@@ -138,31 +148,31 @@
                             <div class="img_exh">
                                 <img src="https://www.herbnoori.com/shopimages/herbnoori/0150060000212.jpg?1463021372" alt="">
                             </div>
-                            <a href="none">플로럴</a>    
+                            <a href="http://localhost:8081/playScent/PERFUMES/FLORAL.jsp">플로럴</a>    
                         </li>
                         <li>
                             <div class="img_exh">
                                 <img src="https://d2gfz7wkiigkmv.cloudfront.net/pickin/2/1/2/sOBOdnVUSsWNegw74VOTsQ" alt="">
                             </div>
-                            <a href="none">시트러스</a>    
+                            <a href="http://localhost:8081/playScent/PERFUMES/Citrus.jsp">시트러스</a>    
                         </li>
                         <li>
                             <div class="img_exh">
                                 <img src="https://dimg.donga.com/ugc/CDB/SHINDONGA/Article/5c/7e/18/31/5c7e18310a00d2738de6.jpg" alt="">
                             </div>
-                            <a href="none">우디</a>    
+                            <a href="http://localhost:8081/playScent/PERFUMES/Woody.jsp">우디</a>    
                         </li>
                         <li>
                             <div class="img_exh">
-                                <img src="imges/mmm1.png" alt="">
+                                <img src="https://p16-va.lemon8cdn.com/tos-maliva-v-ac5634-us/ooQhIseeAzJHXxpQBAnDQiKWtRlQkCB1AEDIbc~tplv-tej9nj120t-origin.webp" alt="">
                             </div>
-                            <a href="none">스위트</a>    
+                            <a href="http://localhost:8081/playScent/PERFUMES/Sweets.jsp">스위트</a>    
                         </li>
                         <li>
                             <div class="img_exh">
-                                <img src="imges/mmm1.png" alt="">
+                                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTnysVjqH3Z360ovLduazJ5M-yyoAACWV0eWuWp6o0iS5BiP0yMtKYEu__iB548I3VrxPE&usqp=CAU" alt="">
                             </div>
-                            <a href="none">머스크</a>    
+                            <a href="http://localhost:8081/playScent/PERFUMES/Musk.jsp">머스크</a>    
                         </li>
 
                         <li>
@@ -311,20 +321,28 @@
 
                 <ul id="product_jin">
                     <% for(int i=0; i<4; i++){%>
-	                	<li><a href="PerfumeDetail.jsp?">
+	                	<li><a href="PerfumeDetail.jsp?P_IDX=<%= perfumes.get(i).getPF_IDX() %>">
 	                        <div class="product_img">
-	                            <img class="jinhee_img" src="https://www.newstap.co.kr/news/photo/202209/173599_281311_1556.jpg" alt="">
+	                            <img class="jinhee_img" src="<%= perfumes.get(i).getPF_Image() %>" alt="">
 	                        </div>
 	
-	                        <h3 class="per_brand">구딸파리 </h3>
-	                        <p>오 드 아드리앙 EDP</p>
-	                        <p class="ptd">태양 아래 레몬 과실을 바구니에 툭 담아낼 때 퍼지는 아로마틱한 향기</p>
+	                        <h3 class="per_brand"><%= perfumes.get(i).getPF_BRAND() %> </h3>
+	                        <p><%= perfumes.get(i).getPF_NAME()%></p>
+	                        
 	
 	                        <div class="product_price">
-	                            <div class="ohjinhee_point">
-	                                <h3 class="per_price">148,800원<span>189,800원</span></h3>
+	                            <div class="ohjinhee_point"><%
+	                            
+	                            		//금액 .찍어서 여기서 변수 저장
+	                            		  int price = (int)Math.round(perfumes.get(i).getPF_PRICE());//double -> 정수형으로
+	                            		  String money = df.format(price); // .찍어줌
+	                            
+	                            
+	                            
+	                            %>
+	                                <h3 class="per_price"><%= money %>원<span></span></h3>
 	                            </div>
-	                           <h2 class="sale">42%</h2>
+	                           
 	                        </div>         
 	                    </a></li>
 	                <%}%>

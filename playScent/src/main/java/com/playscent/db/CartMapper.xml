@@ -10,7 +10,7 @@
 
 	<!-- 장바구니에 담길 향수제품 정보 -->
 	<select id="selectPerfume" resultType="CartPerfumeDTO">
-		select PF_NAME,PF_PRICE,PF_BRAND,PF_GENDERS,PF_ACCORDS,PF_IMAGE from
+		select * from
 		PERFUME_INFO where PF_IDX=#{perfumeIDX}
 	</select>
 
