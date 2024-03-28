@@ -48,6 +48,11 @@ public class OrderCart implements command {
 		ordDTO.setRecipient_phone(userInfo.getMemPhone()); // 전화.
 		// 향수 식별자는 아래 for문에서 넣어주자.
 
+		// 최종 주문/결제 창으로 넘어가기전 기존에 테이블에 저장된 모든주문기록 삭제후 새로 주문할 목록 저장하기 위해. 테이블 모든데이터 삭제메서드 호출.
+		int row = cdao.deleteAllOrder();
+		if(row > 0){System.out.println("주문창 가기전 order테이블 데이터 삭제완료.");
+		} else { System.out.println("order테이블 데이터 삭제실패!!."); }
+		
 		// 수량만 담을 arr일 예정 근데 안쓸거같다.
 	    ArrayList<Integer> quanList = new ArrayList<Integer>(); 
 	    
@@ -56,7 +61,12 @@ public class OrderCart implements command {
 	    		System.out.println("장바구니 식별자 AllCartList "+AllCartList.get(i).getFAV_IDX());
 	    		System.out.println("장바구니 식별자 favIdx_arr "+Integer.parseInt(ind));
 	    		if(AllCartList.get(i).getFAV_IDX() == Integer.parseInt(ind)) {
-	    			AllCartList.get(i).setPF_COUNT(Integer.parseInt(quan_arr[i])); // 수량 변경. 수량 변경 sql도 만들어주어야함.
+	    			AllCartList.get(i).setPF_COUNT(Integer.parseInt(quan_arr[i])); // DTO에 수량 변경 해줌.
+	    			// 장바구니 db에도 수량변경해주는 메서드 실행.
+	    			int cnt = cdao.updateQuantity(AllCartList.get(i)); 
+	    			if(cnt > 0) {
+	    			   System.out.println("수량 변경이 잘되었습니다.");
+	    			} else { System.out.println("수량 변경 실패입니다."); }
 	    			System.out.println("일치 주문번호"+(i)+" "+Integer.parseInt(ind));
 	    			System.out.println("주문수량 TEST"+(i)+" "+Integer.parseInt(quan_arr[i]));
 	    			
@@ -76,9 +86,11 @@ public class OrderCart implements command {
 	    		}
 	    	}
 	    }
-	    System.out.println("수량 리스트 "+quanList.get(0));
-	      System.out.println("수량 리스트 "+quanList.get(1));
-	      System.out.println("수량 리스트 "+quanList.get(2));
+		/*
+		 * System.out.println("수량 리스트 "+quanList.get(0));
+		 * System.out.println("수량 리스트 "+quanList.get(1));
+		 */
+	    //  System.out.println("수량 리스트 "+quanList.get(2));
 	    
 	    
 		return "TotalOrder.jsp";
