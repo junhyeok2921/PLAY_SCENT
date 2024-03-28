@@ -42,8 +42,8 @@
 
 
 	<!-- 최종 주문/결제 창으로 넘어갈때 기존에 테이블에 저장된 모든기록 삭제후 새로 주문할 목록 저장하기 위해. 테이블 모든 데이터 삭제.  -->
-	<delete id="deleteAllOrder">
-		TRUNCATE TABLE ORDER_INFO
+	<delete id="deleteAllOrder" parameterType="String">
+		DELETE FROM ORDER_INFO where MEM_ID=#{user_id}
 	</delete>
 
 

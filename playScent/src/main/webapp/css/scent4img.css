@@ -1,4 +1,10 @@
 @charset "UTF-8";
+@font-face {
+    font-family: 'Tenada';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2210-2@1.0/Tenada.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+  }
 
 ul,
 li {
@@ -6,9 +12,18 @@ li {
 }
 
 #scent_wrap {
+    position: absolute;
+    top: 0;
+    left: 0;
 	width: 100%;
 	height: 100vh;
-	background-color: grey;
+	background-color: #EBEFE8;
+}
+
+form{
+    position: relative;
+    top: 50%;
+	transform: translateY(-50%);
 }
 
 #scent_wrap .title {
@@ -16,31 +31,98 @@ li {
 	text-align: center;
 	line-height: 30px;
 	color: white;
-	font-size: 18px;
+	font-size: 22px;
+    letter-spacing: 7px;
+    position: relative;
+    top: 15px;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
 }
 
 #scent_wrap #scentIMGbox {
-	max-width: 630px;
-	height: 70%;
+	max-width: 530px;
+	height: 73vh;
 	background-color: #1E3B4A;
 	margin: auto;
 	position: relative;
-	top: 50%;
-	transform: translateY(-50%);
 	border-radius: 15px;
 }
 
 #scentIMGbox .sc_imgFrame{
-	width: 98%;
-	background: darkgray;
+    display: block;
+	width: 91%;
+    height: 90%;
+	/* background: darkgray; */
 	display: flex;
 	flex-wrap: wrap;
-	justify-content: space-around;
+	justify-content: space-between;
+    align-content: space-around;
 	margin: 0 auto;	
 	padding: 0;
 }
-#scentIMGbox .sc_imgFrame li{
-	width: 49%;
-	background-color: red;
-	
+#scentIMGbox ul li{
+    display: block;
+	width: 48%;
+	height: 46%;
+    background-color: rgb(251 249 249 / 64%);
+    border-radius: 13px;
+    position: relative;
 }
+
+#scentIMGbox ul li .ll{
+    font-size: 6.5px;
+    color: #FBEA8F;
+     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+     letter-spacing: 2px;
+    position: absolute;
+    right: 0;
+    z-index: 5656;
+    bottom: -14px;
+
+}
+.date{
+    width: 5px;
+    height: auto;
+    padding: 0 3px;
+    word-break: break-all;
+    word-wrap: break-word;
+    font-size: 14px;
+    font-family: Tenad;
+    letter-spacing: -3.2px;
+    color: rgb(251, 234, 143, .6);
+    position: absolute;
+    top: 40%;
+    transform: translateY(-38%);
+    margin-left: 20px;
+}
+
+.sc_imgFrame #box{
+	width: 100%;
+	height:30px;
+    line-height: 30px;
+    overflow: hidden;
+    text-align: center;
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+    letter-spacing: 2px;
+}
+
+.sc_imgFrame li label{
+    width: 100%;   
+    cursor: pointer;
+    height: 46%;
+    width: 70px;
+    text-align: center;
+    font-family: Tenada;
+    color: #053D5C;
+    font-size: 22px;
+}
+
+#scentIMGbox .sc_imgFrame li input{
+	width: 100% ;
+	height: 100% !important;
+	background-color: rgb(0, 255, 255);
+    display: none;
+    visibility: hidden;
+}
+

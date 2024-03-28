@@ -167,9 +167,9 @@
 
                         <li>
                             <div class="img_exh">
-                                <img src="imges/mmm1.png" alt="">
+                                <img src="imges/scent4cut.jpg" alt="향기4컷">
                             </div>
-                            <a href="none">향기네컷</a>    
+                            <a href="Scent4cut.jsp">향기네컷</a>    
                         </li>
                     </ul> 
 
@@ -364,9 +364,6 @@
        
         </div>
 
-        
-
-    
 
         <a href="#none" class="top_but">
             <img src="imges/up1.png" alt="">
@@ -379,21 +376,21 @@
                 <li><a href="#none">이용안내</a></li>
                 <li><a href="#none">개인정보처리방침</a></li>
                 <li><a href="#none">FAQ</a></li>
+                <li><a href="#none"></a></li>
             </ul>
 
              <div id="footer_content">                  
                     <div class="footer_meddle">
                          <div class="f_logo tt1">
-                             <img src="imges/pcnm_logo.png" alt="">
+                             <img src="imges/playscentLogo.png" alt="">
                          </div>
 
                          <ul class="foo_intro tt1">
-                             <li><a href="#none">NAUM mall</a></li>
-                             <li><a href="#none">대표자명: 박원석   문의전화: 1577-7450   팩스: 061-284-6607</a></li>
-                             <li><a href="#none">전라남도 목포시 석현로 46 벤처지원센터 204호</a></li>
-                             <li><a href="#none">나음SE 사업자등록번호: 111-25-77011 <span class="naum_b">사업자정보확인</span></a></li>
-                             <li><a href="#none">개인정보관리책임자: 김대갑 (info@naumse.com)</a></li>
-                             <li><a href="#none">통신판매신고: 제2020-전남목포-0058호 </a></li>
+                             <li><a href="#none">PLAY SCENT</a></li>
+                             <li><a href="#none">대표자명: 오진희   문의전화: 010-3907-5987   팩스: 061-111-2222</a></li>
+                             <li><a href="#none">전남 목포시 산정로212번길 13 AI메타버스센터</a></li>
+                             <li><a href="#none">개인정보관리책임자: 김준혁 (junhyeok2921@gmail.com)</a></li>
+                             <li><a href="#none">경기 성남시 분당구 판교로256번길 7(넥슨)</a></li>
                          </ul>
 
                          <div class="sevice_naumjin tt1">
@@ -411,18 +408,14 @@
                     </div>
 
                     <div class="footer_lower">
-                         <h5>COPYRIGHT ⓒ BY 나음Mall ALL RIGHTS RESERVED.</h5>
+                         <h5>COPYRIGHT ⓒ BY PLAY SCENT ALL RIGHTS RESERVED.</h5>
                     </div>
              </div>
         </footer>
         
-        
-        
 
         <!-------------------------------------footer end------------------------------------>
           
-
-
         <div id="jin_navwrawp">
             <div id="ohjinhee_ca">
                 <ul class="jin_mainmenu">

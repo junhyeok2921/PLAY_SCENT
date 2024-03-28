@@ -64,17 +64,12 @@
 					<div class="perfume">
 						<p class="perfume1">미스 디올 블루밍 부케</p>
 						<p class="perfume1">오 드 뚜왈렛 - 산뜻하고 부드러운 노트</p>
-
-
-
 						<!-- <tr heigh="35px" bgcolor="whitesmoke"> -->
 
 						<td>
 							<option value="">사이즈: 30ml</option> <!-- </select> -->
 						</td>
 						</tr>
-
-
 						<form action="AddCart.do?pfIdx=" method="get" id="order">
 							<div class="sell_quan">
 								수량 : <input type=hidden name="quantity" value="96000">
@@ -167,8 +162,6 @@
 			<div id="footer_text">
 
 				<div>
-
-
 					<p>NAUM mail</p>
 
 					<ul>
