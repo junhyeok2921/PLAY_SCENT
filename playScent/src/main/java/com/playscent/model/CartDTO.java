@@ -11,6 +11,7 @@ public class CartDTO {
 	private Double PF_PRICE;
 	private String PF_IMAGE;
 
+
 	//생성자
 	public CartDTO(String MEM_ID, int PF_IDX, int PF_COUNT) {
 		this.MEM_ID = MEM_ID;

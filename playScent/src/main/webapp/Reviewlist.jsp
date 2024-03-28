@@ -169,7 +169,7 @@ a {
 						
 						
 <div id="review_modal">
-    <button class="modal-Btn">Open</button>
+    <button class="modal-Btn">글쓰기</button>
     <dialog class="modal">
         
 	<h2>향수리뷰리뷰리뷰</h2>
