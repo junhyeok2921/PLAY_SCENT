@@ -34,7 +34,7 @@
                     <li><a href="Login.jsp">JOIN</a></li>
                     <li><a href="#none"><span class="jine2">마이페이지</span><img class="np2" src="imges/nm77.png" alt=""></a></li>
                     <li><a href="#none"><span class="jine2">고객센터</span><img class="np2" src="imges/nm77.png" alt=""></a></li>
-                    <li><a href="#none"><img src="imges/nm4.png" alt=""><span class="jine1">장바구니</span></a></li>
+                    <li><a href="Cart.jsp"><img src="imges/nm4.png" alt=""><span class="jine1">장바구니</span></a></li>
                 </ul>
 
                 <div id="jin_medium">

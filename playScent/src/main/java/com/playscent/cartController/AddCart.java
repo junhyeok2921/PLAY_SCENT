@@ -34,11 +34,18 @@ public class AddCart implements command {
 		// db에서 향수데이터 찾아오자.
 		CartDAO dao = new CartDAO();
 		CartPerfumeDTO perfumeDTO = dao.selectPerfume(perfumeIDX); // 향수 정보 데이터가 담긴 DTO
+		perfumeDTO.setPf_quantity(perfume_count); // 향수 수량도 셋팅해줌.
 		System.out.println("향수 데이터" +perfumeDTO.getPf_brand());
 		
 		// 요 모아진 데이터를 이제 장바구니에 넣을 DTO객체를 만들어서 그안데 필요한 정보를 넣어 장바구니 테이블에 넣어주자.
 		CartDTO cdto = new CartDTO(user_id,perfumeIDX,perfume_count);
-		int res = dao.addCart(cdto);
+		cdto.setPF_BRAND(perfumeDTO.getPf_brand());
+		cdto.setPF_NAME(perfumeDTO.getPf_name());
+		cdto.setPF_PRICE(perfumeDTO.getPf_price());
+		cdto.setPF_IMAGE(perfumeDTO.getPf_image()); 
+		// 나머지 내용들도 SET해줘서 장바구니DB에 저장시켜준다.
+		
+		int res = dao.addCart(cdto); // db에 장바구니 정보저장.
 		
 		if(res > 0) {
 			request.setAttribute("perfumeImfo", perfumeDTO); //향수 데이터 셋팅해서 장바구니페이지로 가져가자.

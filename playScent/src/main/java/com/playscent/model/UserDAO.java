@@ -30,15 +30,15 @@ public class UserDAO {
 	
 		
 		//회원 아이디 있는 체크 기능.
-		public boolean checkId (String user_id) {
+		public int checkId (String user_id) {
 			// connection, close, sql문 실행... 
 			// 모든 메서드마다 아래 이문장이 꼭 들어가야함!!
 			SqlSession sqlSession = sqlSessionFactory.openSession(true);
 			
-			boolean checkE = false;
+			int checkE = 0;
 			
 			try { 
-			   checkE = sqlSession.selectOne("joinMember", user_id);
+			   checkE = sqlSession.selectOne("idCheck", user_id);
 			} catch (Exception e) {
 				e.printStackTrace();
 			}finally {
@@ -47,6 +47,23 @@ public class UserDAO {
 			return checkE; // true or false
 		}
 		
+		
+		//회원정보 가져오기.
+		public UserInfoDTO getUserInfo (String user_id) {
+			// connection, close, sql문 실행... 
+			// 모든 메서드마다 아래 이문장이 꼭 들어가야함!!
+			SqlSession sqlSession = sqlSessionFactory.openSession(true);
+			
+			UserInfoDTO userInfo = null;			
+			try { 
+				userInfo = sqlSession.selectOne("getUserInfo", user_id);
+			} catch (Exception e) {
+				e.printStackTrace();
+			}finally {
+				sqlSession.close();
+			}
+			return userInfo; 
+		}
 
 }
 

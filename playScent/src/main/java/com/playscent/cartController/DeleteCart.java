@@ -7,13 +7,29 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-@WebServlet("/DeleteCart")
-public class DeleteCart extends HttpServlet {
-	private static final long serialVersionUID = 1L;
+import com.playscent.frontcontroller.command;
+import com.playscent.model.CartDAO;
 
+/*@WebServlet("/DeleteCart")*/
+public class DeleteCart implements command{
 	
-	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+	@Override
+	public String execute(HttpServletRequest request, HttpServletResponse response) {
+
+		int fav_idx = Integer.parseInt(request.getParameter("fav_idx")); // 장바구니 식별자 번호 건너옴.
+		System.out.println("삭제할 장바구니식별자: " + fav_idx);
 	
+		CartDAO cdao = new CartDAO();
+		int cnt = cdao.deleteCart(fav_idx);
+		
+	    if(cnt> 0) {
+	    	System.out.println("삭제성공");
+	    } else {
+	    	System.out.println("삭제실패");
+	    }
+	    
+	    
+	    return "Cart.jsp";
 	}
 
 }

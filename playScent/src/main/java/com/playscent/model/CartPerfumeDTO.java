@@ -21,6 +21,10 @@ public class CartPerfumeDTO {
 	
 // 향수 대표향 
 	private String pf_image;
+	
+// 향수 수량 
+	private int pf_quantity;
+	
 
 	
 
@@ -92,6 +96,14 @@ public String getPf_image() {
 
 public void setPf_image(String pf_image) {
 	this.pf_image = pf_image;
+}
+
+public int getPf_quantity() {
+	return pf_quantity;
+}
+
+public void setPf_quantity(int pf_quantity) {
+	this.pf_quantity = pf_quantity;
 }
 	
 
