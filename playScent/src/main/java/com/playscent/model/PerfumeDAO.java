@@ -150,11 +150,11 @@ public class PerfumeDAO {
 
 	}
 
-	public ArrayList<ParseDTO> showMessage(PerfumeDTO pdto) {
+	public ArrayList<PerfumeDTO> showMessage(PerfumeDTO pdto) {
 
 		// 사용할 ArrayList 생성!
 
-		ArrayList<ParseDTO> p_list = new ArrayList();
+		ArrayList<PerfumeDTO> pf_list = new ArrayList();
 
 		// 1. sql 대여
 
@@ -163,13 +163,13 @@ public class PerfumeDAO {
 		// 2. sql 실행 -> ArrayList 타입
 
 		// 3. 결과 처리
-		p_list = (ArrayList) sqlSession.selectList("showPerfume", pdto);
+		pf_list = (ArrayList) sqlSession.selectList("showPerfume", pdto);
 
 		sqlSession.close();
 
 		System.out.println(pdto);
-		System.out.println("리스트 확인" + p_list);
-		return p_list;
+		System.out.println("리스트 확인" + pf_list);
+		return pf_list;
 	}
 
 }

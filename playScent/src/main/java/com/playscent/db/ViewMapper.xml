@@ -54,14 +54,46 @@ select * from PERFUME_INFO WHERE PF_IDX in (127,119,258,27,234)
 
 </select>
 
+<!-- @@ 추천 향수 출력 @@ -->
 
-
-
-
-<!-- 
-<select id="showPerfume" parameterType="int" resultType="com.playscent.model.ParseDTO">
+<select id="showPerfume" parameterType="int" resultType="com.playscent.model.PerfumeDTO">
 select * from PERFUME_INFO WHERE PF_IDX in (#{Parse1},#{Parse2},#{Parse3},#{Parse4},#{Parse5})
-</select> -->
+</select>
+
+<!-- 브랜드별 향수 출력 - 불가리 -->
+
+<select id="Bvlgari" resultType="com.playscent.model.PerfumeDTO">
+
+select * from PERFUME_INFO WHERE PF_BRAND = 'Bvlgari'
+
+</select>
+
+<!-- 브랜드별 향수 출력 - 디올 -->
+
+<select id="Dior" resultType="com.playscent.model.PerfumeDTO">
+
+select * from PERFUME_INFO WHERE PF_BRAND = 'Dior'
+
+</select>
+
+
+<!-- 브랜드별 향수 출력 - 샤넬 -->
+
+<select id="Chanel" resultType="com.playscent.model.PerfumeDTO">
+
+select * from PERFUME_INFO WHERE PF_BRAND = 'Chanel'
+
+</select>
+
+<!-- 브랜드별 향수 출력 - 아르마니 -->
+
+<select id="Chanel" resultType="com.playscent.model.PerfumeDTO">
+
+select * from PERFUME_INFO WHERE PF_BRAND = 'Giorgio Armani'
+
+</select>
+
+
 
 
 </mapper>

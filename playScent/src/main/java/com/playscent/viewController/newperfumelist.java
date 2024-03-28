@@ -1,10 +1,12 @@
 package com.playscent.viewController;
+
 import java.io.IOException;
 import java.io.UnsupportedEncodingException;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -15,22 +17,12 @@ import com.playscent.frontcontroller.command;
 import com.playscent.model.PerfumeDAO;
 import com.playscent.model.PerfumeDTO;
 
+@WebServlet("/newperfumelist")
+public class newperfumelist extends HttpServlet {
+	private static final long serialVersionUID = 1L;
 
-/* @WebServlet("/perfumeList") */
-public class perfumeList implements command {
-	
-	
-	@Override
-	public String execute(HttpServletRequest request, HttpServletResponse response) {
-		//1. 인코딩 작업
-		
-		try {
-			request.setCharacterEncoding("UTF-8");
-		} catch (UnsupportedEncodingException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-		
+	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		// TODO Auto-generated method stub
 		String data = request.getParameter("perfume");
 		data = data.replace("[", "");
 		data = data.replace("]", "");
@@ -79,35 +71,14 @@ public class perfumeList implements command {
 		System.out.println(list);
 		// 4. 결과처리 
 		
-		request.setAttribute("myperfume", list);
-		
-//		
-//		
-//		System.out.println("데이타3탄 슬라이스" + myperfume); 
-//		List<d> perfumes =dao.showperfume(myperfume);
-//		System.out.println("테스트마지막"+perfumes);
+		request.setAttribute("myperfume",list);
+		RequestDispatcher view = request.getRequestDispatcher("Test.jsp");
+
+		view.forward(request, response);
 		
 		
-	return "Test.jsp";
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
+		
+		
 	}
+
 }
-
-
-
-
-		
