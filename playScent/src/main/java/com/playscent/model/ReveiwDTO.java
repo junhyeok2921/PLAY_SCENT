@@ -7,6 +7,7 @@ import lombok.NoArgsConstructor;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
+
 public class ReveiwDTO {
 	private int REVIEW_IDX;
 	private int PF_IDX;

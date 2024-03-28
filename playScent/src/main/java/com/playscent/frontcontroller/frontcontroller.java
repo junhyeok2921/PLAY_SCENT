@@ -9,8 +9,6 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import com.playscent.Reviewcontroller.ReviewDelete;
-import com.playscent.Reviewcontroller.ReviewService;
-
 import com.playscent.cartController.AddCart;
 import com.playscent.cartController.DeleteCart;
 import com.playscent.cartController.OrderCart;
@@ -45,9 +43,6 @@ public class frontcontroller extends HttpServlet {
 		System.out.println(result);
 		if (result.equals("/JoinService.do")) { // naver로그인 기능
 			service = new JoinService();
-		} else if(result.equals("/ReviewService.do")) {
-			service = new ReviewService();
-			System.out.println("요청 서블릿3차: "+service);
 		}
 		else if(result.equals("/ReviewDelete.do")) {
 			service = new ReviewDelete();
