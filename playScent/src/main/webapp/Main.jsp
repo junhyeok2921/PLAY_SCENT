@@ -138,31 +138,31 @@
                             <div class="img_exh">
                                 <img src="https://www.herbnoori.com/shopimages/herbnoori/0150060000212.jpg?1463021372" alt="">
                             </div>
-                            <a href="none">플로럴</a>    
+                            <a href="http://localhost:8081/playScent/PERFUMES/FLORAL.jsp">플로럴</a>    
                         </li>
                         <li>
                             <div class="img_exh">
                                 <img src="https://d2gfz7wkiigkmv.cloudfront.net/pickin/2/1/2/sOBOdnVUSsWNegw74VOTsQ" alt="">
                             </div>
-                            <a href="none">시트러스</a>    
+                            <a href="http://localhost:8081/playScent/PERFUMES/Citrus.jsp">시트러스</a>    
                         </li>
                         <li>
                             <div class="img_exh">
                                 <img src="https://dimg.donga.com/ugc/CDB/SHINDONGA/Article/5c/7e/18/31/5c7e18310a00d2738de6.jpg" alt="">
                             </div>
-                            <a href="none">우디</a>    
+                            <a href="http://localhost:8081/playScent/PERFUMES/Woody.jsp">우디</a>    
                         </li>
                         <li>
                             <div class="img_exh">
-                                <img src="imges/mmm1.png" alt="">
+                                <img src="https://p16-va.lemon8cdn.com/tos-maliva-v-ac5634-us/ooQhIseeAzJHXxpQBAnDQiKWtRlQkCB1AEDIbc~tplv-tej9nj120t-origin.webp" alt="">
                             </div>
-                            <a href="none">스위트</a>    
+                            <a href="http://localhost:8081/playScent/PERFUMES/Sweets.jsp">스위트</a>    
                         </li>
                         <li>
                             <div class="img_exh">
-                                <img src="imges/mmm1.png" alt="">
+                                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTnysVjqH3Z360ovLduazJ5M-yyoAACWV0eWuWp6o0iS5BiP0yMtKYEu__iB548I3VrxPE&usqp=CAU" alt="">
                             </div>
-                            <a href="none">머스크</a>    
+                            <a href="http://localhost:8081/playScent/PERFUMES/Musk.jsp">머스크</a>    
                         </li>
 
                         <li>

@@ -7,14 +7,11 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-
-<<<<<<< HEAD
 import com.playscent.Reviewcontroller.ReviewDelete;
 import com.playscent.Reviewcontroller.ReviewService;
-=======
 import com.playscent.cartController.AddCart;
->>>>>>> branch 'main' of https://github.com/2023-SMHRD-KDT-AI-16/PLAY_SCENT.git
 import com.playscent.controller.JoinService;
+import com.playscent.viewController.perfumeList;
 
 @WebServlet("*.do")
 public class frontcontroller extends HttpServlet {
@@ -45,7 +42,7 @@ public class frontcontroller extends HttpServlet {
 		System.out.println(result);
 		if (result.equals("/JoinService.do")) { // naver로그인 기능
 			service = new JoinService();
-<<<<<<< HEAD
+
 		} else if(result.equals("/ReviewService.do")) {
 			service = new ReviewService();
 			System.out.println("요청 서블릿3차: "+service);
@@ -53,12 +50,18 @@ public class frontcontroller extends HttpServlet {
 		else if(result.equals("/ReviewDelete.do")) {
 			service = new ReviewDelete();
 			System.out.println("요청 서블릿4차: "+service);
-=======
+
 		} 
 		else if (result.equals("/AddCart.do")) { 
 			service = new AddCart(); 
->>>>>>> branch 'main' of https://github.com/2023-SMHRD-KDT-AI-16/PLAY_SCENT.git
+
 		}
+		else if (result.equals("/perfumeList.do")) { 
+			service = new perfumeList(); 
+
+		}
+	
+		
 		
 		// 새로 추가된 서블릿파일이 있다면 여기 .equals("") 안에 서블릿 url 넣으세요!.
 		/*

@@ -211,6 +211,13 @@
 			priceElement.textContent = newPrice.toLocaleString() + '원';
 
 		}
+		
+		
+		
+		
+		
+		
+		
 	</script>
 
 </body>
