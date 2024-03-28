@@ -32,7 +32,7 @@
 	   DecimalFormat df = new DecimalFormat("###,###");
 	   String user_id = (String) session.getAttribute("user_id");
 	   System.out.println(user_id);
-	   String PFIDX = request.getParameter("P_IDX");
+	   String PFIDX = request.getParameter("pfIdx");
 	   System.out.print(PFIDX);
 	   int PF_IDX = Integer.parseInt(PFIDX);
 	   CartPerfumeDTO perfumes = new CartDAO().selectPerfume(PF_IDX);
@@ -87,27 +87,20 @@
 
 				<div id="fifth">
 					<div class="perfume">
-<<<<<<< HEAD
-						<p class="perfume1">미스 디올 블루밍 부케</p>
-						<p class="perfume1">오 드 뚜왈렛 - 산뜻하고 부드러운 노트</p>
-=======
 						<p class="perfume1"><%=perfumes.getPf_brand() %></p>
 						<p class="perfume1"><%=perfumes.getPf_name() %></p>
 
-
-
->>>>>>> branch 'main' of https://github.com/2023-SMHRD-KDT-AI-16/PLAY_SCENT.git
 						<!-- <tr heigh="35px" bgcolor="whitesmoke"> -->
 
 						<td>
 							<option value="">사이즈: 30ml</option> <!-- </select> -->
 						</td>
 						</tr>
-						<form action="AddCart.do?pfIdx=" method="get" id="order">
+						<form action="AddCart.do?pfIdx=<%=PFIDX%>" method="post" id="order">
 							<div class="sell_quan">
-								수량 : <input type=hidden name="quantity" value="96000">
+								수량 : 
 								<!-- <input type="text" name="amount" value="1" size="3" onchange="change();">  -->
-								<input type="number" name="" value="1" min="1" max="10" />
+								<input type="number" name="quantity" value="1" min="1" max="10" />
 								<!-- <input type="button" value=" + " onclick="add();"><input type="button" value=" - " onclick="del();" class="up"><br> -->
 							</div>
 							<div class="sell_price">금액 : <%= money %><input type="hidden" name="price" value="<%=price%>">원 </div>

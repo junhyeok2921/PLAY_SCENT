@@ -86,7 +86,7 @@ DecimalFormat df = new DecimalFormat("###,###");
 
         <div id="jinhee_pcnav">
                 <nav id="pc_nav">
-                    <div class="all_menu">xx
+                    <div class="all_menu">
                         <img src="imges/nm1.png" alt="">
                         <span>전체카테고리</span>
                     </div>     
@@ -321,28 +321,19 @@ DecimalFormat df = new DecimalFormat("###,###");
 
                 <ul id="product_jin">
                     <% for(int i=0; i<4; i++){%>
-	                	<li><a href="PerfumeDetail.jsp?P_IDX=<%= perfumes.get(i).getPF_IDX() %>">
+	                	<li><a href="PerfumeDetail.jsp?pfIdx=<%= perfumes.get(i).getPF_IDX()%>">
 	                        <div class="product_img">
-	                            <img class="jinhee_img" src="<%= perfumes.get(i).getPF_Image() %>" alt="">
+	                            <img class="jinhee_img" src="<%= perfumes.get(i).getPF_Image()%>" alt="">
 	                        </div>
-	
 	                        <h3 class="per_brand"><%= perfumes.get(i).getPF_BRAND() %> </h3>
 	                        <p><%= perfumes.get(i).getPF_NAME()%></p>
-	                        
-	
 	                        <div class="product_price">
 	                            <div class="ohjinhee_point"><%
-	                            
 	                            		//금액 .찍어서 여기서 변수 저장
 	                            		  int price = (int)Math.round(perfumes.get(i).getPF_PRICE());//double -> 정수형으로
-	                            		  String money = df.format(price); // .찍어줌
-	                            
-	                            
-	                            
-	                            %>
+	                            		  String money = df.format(price); // .찍어줌 %>
 	                                <h3 class="per_price"><%= money %>원<span></span></h3>
 	                            </div>
-	                           
 	                        </div>         
 	                    </a></li>
 	                <%}%>
