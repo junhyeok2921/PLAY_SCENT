@@ -118,13 +118,14 @@
 				// 회원의 장바구니 모든 내역.
 				ArrayList<CartDTO> AllCartList = Cdao.allCartList(user_id);
 				System.out.println("장바구니목록 " + AllCartList);
+				request.setAttribute("AllCartList", AllCartList); // 전달 안됨.
 				%>
 			<form action="OrderCart.do" method="post">
 				<table class="cart__list">
 					<tbody>
-						<% for (int i = 0; i < AllCartList.size(); i++) {%>
+						<% for (int i=0; i < AllCartList.size(); i++) {%>
 						<tr class="cart__list__detail">
-							<td><input type="checkbox" name="pfIdx" value="<%=AllCartList.get(i).getFAV_IDX()%>"></td>
+							<td><input type="checkbox" name="favIdx" value="<%=AllCartList.get(i).getFAV_IDX()%>"></td>
 							<td><img src="딥디크.jpg" alt="magic keyboard" width="50px "></td>
 							<td><a href="#">플레르 드 뽀 오 드 퍼퓸</a><span
 								class="cart__list__smartstore"></span></td>
@@ -160,8 +161,6 @@
 		</section>
 
 
-	
-	
 
 	<!-- JavaScript 함수를 HTML 내부에 추가합니다 -->
 	<script>
@@ -208,9 +207,9 @@
 			const jsonData = await response.json();
 			// res :서블릿에서 반환 받은 데이터.
 			if (jsonData == 1) {
-				alert("아이디 사용불가 합니다!.");
+			//	alert("아이디 사용불가 합니다!.");
 			} else {
-				alert("아이디 사용가능 합니다!.");
+			//	alert("아이디 사용가능 합니다!.");
 			}
 		};
 		
@@ -270,7 +269,7 @@
 			}
 
 		}
-
+		
 	</script>
 
 </body>

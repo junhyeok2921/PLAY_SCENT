@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.playscent.db.ViewMapper">
+
+<!--전체상품 출력  -->
+
+<select id="allperfume" resultType="com.playscent.model.PerfumeDTO">
+
+select * from PERFUME_INFO
+
+</select>
+
+
+<!--플로럴 노트 출력  -->
+
+<select id="floralperfume" resultType="com.playscent.model.PerfumeDTO">
+
+select * from PERFUME_INFO WHERE PF_IDX in (187,275,223,94,62)
+
+</select>
+
+
+<!--시트러스 노트 출력  -->
+
+<select id="citrusperfume" resultType="com.playscent.model.PerfumeDTO">
+
+select * from PERFUME_INFO WHERE PF_IDX in (143,187,63,186,33)
+
+</select>
+
+
+<!--우디 노트 출력  -->
+
+<select id="woodyperfume" resultType="com.playscent.model.PerfumeDTO">
+
+select * from PERFUME_INFO WHERE PF_IDX in (56,4,124,42,23)
+
+</select>
+
+
+<!--스위트 노트 출력  -->
+
+<select id="sweetsperfume" resultType="com.playscent.model.PerfumeDTO">
+
+select * from PERFUME_INFO WHERE PF_IDX in (253,258,261,284,207)
+
+</select>
+
+<!--머스크 노트 출력  -->
+
+<select id="muskperfume" resultType="com.playscent.model.PerfumeDTO">
+
+select * from PERFUME_INFO WHERE PF_IDX in (127,119,258,27,234)
+
+</select>
+
+<!--  추천 향수 출력 -->
+
+<select id="showPerfume" parameterType="int" resultType="com.playscent.model.PerfumeDTO">
+select * from PERFUME_INFO WHERE PF_IDX in (#{Parse1},#{Parse2},#{Parse3},#{Parse4},#{Parse5})
+</select>
+
+<!-- 브랜드별 향수 출력 - 불가리 -->
+
+<select id="Bvlgari" resultType="com.playscent.model.PerfumeDTO">
+
+select * from PERFUME_INFO WHERE PF_BRAND = 'Bvlgari'
+
+</select>
+
+<!-- 브랜드별 향수 출력 - 디올 -->
+
+<select id="Dior" resultType="com.playscent.model.PerfumeDTO">
+
+select * from PERFUME_INFO WHERE PF_BRAND = 'Dior'
+
+</select>
+
+
+<!-- 브랜드별 향수 출력 - 샤넬 -->
+
+<select id="Chanel" resultType="com.playscent.model.PerfumeDTO">
+
+select * from PERFUME_INFO WHERE PF_BRAND = 'Chanel'
+
+</select>
+
+<!-- 브랜드별 향수 출력 - 아르마니 -->
+
+<select id="Giorgio Armani" resultType="com.playscent.model.PerfumeDTO">
+
+select * from PERFUME_INFO WHERE PF_BRAND = 'Giorgio Armani'
+
+</select>
+
+
+
+
+</mapper>

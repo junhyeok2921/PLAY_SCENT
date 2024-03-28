@@ -2,45 +2,74 @@
 <html lang="ko">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>welcome-message</title>
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Bebas Neue">
-    <style>
-        body {
-            background-color: rgba(245, 245, 245, 1);
-            font-family: 'Bebas Neue', sans-serif;
-            text-shadow: 4px 4px 4px #aaa;
-            overflow: hidden;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            margin: 0;
-        }
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>welcome-message</title>
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Bebas Neue">
+	<style>
+		@import url('css/fire.css');
+		body {
+			background: rgba(123, 150, 116, 0.15);
+			font-family: 'Bebas Neue', sans-serif;
+			height: 100vh;
+			z-index: -56;
+		}
 
-        .welcome-message {
-            color: rgba(30, 88, 120, 1);
-            text-align: center;
-            font-size: 48px;
-            letter-spacing: 0.5em;
-            text-decoration: none;
-            /* 밑줄 제거 */
-            transition: font-size 0.3s ease;
-            /* 부드러운 전환 효과 */
-        }
+		.welcome-message {
+			width: 80%;
+			color: rgb(37, 102, 114);
+			text-align: center;
+			font-size: 48px;
+			letter-spacing: 0.5em;
+			text-decoration: none;
+			/* 밑줄 제거 */
+			transition: font-size 0.3s ease;
+			/* 부드러운 전환 효과 */
+			margin: 0 auto;
+			position: relative;
+			top: 46%;
+			transform: translateY(-50%);
+			text-shadow: 4px 4px 4px #aaa;
+			z-index: 456484;
+		}
 
-        .welcome-message:hover {
-            font-size: 74px;
-            /* 마우스를 올렸을 때 글자 크기 */
-        }
-    </style>
+		.welcome-message:hover {
+			font-size: 64px;
+			/* 마우스를 올렸을 때 글자 크기 */
+		}
+
+		.go {
+			display: block;
+			width: 22%;
+			margin: 0 auto;
+			height: 55px;
+			line-height: 55px;
+			border-radius: 25px;
+			text-decoration: none;
+			background-color: #CFE2D7;
+			text-align: center;
+			margin-top: 20px;
+			position: relative;
+			top: 44%;
+			color: #365A2D;
+			font-size: 22px;
+			font-weight: bold;
+			letter-spacing: 3px;
+
+		}
+	</style>
 </head>
 
 <body>
-    <div class="welcome-message">
-        <a href="https://www.google.co.kr/?hl=ko" class="welcome-message">PLAY SCENT 회원가입<br> 축하드립니다.</a>
-    </div>
+	<canvas id="birthday"></canvas> 
+
+	<h2 class="welcome-message">PLAY SCENT 회원가입<br><br>축하드립니다.</h2>
+
+	<a class="go" href="Main.jsp">설문조사 하러GO!</a>
+	
+	
+	<script src="script/firecracker.js"></script>
+
 </body>
 
 </html>

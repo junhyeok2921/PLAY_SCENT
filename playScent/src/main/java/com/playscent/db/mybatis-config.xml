@@ -8,8 +8,10 @@
 	<!-- 3. db.properties 만들기 : db연결정보들을 가지고 있는 파일 -> 공백 주의할 것 -->
 	<typeAliases>
 		<typeAlias type="com.playscent.model.NaverUserInfo" alias="NaverUserInfo" />
+		<typeAlias type="com.playscent.model.UserInfoDTO" alias="UserInfoDTO" />
 		<typeAlias type="com.playscent.model.SelectedProductDTO" alias="SelectedProductDTO" />
 		<typeAlias type="com.playscent.model.CartPerfumeDTO" alias="CartPerfumeDTO" />
+		<typeAlias type="com.playscent.model.OrderPfDTO" alias="OrderPfDTO" />
 		<typeAlias type="com.playscent.model.CartDTO" alias="CartDTO" />
 	</typeAliases>
 	
@@ -30,5 +32,7 @@
 	<mappers>
 		<mapper resource="com/playscent/db/UserMapper.xml"/>
 		<mapper resource="com/playscent/db/CartMapper.xml"/>
+		<mapper resource="com/playscent/db/ViewMapper.xml"/>
+		
 	</mappers>
 </configuration>

@@ -3,10 +3,12 @@
 <!DOCTYPE html>
 <html>
 <head>
+
+<link rel="stylesheet" href="css/Review_style.css" type="text/css">
 <meta charset="UTF-8">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 <title>Insert title here</title>
-<style>
+<!-- <style>
 
 @import url(//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css);
        .rate { display: inline-block;border: 0;margin-right: 15px;}
@@ -76,7 +78,7 @@
   background:bisque;
 }
 
-</style>
+</style> -->
 
 
 </head>
@@ -99,7 +101,7 @@
                                 <input type="radio" id="rating1" name="rating" value="1"><label class="half" for="rating1" title="0.5점"></label>
 								
                             </fieldset><br>
-                            
+                        
 
 </div>
 
@@ -108,11 +110,18 @@
 <input type="submit" class="btn02" value="리뷰 등록">
 
 
+ 
+
 </form>
 
 
 
+
+
+
+
 </body>
+
 
 
 

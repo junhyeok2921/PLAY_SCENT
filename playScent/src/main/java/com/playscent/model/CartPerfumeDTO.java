@@ -1,5 +1,11 @@
 package com.playscent.model;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 
+@Data
+@AllArgsConstructor
+@NoArgsConstructor
 public class CartPerfumeDTO { 
 // 향수 식별자 향수 식별자 
 	private int pf_idx;
@@ -24,6 +30,10 @@ public class CartPerfumeDTO {
 	
 // 향수 수량 
 	private int pf_quantity;
+	
+	private String PF_TOP;
+	private String PF_MID;
+	private String PF_BOTTOM;
 	
 
 	

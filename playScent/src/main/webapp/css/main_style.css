@@ -852,7 +852,7 @@ header #jin_medium .ranking_slide {
 
 footer .footer_up {
 	width: 100%;
-	padding: 0 405px;
+	padding: 0 320px !important;
 	box-sizing: border-box;
 	line-height: 55px;
 	display: flex;
@@ -881,7 +881,8 @@ footer .footer_up li a {
 }
 
 footer #footer_content .footer_meddle .f_logo {
-	width: 25%;
+	width: 45%;
+	margin-top: 6px;
 }
 
 footer #footer_content .footer_meddle .foo_intro {
@@ -889,7 +890,7 @@ footer #footer_content .footer_meddle .foo_intro {
 }
 
 footer #footer_content .footer_meddle .f_logo img {
-	width: 155px;
+	width: 200px;
 }
 
 footer #footer_content .footer_meddle .foo_intro li a {
