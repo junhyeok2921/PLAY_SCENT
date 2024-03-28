@@ -56,7 +56,7 @@ public class OrderCart implements command {
 	    		System.out.println("장바구니 식별자 AllCartList "+AllCartList.get(i).getFAV_IDX());
 	    		System.out.println("장바구니 식별자 favIdx_arr "+Integer.parseInt(ind));
 	    		if(AllCartList.get(i).getFAV_IDX() == Integer.parseInt(ind)) {
-	    			AllCartList.get(i).setPF_COUNT(Integer.parseInt(quan_arr[i])); // 수량 변경.  수량 변경 sql도 만들어주어야함.
+	    			AllCartList.get(i).setPF_COUNT(Integer.parseInt(quan_arr[i])); // 수량 변경. 수량 변경 sql도 만들어주어야함.
 	    			System.out.println("일치 주문번호"+(i)+" "+Integer.parseInt(ind));
 	    			System.out.println("주문수량 TEST"+(i)+" "+Integer.parseInt(quan_arr[i]));
 	    			
