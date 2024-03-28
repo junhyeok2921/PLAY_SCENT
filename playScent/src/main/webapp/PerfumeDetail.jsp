@@ -3,25 +3,29 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/pfDetail.css" type="text/css">
-    <link href="styles/detail.css" rel="stylesheet" type="text/css" />
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css"
-        integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous">
-    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap" rel="stylesheet">
-    <title>상세 페이지</title>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="css/pfDetail.css" type="text/css">
+<link href="styles/detail.css" rel="stylesheet" type="text/css" />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet"
+	href="https://use.fontawesome.com/releases/v5.15.4/css/all.css"
+	integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm"
+	crossorigin="anonymous">
+<link
+	href="https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap"
+	rel="stylesheet">
+<title>상세 페이지</title>
 </head>
 <body>
 
 	<%
-	   String user_id = (String) session.getAttribute("user_id");
-	   System.out.println(user_id);
+	String user_id = (String) session.getAttribute("user_id");
+	System.out.println(user_id);
 	%>
-	
+
 	<nav>
 		<!--최상단의 배너-->
 		<div class="menu">
@@ -82,7 +86,9 @@
 								<input type="number" name="" value="1" min="1" max="10" />
 								<!-- <input type="button" value=" + " onclick="add();"><input type="button" value=" - " onclick="del();" class="up"><br> -->
 							</div>
-							<div class="sell_price">금액 : 96,000<input type="hidden" name="price" value="96000">원 </div>
+							<div class="sell_price">
+								금액 : 96,000<input type="hidden" name="price" value="96000">원
+							</div>
 							<input type="submit" value="장바구니에 추가">
 						</form>
 					</div>
