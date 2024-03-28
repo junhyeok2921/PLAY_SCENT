@@ -54,7 +54,7 @@ select * from PERFUME_INFO WHERE PF_IDX in (127,119,258,27,234)
 
 </select>
 
-<!-- @@ 추천 향수 출력 @@ -->
+<!--  추천 향수 출력 -->
 
 <select id="showPerfume" parameterType="int" resultType="com.playscent.model.PerfumeDTO">
 select * from PERFUME_INFO WHERE PF_IDX in (#{Parse1},#{Parse2},#{Parse3},#{Parse4},#{Parse5})
@@ -87,7 +87,7 @@ select * from PERFUME_INFO WHERE PF_BRAND = 'Chanel'
 
 <!-- 브랜드별 향수 출력 - 아르마니 -->
 
-<select id="Chanel" resultType="com.playscent.model.PerfumeDTO">
+<select id="Giorgio Armani" resultType="com.playscent.model.PerfumeDTO">
 
 select * from PERFUME_INFO WHERE PF_BRAND = 'Giorgio Armani'
 
