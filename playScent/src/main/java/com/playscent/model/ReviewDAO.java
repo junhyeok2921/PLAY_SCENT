@@ -16,8 +16,14 @@ public class ReviewDAO {
 	// connection, close, sql문 실행...
 	SqlSession sqlSession = sqlSessionFactory.openSession(true);
 
-	public int sendReview(ReveiwDTO dto) {
-
+	
+public int sendReview(ReveiwDTO dto) {
+	
+SqlSessionFactory sqlSessionFactory = SqlSessionManager.getSqlSession();
+	
+	// connection, close, sql문 실행...
+	SqlSession sqlSession = sqlSessionFactory.openSession(true);
+	
 		int result = sqlSession.insert("sendReview", dto);
 		sqlSession.close();
 		return result;
