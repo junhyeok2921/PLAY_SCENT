@@ -26,6 +26,36 @@
     <link rel="stylesheet" href="./slick-1.8.1/slick/slick-theme.css" type="text/css">    
     <script src="script/jquery-1.12.4.js"></script>
     <title>PLAY SCENT</title>
+    <style>
+    	 swiper-container {
+	      width: 100%;
+	      margin-top: 15px;
+	    }
+
+	    swiper-slide {
+	      background-position: center;
+	      background-size: cover;
+	      width: 23.5%;
+	      height: auto;
+	      overflow: hidden;
+	    }
+	
+	    swiper-slide img {
+	      display: block;
+	      width: 100%;
+	    }
+	    
+	    #ex_container #product_jin li {
+		  width: 100%;
+		  height: 500px;
+		  background-color: rgb(241, 246, 235, .5);
+		  border-radius: 20px
+		}
+		
+		.swiper-pagination-bullet-active {
+			background: #51a90f;
+		}
+    </style>
 </head>
  
 <body>
@@ -182,7 +212,6 @@ DecimalFormat df = new DecimalFormat("###,###");
                             <a href="Scent4cut.jsp">향기네컷</a>    
                         </li>
                     </ul> 
-
                 </div>            
         </div>
 
@@ -195,31 +224,37 @@ DecimalFormat df = new DecimalFormat("###,###");
                 	<img src="https://image.jtbcplus.kr/data/contents/jam_photo/202110/11/834a7806-d24c-4c11-b24e-c6060139377b.jpg" alt="" />
                 </div>
                 
-                <ul class="pont">
+              <!--   <ul class="pont">
                     <li><a href="#none"></a></li>
                     <li><a href="#none"></a></li>
                     <li><a href="#none"></a></li>
-                </ul>
+                </ul> -->
 
                 <ul id="product_jin">
-                <% for(int i=0; i<4; i++){%>
-                	<li><a href="PerfumeDetail.jsp?pfIdx=">
-                        <div class="product_img" >
-                            <img class="jinhee_img" src="https://www.newstap.co.kr/news/photo/202209/173599_281311_1556.jpg" alt="">
-                        </div>
-
-                        <h3 class="per_brand">구딸파리 </h3>
-                        <p>오 드 아드리앙 EDP</p>
-                        <p class="ptd">태양 아래 레몬 과실을 바구니에 툭 담아낼 때 퍼지는 아로마틱한 향기</p>
-
-                        <div class="product_price">
-                            <div class="ohjinhee_point">
-                                <h3 class="per_price">148,800원<span>189,800원</span></h3>
-                            </div>
-                           <h2 class="sale">42%</h2>
-                        </div>         
-                    </a></li>
-                <%}%>
+	                <swiper-container class="mySwiper" pagination="true" effect="coverflow" grab-cursor="true" centered-slides="true"
+						    slides-per-view="auto" coverflow-effect-rotate="50" coverflow-effect-stretch="0" coverflow-effect-depth="100"
+						    coverflow-effect-modifier="1" coverflow-effect-slide-shadows="true">
+						     <% for(int i=0; i<12; i++){%>
+						      <swiper-slide>
+			                	<li><a href="PerfumeDetail.jsp?">
+			                        <div class="product_img">
+			                            <img class="jinhee_img" src="https://www.newstap.co.kr/news/photo/202209/173599_281311_1556.jpg" alt="">
+			                        </div>
+			
+			                        <h3 class="per_brand">구딸파리 </h3>
+			                        <p>오 드 아드리앙 EDP</p>
+			                        <p class="ptd">태양 아래 레몬 과실을 바구니에 툭 담아낼 때 퍼지는 아로마틱한 향기</p>
+			
+			                        <div class="product_price">
+			                            <div class="ohjinhee_point">
+			                                <h3 class="per_price">148,800원<span>189,800원</span></h3>
+			                            </div>
+			                           <h2 class="sale">42%</h2>
+			                        </div>         
+			                    </a></li>
+			                  </swiper-slide>
+		                	<%}%>					  
+					  </swiper-container>  
                     
                    <!--  <li><a href="#none">
                         <div class="product_img">
@@ -236,42 +271,48 @@ DecimalFormat df = new DecimalFormat("###,###");
                             </div>
                            <h2 class="sale">42%</h2>
                         </div>         
-                    </a></li> -->
-                   
+                    </a></li> -->                   
                 </ul>
             </div>    
 
 
             <!------------------------------이슈머 최고추천상품 end------------------------------>
             
+            
             <div class="jinhee_nct jinhee_nct2" >
                 <h2 class="repres_title rt23">여성 베스트상품</h2> <span class="sub"></span>
                 
-                <ul class="pont">
+              <!--   <ul class="pont">
                     <li><a href="#none"></a></li>
                     <li><a href="#none"></a></li>
                     <li><a href="#none"></a></li>
-                </ul>
+                </ul> -->
 
                 <ul id="product_jin">
-                    <% for(int i=0; i<4; i++){%>
-	                	<li><a href="PerfumeDetail.jsp?">
-	                        <div class="product_img">
-	                            <img class="jinhee_img" src="https://www.newstap.co.kr/news/photo/202209/173599_281311_1556.jpg" alt="">
-	                        </div>
-	
-	                        <h3 class="per_brand">구딸파리 </h3>
-	                        <p>오 드 아드리앙 EDP</p>
-	                        <p class="ptd">태양 아래 레몬 과실을 바구니에 툭 담아낼 때 퍼지는 아로마틱한 향기</p>
-	
-	                        <div class="product_price">
-	                            <div class="ohjinhee_point">
-	                                <h3 class="per_price">148,800원<span>189,800원</span></h3>
-	                            </div>
-	                           <h2 class="sale">42%</h2>
-	                        </div>         
-	                    </a></li>
-	                <%}%>
+                	<swiper-container class="mySwiper" pagination="true" effect="coverflow" grab-cursor="true" centered-slides="true"
+					    slides-per-view="auto" coverflow-effect-rotate="50" coverflow-effect-stretch="0" coverflow-effect-depth="100"
+					    coverflow-effect-modifier="1" coverflow-effect-slide-shadows="true">
+					     <% for(int i=0; i<12; i++){%>
+					      <swiper-slide>
+		                	<li><a href="PerfumeDetail.jsp?">
+		                        <div class="product_img">
+		                            <img class="jinhee_img" src="https://www.newstap.co.kr/news/photo/202209/173599_281311_1556.jpg" alt="">
+		                        </div>
+		
+		                        <h3 class="per_brand">구딸파리 </h3>
+		                        <p>오 드 아드리앙 EDP</p>
+		                        <p class="ptd">태양 아래 레몬 과실을 바구니에 툭 담아낼 때 퍼지는 아로마틱한 향기</p>
+		
+		                        <div class="product_price">
+		                            <div class="ohjinhee_point">
+		                                <h3 class="per_price">148,800원<span>189,800원</span></h3>
+		                            </div>
+		                           <h2 class="sale">42%</h2>
+		                        </div>         
+		                    </a></li>
+		                  </swiper-slide>
+	                	<%}%>					  
+					  </swiper-container>                   
                 </ul>
             </div> 
 
@@ -280,32 +321,38 @@ DecimalFormat df = new DecimalFormat("###,###");
 
             <div class="jinhee_nct jinhee_nct2 nct3" >
                 <h2 class="repres_title rt23">남성 베스트상품</h2> <span class="sub"></span>
-                
+             <!--    
                 <ul class="pont">
                     <li><a href="#none"></a></li>
                     <li><a href="#none"></a></li>
                     <li><a href="#none"></a></li>
-                </ul>
+                </ul> -->
 
                 <ul id="product_jin">
-                   <% for(int i=0; i<4; i++){%>
-	                	<li><a href="PerfumeDetail.jsp?">
-	                        <div class="product_img">
-	                            <img class="jinhee_img" src="https://www.newstap.co.kr/news/photo/202209/173599_281311_1556.jpg" alt="">
-	                        </div>
-	
-	                        <h3 class="per_brand">구딸파리 </h3>
-	                        <p>오 드 아드리앙 EDP</p>
-	                        <p class="ptd">태양 아래 레몬 과실을 바구니에 툭 담아낼 때 퍼지는 아로마틱한 향기</p>
-	
-	                        <div class="product_price">
-	                            <div class="ohjinhee_point">
-	                                <h3 class="per_price">148,800원<span>189,800원</span></h3>
-	                            </div>
-	                           <h2 class="sale">42%</h2>
-	                        </div>         
-	                    </a></li>
-	                <%}%>
+                   <swiper-container class="mySwiper" pagination="true" effect="coverflow" grab-cursor="true" centered-slides="true"
+					    slides-per-view="auto" coverflow-effect-rotate="50" coverflow-effect-stretch="0" coverflow-effect-depth="100"
+					    coverflow-effect-modifier="1" coverflow-effect-slide-shadows="true">
+					     <% for(int i=0; i<12; i++){%>
+					      <swiper-slide>
+		                	<li><a href="PerfumeDetail.jsp?">
+		                        <div class="product_img">
+		                            <img class="jinhee_img" src="https://www.newstap.co.kr/news/photo/202209/173599_281311_1556.jpg" alt="">
+		                        </div>
+		
+		                        <h3 class="per_brand">구딸파리 </h3>
+		                        <p>오 드 아드리앙 EDP</p>
+		                        <p class="ptd">태양 아래 레몬 과실을 바구니에 툭 담아낼 때 퍼지는 아로마틱한 향기</p>
+		
+		                        <div class="product_price">
+		                            <div class="ohjinhee_point">
+		                                <h3 class="per_price">148,800원<span>189,800원</span></h3>
+		                            </div>
+		                           <h2 class="sale">42%</h2>
+		                        </div>         
+		                    </a></li>
+		                  </swiper-slide>
+	                	<%}%>					  
+				   </swiper-container>  
                 </ul>
             </div>
 
@@ -313,44 +360,55 @@ DecimalFormat df = new DecimalFormat("###,###");
 			 <div class="jinhee_nct jinhee_nct2" >
                 <h2 class="repres_title rt23">연령별 베스트상품</h2> <span class="sub"></span>
                 
-                <ul class="pont">
+                <!-- <ul class="pont">
                     <li><a href="#none"></a></li>
                     <li><a href="#none"></a></li>
                     <li><a href="#none"></a></li>
-                </ul>
+                </ul> -->
 
                 <ul id="product_jin">
-                    <% for(int i=0; i<4; i++){%>
-	                	<li><a href="PerfumeDetail.jsp?pfIdx=<%= perfumes.get(i).getPF_IDX()%>">
-	                        <div class="product_img">
-	                            <img class="jinhee_img" src="<%= perfumes.get(i).getPF_Image()%>" alt="">
-	                        </div>
-	                        <h3 class="per_brand"><%= perfumes.get(i).getPF_BRAND() %> </h3>
-	                        <p><%= perfumes.get(i).getPF_NAME()%></p>
-	                        <div class="product_price">
-	                            <div class="ohjinhee_point"><%
-	                            		//금액 .찍어서 여기서 변수 저장
-	                            		  int price = (int)Math.round(perfumes.get(i).getPF_PRICE());//double -> 정수형으로
-	                            		  String money = df.format(price); // .찍어줌 %>
-	                                <h3 class="per_price"><%= money %>원<span></span></h3>
-	                            </div>
-	                        </div>         
-	                    </a></li>
-	                <%}%>
+                   <swiper-container class="mySwiper" pagination="true" effect="coverflow" grab-cursor="true" centered-slides="true"
+					    slides-per-view="auto" coverflow-effect-rotate="50" coverflow-effect-stretch="0" coverflow-effect-depth="100"
+					    coverflow-effect-modifier="1" coverflow-effect-slide-shadows="true">
+					     <% for(int i=0; i<12; i++){%>
+					      <swiper-slide>
+		                	<li><a href="PerfumeDetail.jsp?">
+		                        <div class="product_img">
+		                            <img class="jinhee_img" src="https://www.newstap.co.kr/news/photo/202209/173599_281311_1556.jpg" alt="">
+		                        </div>
+		
+		                        <h3 class="per_brand">구딸파리 </h3>
+		                        <p>오 드 아드리앙 EDP</p>
+		                        <p class="ptd">태양 아래 레몬 과실을 바구니에 툭 담아낼 때 퍼지는 아로마틱한 향기</p>
+		
+		                        <div class="product_price">
+		                            <div class="ohjinhee_point">
+		                                <h3 class="per_price">148,800원<span>189,800원</span></h3>
+		                            </div>
+		                           <h2 class="sale">42%</h2>
+		                        </div>         
+		                    </a></li>
+		                  </swiper-slide>
+	                	<%}%>					  
+					  </swiper-container>  
                 </ul>
             </div> 
        		
        		   <div class="jinhee_nct jinhee_nct2" >
                 <h2 class="repres_title rt23">브랜드 베스트상품</h2> <span class="sub"></span>
                 
-                <ul class="pont">
+                <!-- <ul class="pont">
                     <li><a href="#none"></a></li>
                     <li><a href="#none"></a></li>
                     <li><a href="#none"></a></li>
-                </ul>
+                </ul> -->
 
                 <ul id="product_jin">
-                    <% for(int i=0; i<4; i++){%>
+                  <swiper-container class="mySwiper" pagination="true" effect="coverflow" grab-cursor="true" centered-slides="true"
+				    slides-per-view="auto" coverflow-effect-rotate="50" coverflow-effect-stretch="0" coverflow-effect-depth="100"
+				    coverflow-effect-modifier="1" coverflow-effect-slide-shadows="true">
+				     <% for(int i=0; i<12; i++){%>
+				      <swiper-slide>
 	                	<li><a href="PerfumeDetail.jsp?">
 	                        <div class="product_img">
 	                            <img class="jinhee_img" src="https://www.newstap.co.kr/news/photo/202209/173599_281311_1556.jpg" alt="">
@@ -367,7 +425,9 @@ DecimalFormat df = new DecimalFormat("###,###");
 	                           <h2 class="sale">42%</h2>
 	                        </div>         
 	                    </a></li>
-	                <%}%>
+	                  </swiper-slide>
+                	<%}%>					  
+				  </swiper-container>  
                 </ul>
             </div> 
        
@@ -714,7 +774,7 @@ DecimalFormat df = new DecimalFormat("###,###");
 
         </script>
 
-
+	<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-element-bundle.min.js"></script>
     <script src="script/script.js"></script>
 
 </body>	
