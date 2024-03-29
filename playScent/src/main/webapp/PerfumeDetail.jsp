@@ -1,3 +1,5 @@
+<%@page import="com.playscent.model.ReviewDAO"%>
+<%@page import="com.playscent.model.ReveiwDTO"%>
 <%@page import="java.text.DecimalFormat"%>
 <%@page import="java.util.ArrayList"%>
 <%@page import="com.playscent.model.CartPerfumeDTO"%>
@@ -8,11 +10,14 @@
 <!DOCTYPE html>
 <html>
 <head>
+	<script src="http://code.jquery.com/jquery-latest.js"></script>
 	<meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/pfDetail.css" type="text/css">
     <link href="styles/detail.css" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" href="css/Review_style.css" type="text/css">
+    <link rel="stylesheet" href="css/reviewlist_style.css" type="text/css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css"
@@ -21,7 +26,9 @@
     <title>상세 페이지</title>
     <style>
     #one img {
-    width: 70%;
+    padding-top: 70px;
+    width: 80%;
+    padding-left: 50px;
 }
   
     
@@ -38,7 +45,7 @@
 	   String user_id = (String) session.getAttribute("user_id");
 	   System.out.println(user_id);
 	   String PFIDX = request.getParameter("pfIdx");
-	   System.out.print(PFIDX);
+	   System.out.print("pfidx확인"+PFIDX);
 	   int PF_IDX = Integer.parseInt(PFIDX);
 	   CartPerfumeDTO perfumes = new CartDAO().selectPerfume(PF_IDX);
 	   
@@ -102,18 +109,25 @@
 						</td>
 						</tr>
 						<form action="AddCart.do?pfIdx=<%=PFIDX%>" method="post" id="order">
-							<div class="sell_quan">
-								수량 : 
-								<!-- <input type="text" name="amount" value="1" size="3" onchange="change();">  -->
-								<input type="number" name="quantity" value="1" min="1" max="10" />
-								<!-- <input type="button" value=" + " onclick="add();"><input type="button" value=" - " onclick="del();" class="up"><br> -->
-							</div>
-							<div class="sell_price">금액 : <%= money %><input type="hidden" name="price" value="<%=price%>">원 </div>
-							<input type="submit" value="장바구니에 추가">
-						</form>
-					</div>
-
-
+			<div>가격 :
+				<span id="priceSpan"><%= price %></span>
+				
+			</div>
+			<div>수량 : 
+				<input type="number" class="my-input" name="quantity" value="1" min="1" max="10">
+			</div>
+			<div>총 가격 : 
+			<span id="totalPriceSpan"><%= price %></span></div>
+			<!-- 총 가격 어떻게 보낼지 고민중   -->
+			<input type="hidden" name="price" value="<%=price%>">
+			<div>
+				<div class="btnDiv">
+					<input type="submit" class="btn" value="장바구니">
+				</div>
+			</div>
+		</form>
+		</div>
+	</div>
 
 
 
@@ -156,6 +170,89 @@
 									</p>
 								</div>
 	</section>
+<!---------------------------------------------- 리뷰댓글칸-------------------------------------------------------------->
+
+	<%
+							
+						List<ReveiwDTO> reviews = new ReviewDAO().allReviews();
+							
+							
+							%>
+
+						
+				<div >		
+						
+						<table class="review-table" >
+    <thead>
+    <tr>
+        <th>향수</th>
+        <th>평점(1/10)</th>
+        <th>후기</th>
+        <th>등록일자</th>
+        <th> </th>
+
+    </tr>
+    </thead>
+    <tbody>
+   <%for(ReveiwDTO rev:reviews){ %>
+							<tr>
+							
+							<td><%=perfumes.getPf_name()%></td>
+								<td><%=rev.getREVIEW_STAR()%></td>
+								<td><%=rev.getREVIEW_CONTENT() %></td>
+								<td><%=rev.getREVIEWED_AT() %></td>	
+								<td><a href = "ReviewDelete.do?MEM_ID=<%=rev.getMEM_ID()%>">삭제</a></td>
+													
+							</tr>
+							<%} %>
+							
+						
+    </tbody>
+</table>
+			</div>			
+						
+						
+						
+<!-- 구분선                             -->			
+						
+						
+<div id="review_modal">
+    <button class="modal-Btn">글쓰기</button>
+    <dialog class="modal">
+        
+	<h2>향수리뷰리뷰리뷰</h2>
+	<form action= "ReviewService.do" method= "POST">
+	<div class ="star_rating">
+	 <fieldset class="rate">
+                                <input type="radio" id="rating10" name="rating" value="10"><label for="rating10" title="5점"></label>
+                                <input type="radio" id="rating9" name="rating" value="9"><label class="half" for="rating9" title="4.5점"></label>
+                                <input type="radio" id="rating8" name="rating" value="8"><label for="rating8" title="4점"></label>
+                                <input type="radio" id="rating7" name="rating" value="7"><label class="half" for="rating7" title="3.5점"></label>
+                                <input type="radio" id="rating6" name="rating" value="6"><label for="rating6" title="3점"></label>
+                                <input type="radio" id="rating5" name="rating" value="5"><label class="half" for="rating5" title="2.5점"></label>
+                                <input type="radio" id="rating4" name="rating" value="4"><label for="rating4" title="2점"></label>
+                                <input type="radio" id="rating3" name="rating" value="3"><label class="half" for="rating3" title="1.5점"></label>
+                                <input type="radio" id="rating2" name="rating" value="2"><label for="rating2" title="1점"></label>
+                                <input type="radio" id="rating1" name="rating" value="1"><label class="half" for="rating1" title="0.5점"></label>
+								
+                            </fieldset><br>
+                            
+
+</div>
+
+<input type = "text" name = "contents" class="star_box" placeholder = "리뷰내용을 입력해주세요"><br>
+<input type = "hidden" name = "MEM_ID" VALUE = "Ef-8R3fBQ9V7oNLNfOv7gHjUqXb9k7pn6QkITa77XvE">
+<input type="submit" class="btn02" value="리뷰 등록">
+
+
+</form>
+        <form method="dialog">
+            <button>Close</button>
+        </form>
+    </dialog>
+</div>
+
+
 
 	<footer>
 		<!-- 최하단부의 배너를 담는 fotter 태그 -->
@@ -207,4 +304,49 @@
 
 
 </body>
+
+<script>
+
+const modalBtn = document.querySelector(".modal-Btn");
+const modal = document.querySelector(".modal");
+
+modalBtn.addEventListener("click", () => {
+    modal.showModal()
+})
+
+//수량 input 태그 선택 
+	const putCntInput = document.querySelector('input[type="number"]');
+	//이벤트 추가
+	//btn을 'change' 값이 바뀔때마다 'function()' 기능을 적용시킨다.
+	//밑에 세 가지 모두 키보드를 누르고 뗄 때마다 의미함
+    //keyup
+	//keypress
+	//keydown
+	putCntInput.addEventListener('change',function(){
+		const priceTag = document.querySelector('#priceSpan').innerText;//선택한 태그의 innerText 가격값을 가져온다.
+		//alert(priceTag.innerText);
+		const putCnt = document.querySelector('input[type="number"]').value;
+		const result = priceTag * putCnt;
+		 document.querySelector('#totalPriceSpan').innerText = result;
+	});
+    putCntInput.addEventListener('keyup',function(){
+		//총가격 변경시키기
+		//1.가격정보 가져온다.
+		const priceTag = document.querySelector('#priceSpan').innerText;//선택한 태그의 innerText 가격값을 가져온다.
+		//alert(priceTag.innerText);
+		
+		//2.수량정보 가져온다.
+		const putCnt = document.querySelector('input[type="number"]').value;
+		
+		//3.수량과 가격을 곱한다.
+		const result = priceTag * putCnt;
+		
+		//4.총가격의 값을 바꾼다.
+		 document.querySelector('#totalPriceSpan').innerText = result;
+	});
+	
+
+
+
+</script>
 </html>

@@ -1,5 +1,9 @@
 package com.playscent.model;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 
+@Data
+@NoArgsConstructor
 public class CartDTO {
 	private int FAV_IDX; // 장바구니 식별자.
 	private String MEM_ID;

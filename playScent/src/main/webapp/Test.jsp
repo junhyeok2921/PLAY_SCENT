@@ -116,7 +116,7 @@ request.setCharacterEncoding("utf-8");
 PerfumeDAO dao = new PerfumeDAO();
 ArrayList<PerfumeDTO> list  = (ArrayList)request.getAttribute("myperfume");
 System.out.println("LIST "+ list);
- 
+
 %>
 
 

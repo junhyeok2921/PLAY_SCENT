@@ -99,8 +99,9 @@ a {
 
 </head>
 <body>
-
-					
+		
+	<div ></div>
+			
 							<%
 							
 						List<ReveiwDTO> reviews = new ReviewDAO().allReviews();
@@ -216,6 +217,10 @@ const modal = document.querySelector(".modal");
 modalBtn.addEventListener("click", () => {
     modal.showModal()
 })
+
+window.onload = function goBac(){
+	window.location = document.referrer;
+}
 
 </script>
 
