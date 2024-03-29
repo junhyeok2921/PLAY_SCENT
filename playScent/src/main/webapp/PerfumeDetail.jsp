@@ -1,30 +1,53 @@
+
 <%@page import="org.apache.ibatis.reflection.SystemMetaObject"%>
+<%@page import="java.text.DecimalFormat"%>
+<%@page import="java.util.ArrayList"%>
+<%@page import="com.playscent.model.CartPerfumeDTO"%>
+<%@page import="java.util.List"%>
+<%@page import="com.playscent.model.CartDAO"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="UTF-8">
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link rel="stylesheet" href="css/pfDetail.css" type="text/css">
-<link href="styles/detail.css" rel="stylesheet" type="text/css" />
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet"
-	href="https://use.fontawesome.com/releases/v5.15.4/css/all.css"
-	integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm"
-	crossorigin="anonymous">
-<link
-	href="https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap"
-	rel="stylesheet">
-<title>상세 페이지</title>
+	<meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/pfDetail.css" type="text/css">
+    <link href="styles/detail.css" rel="stylesheet" type="text/css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css"
+        integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap" rel="stylesheet">
+    <title>상세 페이지</title>
+    <style>
+     .pf_img{
+      width: 72%;
+     }    
+   </style>
+
 </head>
 <body>
 
 	<%
-	String user_id = (String) session.getAttribute("user_id");
-	System.out.println(user_id);
+	   DecimalFormat df = new DecimalFormat("###,###");
+	   String user_id = (String) session.getAttribute("user_id");
+	   System.out.println(user_id);
+	   String PFIDX = request.getParameter("pfIdx");
+	   System.out.print(PFIDX);
+	   int PF_IDX = Integer.parseInt(PFIDX);
+	   CartPerfumeDTO perfumes = new CartDAO().selectPerfume(PF_IDX);
+	   
+	  System.out.print(perfumes.getPf_accords());
+	  System.out.print(perfumes.getPf_name());
+	  System.out.print(perfumes.getPf_image());
+	  System.out.print(perfumes.getPf_price());
+	  //금액 .찍어서 여기서 변수 저장
+	  int price = (int)Math.round(perfumes.getPf_price());//double -> 정수형으로
+	  String money = df.format(price); // .찍어줌
+	%>
+
 	
 	String pfIdx = request.getParameter("pfIdx");
 	System.out.println(pfIdx);
@@ -56,10 +79,10 @@
 			<div class="first">
 				<!--중반부 를 두개의 div태그로 나누어 왼쪽 절반의 구역으로 나눠줌-->
 
-				<img src="디올.jpg" alt="디올">
+				<img src="<%= perfumes.getPf_image()%>" alt="디올" class="pf_img">
 
 				<div class="image-wrapper">
-					<img src="디올이미지2.jpg" alt="디올"> <img src="디올이미지.jpg" alt="디올">
+					
 				</div>
 			</div>
 
@@ -70,10 +93,8 @@
 
 				<div id="fifth">
 					<div class="perfume">
-						<p class="perfume1">미스 디올 블루밍 부케</p>
-						<p class="perfume1">오 드 뚜왈렛 - 산뜻하고 부드러운 노트</p>
-
-
+						<p class="perfume1"><%=perfumes.getPf_brand() %></p>
+						<p class="perfume1"><%=perfumes.getPf_name() %></p>
 
 						<!-- <tr heigh="35px" bgcolor="whitesmoke"> -->
 
@@ -81,18 +102,20 @@
 							<option value="">사이즈: 30ml</option> <!-- </select> -->
 						</td>
 						</tr>
-
-
-						<form action="AddCart.do?pfIdx=" method="get" id="order">
+						<form action="AddCart.do?pfIdx=<%=PFIDX%>" method="post" id="order">
 							<div class="sell_quan">
-								수량 : <input type=hidden name="quantity" value="96000">
+								수량 : 
 								<!-- <input type="text" name="amount" value="1" size="3" onchange="change();">  -->
-								<input type="number" name="" value="1" min="1" max="10" />
+								<input type="number" name="quantity" value="1" min="1" max="10" />
 								<!-- <input type="button" value=" + " onclick="add();"><input type="button" value=" - " onclick="del();" class="up"><br> -->
 							</div>
+<<<<<<< HEAD
 							<div class="sell_price">
 								금액 : 96,000<input type="hidden" name="price" value="96000">원
 							</div>
+=======
+							<div class="sell_price">금액 : <%= money %><input type="hidden" name="price" value="<%=price%>">원 </div>
+>>>>>>> branch 'main' of https://github.com/2023-SMHRD-KDT-AI-16/PLAY_SCENT.git
 							<input type="submit" value="장바구니에 추가">
 						</form>
 					</div>
@@ -117,45 +140,26 @@
                 </div> -->
 
 					<!-- <div class="Allcomment"> -->
-					<p class="reviewnav">상품정보</p>
+					<p class="reviewnav">Main Accords</p>
 					<div class="comment">
 						<!-- comment class는 각각 하나의 댓글을 담아냄 -->
 
-						<span class="ment">미스 디올 오 드 뚜왈렛은 산뜻하고 황홀한 향기가 돋보입니다. 탑
-							노트에서 블러드 오렌지와 만다린이 눈 부신 매력을 더해주며, 미들 노트의 은방울꽃 어코드가 그라스산 로즈의 스파이시한
-							향에 가볍고 산뜻한 향기를 더해줍니다. 베이스 노트의 선명한 패츌리 어코드가 행복으로 가득한 노트를 조화롭게
-							이어줍니다.</span>
+						<span class="ment"><%=perfumes.getPf_accords() %></span>
 					</div>
-					<hr>
-
-					<p class="reviewnav">전성분</p>
-					<div class="comment">
-						<!-- comment class는 각각 하나의 댓글을 담아냄 -->
-						<div class="ment">
-							<p>
-								에탄올 정제수 향료 부틸메톡시디벤조일메탄 적색504호 황색4호 자색401호 리모넨 헥실신남알 리날룰 벤질살리실레이트
-								알파-아이소메틸아이오논 시트로넬올 아이소유제놀 하이드록시시트로넬알 시트랄 제라니올 벤질알코올<br>
-							</p>
-							<hr>
-
-
-
+				<hr>
 							<!-- <div class="Allcomment"> -->
-							<p class="reviewnav">향기노트보기</p>
+							<p class="reviewnav">Notes</p>
 							<div class="comment">
 								<!-- comment class는 각각 하나의 댓글을 담아냄 -->
 								<div class="ment">
 									<p>
-										<strong>베르가못 에센스는 </strong><br> 이탈리아 남부에서 나는 열매껍질을 냉각
-										압축시켜 추출합니다. 향수에 부드럽고 상쾌한 느낌을 선사하며, 특히 시트러스 노트를 돋보이게 해줍니다.
+										<strong>Top notes </strong><br> <%=perfumes.getPF_TOP() %>
 									</p>
 									<p>
-										<strong>다마스크 로즈 에센스와 피오니 노트 </strong><br>은은한 스파이시함이 감도는
-										플로럴 노트를 만들어 냅니다.
+										<strong>Mid notes </strong><br><%=perfumes.getPF_MID() %>
 									</p>
 									<p>
-										<strong>화이트 머스크 </strong><br>파우더리한 향기가 마치 코튼이 피부를 부드럽게
-										감싸는 듯한 포근함을 선사합니다.
+										<strong>Bottom notes </strong><br><%=perfumes.getPF_BOTTOM() %>
 									</p>
 								</div>
 	</section>
@@ -177,8 +181,6 @@
 			<div id="footer_text">
 
 				<div>
-
-
 					<p>NAUM mail</p>
 
 					<ul>

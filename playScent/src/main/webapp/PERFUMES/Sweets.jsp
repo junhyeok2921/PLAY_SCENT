@@ -117,11 +117,13 @@ a {
 <table class="review-table">
     <thead>
     <tr>
-        <th>향수향수</th>
+        <th>향수향수 <%= perfumes.get(1).getPF_IDX() %></th>
+        <a href="어쩌구저쩌굼ㄴㅇㄻㄴㅇㄹ=?<%=perfumes.get(1).getPF_IDX()%>">qjxmqjsdlkfajsdlkf</a>
         <th>향수브랜드</th>
         <th>향수가격</th>
         <th>향수향기</th>
         <th colspan='2'>이미지</th>
+        
     </tr>
     </thead>
     <tbody>

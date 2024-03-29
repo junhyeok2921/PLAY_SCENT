@@ -45,7 +45,6 @@ public class frontcontroller extends HttpServlet {
 		System.out.println(result);
 		if (result.equals("/JoinService.do")) { // naver로그인 기능
 			service = new JoinService();
-
 		}
 
 		else if (result.equals("/ReviewService.do")) {

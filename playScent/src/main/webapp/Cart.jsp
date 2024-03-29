@@ -161,8 +161,6 @@
 		</section>
 
 
-	
-	
 
 	<!-- JavaScript 함수를 HTML 내부에 추가합니다 -->
 	<script>

@@ -15,12 +15,12 @@
 
 <% 
 
-		List<ParseDTO> pdto = null;
-		pdto = new PerfumeDAO().showMessage(null);%>
+	//	List<ParseDTO> pdto = null;
+//		pdto = new PerfumeDAO().showMessage(null);
+%>
 						
 							
-						
-
+				
 
 </body>
 </html>
