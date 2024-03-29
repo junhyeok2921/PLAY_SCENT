@@ -1,5 +1,6 @@
 <%@page import="com.playscent.model.ReviewDAO"%>
 <%@page import="com.playscent.model.ReveiwDTO"%>
+<%@page import="org.apache.ibatis.reflection.SystemMetaObject"%>
 <%@page import="java.text.DecimalFormat"%>
 <%@page import="java.util.ArrayList"%>
 <%@page import="com.playscent.model.CartPerfumeDTO"%>
@@ -36,7 +37,7 @@
       width: 72%;
      }    
    </style>
-    
+
 </head>
 <body>
 
@@ -56,9 +57,13 @@
 	  //금액 .찍어서 여기서 변수 저장
 	  int price = (int)Math.round(perfumes.getPf_price());//double -> 정수형으로
 	  String money = df.format(price); // .찍어줌
-	  
-	%>
 	
+
+	
+	String pfIdx = request.getParameter("pfIdx");
+	System.out.println(pfIdx);
+	%>
+
 	<nav>
 		<!--최상단의 배너-->
 		<div class="menu">
@@ -109,6 +114,7 @@
 						</td>
 						</tr>
 						<form action="AddCart.do?pfIdx=<%=PFIDX%>" method="post" id="order">
+
 			<div>가격 :
 				<span id="priceSpan"><%= price %></span>
 				
@@ -119,7 +125,7 @@
 			<div>총 가격 : 
 			<span id="totalPriceSpan"><%= price %></span></div>
 			<!-- 총 가격 어떻게 보낼지 고민중   -->
-			<input type="hidden" name="price" value="<%=price%>">
+			<input type="hidden" name="price" value="<%=money%>">
 			<div>
 				<div class="btnDiv">
 					<input type="submit" class="btn" value="장바구니">
@@ -128,6 +134,7 @@
 		</form>
 		</div>
 	</div>
+
 
 
 
