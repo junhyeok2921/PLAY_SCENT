@@ -1,3 +1,4 @@
+<%@page import="org.apache.ibatis.reflection.SystemMetaObject"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -24,6 +25,9 @@
 	<%
 	String user_id = (String) session.getAttribute("user_id");
 	System.out.println(user_id);
+	
+	String pfIdx = request.getParameter("pfIdx");
+	System.out.println(pfIdx);
 	%>
 
 	<nav>
