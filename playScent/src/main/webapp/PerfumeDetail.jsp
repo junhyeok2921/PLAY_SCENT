@@ -1,3 +1,5 @@
+
+<%@page import="org.apache.ibatis.reflection.SystemMetaObject"%>
 <%@page import="java.text.DecimalFormat"%>
 <%@page import="java.util.ArrayList"%>
 <%@page import="com.playscent.model.CartPerfumeDTO"%>
@@ -24,7 +26,7 @@
       width: 72%;
      }    
    </style>
-    
+
 </head>
 <body>
 
@@ -44,9 +46,13 @@
 	  //금액 .찍어서 여기서 변수 저장
 	  int price = (int)Math.round(perfumes.getPf_price());//double -> 정수형으로
 	  String money = df.format(price); // .찍어줌
-	  
 	%>
+
 	
+	String pfIdx = request.getParameter("pfIdx");
+	System.out.println(pfIdx);
+	%>
+
 	<nav>
 		<!--최상단의 배너-->
 		<div class="menu">
@@ -104,6 +110,7 @@
 								<!-- <input type="button" value=" + " onclick="add();"><input type="button" value=" - " onclick="del();" class="up"><br> -->
 							</div>
 							<div class="sell_price">금액 : <%= money %><input type="hidden" name="price" value="<%=price%>">원 </div>
+
 							<input type="submit" value="장바구니에 추가">
 						</form>
 					</div>

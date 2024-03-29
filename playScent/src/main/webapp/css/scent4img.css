@@ -66,6 +66,7 @@ form{
     background-color: rgb(251 249 249 / 64%);
     border-radius: 13px;
     position: relative;
+    overflow: hidden;
 }
 
 #scentIMGbox ul li .ll{
@@ -125,4 +126,6 @@ form{
     display: none;
     visibility: hidden;
 }
+
+
 
