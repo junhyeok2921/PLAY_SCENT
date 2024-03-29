@@ -109,13 +109,8 @@
 								<input type="number" name="quantity" value="1" min="1" max="10" />
 								<!-- <input type="button" value=" + " onclick="add();"><input type="button" value=" - " onclick="del();" class="up"><br> -->
 							</div>
-<<<<<<< HEAD
-							<div class="sell_price">
-								금액 : 96,000<input type="hidden" name="price" value="96000">원
-							</div>
-=======
 							<div class="sell_price">금액 : <%= money %><input type="hidden" name="price" value="<%=price%>">원 </div>
->>>>>>> branch 'main' of https://github.com/2023-SMHRD-KDT-AI-16/PLAY_SCENT.git
+
 							<input type="submit" value="장바구니에 추가">
 						</form>
 					</div>
