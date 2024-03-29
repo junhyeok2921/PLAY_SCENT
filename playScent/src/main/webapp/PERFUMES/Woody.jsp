@@ -11,10 +11,10 @@
 <title>Perfume List</title>
 <style>
 img {
-  width: 300px;
-  height: 150px;
-  object-fit: cover;
-}
+
+    width: 150px;
+
+}}
 body {
   padding:1.5em;
   background: #f5f5f5
@@ -131,7 +131,7 @@ a {
 								<td><%=per.getPF_BRAND()%></td>
 								<td><%=per.getPF_PRICE() %></td>
 								<td><%=per.getPF_Accords() %></td>	
-								<td><img src=<%=per.getPF_Image()%>></td>					
+								<td onClick="location.href='PerfumeDetail.jsp?pfIdx=<%= per.getPF_IDX()%>'" style="cursor:pointer;"><img src=<%=per.getPF_Image()%>></td>					
 							</tr>
 							<%} %>					
     </tbody>

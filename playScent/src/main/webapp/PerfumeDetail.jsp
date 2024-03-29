@@ -20,6 +20,11 @@
     <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap" rel="stylesheet">
     <title>상세 페이지</title>
     <style>
+    #one img {
+    width: 70%;
+}
+  
+    
      .pf_img{
       width: 72%;
      }    

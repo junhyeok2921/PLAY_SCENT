@@ -11,9 +11,9 @@
 <title>Perfume List</title>
 <style>
 img {
-  width: 300px;
-  height: 150px;
-  object-fit: cover;
+
+    width: 150px;
+
 }
 body {
   padding:1.5em;
@@ -118,7 +118,6 @@ a {
     <thead>
     <tr>
         <th>향수향수 <%= perfumes.get(1).getPF_IDX() %></th>
-        <a href="어쩌구저쩌굼ㄴㅇㄻㄴㅇㄹ=?<%=perfumes.get(1).getPF_IDX()%>">qjxmqjsdlkfajsdlkf</a>
         <th>향수브랜드</th>
         <th>향수가격</th>
         <th>향수향기</th>
@@ -134,7 +133,7 @@ a {
 								<td><%=per.getPF_BRAND()%></td>
 								<td><%=per.getPF_PRICE() %></td>
 								<td><%=per.getPF_Accords() %></td>	
-								<td><img src=<%=per.getPF_Image()%>></td>					
+								<td onClick="location.href='PerfumeDetail.jsp?pfIdx=<%= per.getPF_IDX()%>'" style="cursor:pointer;"><img src=<%=per.getPF_Image()%>></td>					
 							</tr>
 							<%} %>					
     </tbody>

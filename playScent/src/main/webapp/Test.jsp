@@ -8,6 +8,7 @@
 <!DOCTYPE html>
 <html>
 <head>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 <style>
 img {
   width: 300px;
@@ -133,16 +134,18 @@ System.out.println("LIST "+ list);
     </thead>
     <tbody>
    <%for(PerfumeDTO per: list){ %>
+
 							<tr>
-							
 							<td><%=per.getPF_NAME()%></td>
 								<td><%=per.getPF_BRAND()%></td>
 								<td><%=per.getPF_PRICE() %></td>
 								<td><%=per.getPF_Accords() %></td>	
-								<td><img src=<%=per.getPF_Image()%>></td>					
+								
+								<td onClick="location.href='PerfumeDetail.jsp?pfIdx=<%= per.getPF_IDX()%>'" style="cursor:pointer;"><img src=<%=per.getPF_Image()%>></td>
 							</tr>
+								
 							<%} %>
-							
+						
 						
     </tbody>
 </table>
@@ -152,4 +155,6 @@ System.out.println("LIST "+ list);
 
 
 </body>
+
+
 </html>

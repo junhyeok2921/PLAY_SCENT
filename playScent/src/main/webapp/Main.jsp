@@ -1,3 +1,4 @@
+<%@page import="java.util.Random"%>
 <%@page import="java.text.DecimalFormat"%>
 <%@page import="com.playscent.model.PerfumeDTO"%>
 <%@page import="java.util.List"%>
@@ -29,9 +30,14 @@
 </head>
  
 <body>
+<!-- 향수 정보들 뽑아오기 ,천단위 점찍기  -->
 <%List<PerfumeDTO> perfumes = new PerfumeDAO().SweetsDAO();
+List<PerfumeDTO> manperfume = new PerfumeDAO().manDAO(); /* 남자향수 */
+List<PerfumeDTO> womanperfume = new PerfumeDAO().womanDAO(); /* 남자향수 */
+List<PerfumeDTO> allperfume = new PerfumeDAO().allPerfumes(); /* 모든향수 */
 System.out.println(perfumes.get(0).getPF_IDX());
 DecimalFormat df = new DecimalFormat("###,###");
+Random rdm = new Random();
 
 
 %>
@@ -202,23 +208,26 @@ DecimalFormat df = new DecimalFormat("###,###");
                 </ul>
 
                 <ul id="product_jin">
-                <% for(int i=0; i<4; i++){%>
-                	<li><a href="PerfumeDetail.jsp?pfIdx=">
-                        <div class="product_img" >
-                            <img class="jinhee_img" src="https://www.newstap.co.kr/news/photo/202209/173599_281311_1556.jpg" alt="">
-                        </div>
-
-                        <h3 class="per_brand">구딸파리 </h3>
-                        <p>오 드 아드리앙 EDP</p>
-                        <p class="ptd">태양 아래 레몬 과실을 바구니에 툭 담아낼 때 퍼지는 아로마틱한 향기</p>
-
-                        <div class="product_price">
-                            <div class="ohjinhee_point">
-                                <h3 class="per_price">148,800원<span>189,800원</span></h3>
-                            </div>
-                           <h2 class="sale">42%</h2>
-                        </div>         
-                    </a></li>
+                <% for(int i=0; i<4; i++){int rd = rdm.nextInt(314); //랜덤수 하나 받기 (대표향 추천상품 뽑기용)%>
+	                	<li><a href="PerfumeDetail.jsp?pfIdx=<%= allperfume.get(rd).getPF_IDX()%>">
+	                        <div class="product_img">
+	                            <img class="jinhee_img" src="<%= allperfume.get(rd).getPF_Image()%>" alt="여자 향수">
+	                        </div>
+	
+	                        <h3 class="per_brand"><%= allperfume.get(rd).getPF_BRAND() %> </h3>
+	                        <p><%= allperfume.get(rd).getPF_NAME() %></p>
+	                        <p class="ptd"><%= allperfume.get(rd).getPF_Accords() %></p>
+	
+	                        <div class="product_price">
+	                            <div class="ohjinhee_point"><%
+	                            		//금액 .찍어서 여기서 변수 저장
+	                            		  int allprice = (int)Math.round(allperfume.get(rd).getPF_PRICE());//double -> 정수형으로
+	                            		  String allprice2 = df.format(allprice); // .찍어줌 %>
+	                                <h3 class="per_price"><%= allprice2 %>원<span></span></h3>
+	                            </div>
+	                           
+	                        </div>         
+	                    </a></li>
                 <%}%>
                     
                    <!--  <li><a href="#none">
@@ -254,21 +263,24 @@ DecimalFormat df = new DecimalFormat("###,###");
                 </ul>
 
                 <ul id="product_jin">
-                    <% for(int i=0; i<4; i++){%>
-	                	<li><a href="PerfumeDetail.jsp?">
+                    <% for(int i=6; i<10; i++){%>
+	                	<li><a href="PerfumeDetail.jsp?pfIdx=<%= womanperfume.get(i).getPF_IDX()%>">
 	                        <div class="product_img">
-	                            <img class="jinhee_img" src="https://www.newstap.co.kr/news/photo/202209/173599_281311_1556.jpg" alt="">
+	                            <img class="jinhee_img" src="<%= womanperfume.get(i).getPF_Image()%>" alt="여자 향수">
 	                        </div>
 	
-	                        <h3 class="per_brand">구딸파리 </h3>
-	                        <p>오 드 아드리앙 EDP</p>
-	                        <p class="ptd">태양 아래 레몬 과실을 바구니에 툭 담아낼 때 퍼지는 아로마틱한 향기</p>
+	                        <h3 class="per_brand"><%= womanperfume.get(i).getPF_BRAND() %> </h3>
+	                        <p><%= womanperfume.get(i).getPF_NAME() %></p>
+	                        <p class="ptd"><%= womanperfume.get(i).getPF_Accords() %></p>
 	
 	                        <div class="product_price">
-	                            <div class="ohjinhee_point">
-	                                <h3 class="per_price">148,800원<span>189,800원</span></h3>
+	                            <div class="ohjinhee_point"><%
+	                            		//금액 .찍어서 여기서 변수 저장
+	                            		  int womanprice = (int)Math.round(womanperfume.get(i).getPF_PRICE());//double -> 정수형으로
+	                            		  String womanprice2 = df.format(womanprice); // .찍어줌 %>
+	                                <h3 class="per_price"><%= womanprice2 %>원<span></span></h3>
 	                            </div>
-	                           <h2 class="sale">42%</h2>
+	                           
 	                        </div>         
 	                    </a></li>
 	                <%}%>
@@ -289,20 +301,23 @@ DecimalFormat df = new DecimalFormat("###,###");
 
                 <ul id="product_jin">
                    <% for(int i=0; i<4; i++){%>
-	                	<li><a href="PerfumeDetail.jsp?">
+	                	<li><a href="PerfumeDetail.jsp?pfIdx=<%= manperfume.get(i).getPF_IDX()%>">
 	                        <div class="product_img">
-	                            <img class="jinhee_img" src="https://www.newstap.co.kr/news/photo/202209/173599_281311_1556.jpg" alt="">
+	                            <img class="jinhee_img" src="<%= manperfume.get(i).getPF_Image()%>" alt="남자 향수">
 	                        </div>
 	
-	                        <h3 class="per_brand">구딸파리 </h3>
-	                        <p>오 드 아드리앙 EDP</p>
-	                        <p class="ptd">태양 아래 레몬 과실을 바구니에 툭 담아낼 때 퍼지는 아로마틱한 향기</p>
+	                        <h3 class="per_brand"><%= manperfume.get(i).getPF_BRAND() %> </h3>
+	                        <p><%= manperfume.get(i).getPF_NAME() %></p>
+	                        <p class="ptd"><%= manperfume.get(i).getPF_Accords() %></p>
 	
 	                        <div class="product_price">
-	                            <div class="ohjinhee_point">
-	                                <h3 class="per_price">148,800원<span>189,800원</span></h3>
+	                            <div class="ohjinhee_point"><%
+	                            		//금액 .찍어서 여기서 변수 저장
+	                            		  int manprice = (int)Math.round(manperfume.get(i).getPF_PRICE());//double -> 정수형으로
+	                            		  String manprice2 = df.format(manprice); // .찍어줌 %>
+	                                <h3 class="per_price"><%= manprice2 %>원<span></span></h3>
 	                            </div>
-	                           <h2 class="sale">42%</h2>
+	                           
 	                        </div>         
 	                    </a></li>
 	                <%}%>
@@ -311,7 +326,7 @@ DecimalFormat df = new DecimalFormat("###,###");
 
 
 			 <div class="jinhee_nct jinhee_nct2" >
-                <h2 class="repres_title rt23">연령별 베스트상품</h2> <span class="sub"></span>
+                <h2 class="repres_title rt23">브랜드 베스트상품</h2> <span class="sub"></span>
                 
                 <ul class="pont">
                     <li><a href="#none"></a></li>
