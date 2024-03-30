@@ -94,7 +94,7 @@
 				src="http://static.nid.naver.com/oauth/small_g_in.PNG" /></a>
 		</div>
 
-		<button class="play_join">회원가입</button>
+		<!-- <button class="play_join">회원가입</button> -->
 	</div>
 
 

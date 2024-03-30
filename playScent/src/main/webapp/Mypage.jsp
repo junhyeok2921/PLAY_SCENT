@@ -18,18 +18,18 @@
 	UserInfoDTO userData = userDAO.getUserInfo(user_id);
 
 	String userGrade = "GOLD"; // 사용자 등급을 가져오는 로직이 필요합니다. 여기서는 예시로 "GOLD"를 직접 할당하였습니다.
-	if(userData != null) {
-	    out.println("<div class='grade'><H3>" + userData.getMemName() + " 님은 " + userGrade + "등급 입니다</H3></div>");
-	} else {
-	    out.println("사용자 정보를 찾을 수 없습니다.");
-	}
+	
 	%>
 
 	<div class="wrap">
 		<div class="greenContainer">
 			<div>
 				<div class="grade">
-					<H3>김경민 님은 GOLD등급 입니다
+					<% if(userData != null) {
+	    out.println("<div class='grade'><H3>" + userData.getMemName() + " 님은 " + userGrade + "등급 입니다</H3></div>");
+	} else {
+	    out.println("사용자 정보를 찾을 수 없습니다.");
+	}%>
 				</div>
 				<!-- <div class="name">김경민</div> -->
 			</div>
@@ -61,7 +61,7 @@
 						<div class="green number">1</div>
 						<div class="text">배송완료</div>
 					</div>
-					<div class="icon">></div>
+					<div class="icon"></div>
 				</div>
 				<div class="item">
 					<div>

@@ -134,6 +134,21 @@ public class PerfumeDAO {
 		return womanperfume;
 
 	}
+	
+	public List<PerfumeDTO> summerDAO() {
+
+		List<PerfumeDTO> summerperfume = null;
+
+		try {
+			summerperfume = sqlSession.selectList("summerperfume");
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			sqlSession.close();
+		}
+		return summerperfume;
+
+	}
 
 	public List<PerfumeDTO> Myperfumes() {
 

@@ -1,19 +1,19 @@
+<%@page import="com.playscent.model.PerfumeDTO"%>
 <%@page import="java.util.List"%>
 <%@page import="com.playscent.model.PerfumeDAO"%>
-<%@page import="com.playscent.model.PerfumeDTO"%>
-<%@page import="java.util.ArrayList"%>
-<%@page import="org.apache.ibatis.reflection.SystemMetaObject"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
 <head>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<meta charset="UTF-8">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<title>Perfume List</title>
 <style>
 img {
-  width: 300px;
-  height: 150px;
-  object-fit: cover;
+
+    width: 150px;
+
 }
 body {
   padding:1.5em;
@@ -107,57 +107,37 @@ a {
   }
 
 </style>
-<meta charset="UTF-8">
-<title>Insert title here</title>
 </head>
 <body>
-<%  
-request.setCharacterEncoding("utf-8");
-PerfumeDAO dao = new PerfumeDAO();
-ArrayList<PerfumeDTO> list  = (ArrayList)request.getAttribute("myperfume");
-System.out.println("LIST "+ list);
 
 
-
-
-%>
-
-
-
+<%						
+						List<PerfumeDTO> perfumes = new PerfumeDAO().summerDAO();						
+							%>
 <table class="review-table">
     <thead>
     <tr>
-        <th>향수향수</th>
+        <th>향수향수 <%= perfumes.get(1).getPF_IDX() %></th>
         <th>향수브랜드</th>
         <th>향수가격</th>
         <th>향수향기</th>
         <th colspan='2'>이미지</th>
-
+        
     </tr>
     </thead>
     <tbody>
-   <%for(PerfumeDTO per: list){ %>
-
+   <%for(PerfumeDTO per: perfumes){ %>
 							<tr>
+							
 							<td><%=per.getPF_NAME()%></td>
 								<td><%=per.getPF_BRAND()%></td>
 								<td><%=per.getPF_PRICE() %></td>
 								<td><%=per.getPF_Accords() %></td>	
-								
-								<td onClick="location.href='PerfumeDetail.jsp?pfIdx=<%= per.getPF_IDX()%>'" style="cursor:pointer;"><img src=<%=per.getPF_Image()%>></td>
+								<td onClick="location.href='PerfumeDetail.jsp?pfIdx=<%= per.getPF_IDX()%>'" style="cursor:pointer;"><img src=<%=per.getPF_Image()%>></td>					
 							</tr>
-								
-							<%} %>
-						
-						
+							<%} %>					
     </tbody>
 </table>
 
-
-
-
-
 </body>
-
-
 </html>

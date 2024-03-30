@@ -1,3 +1,5 @@
+<%@page import="com.playscent.model.ReveiwDTO"%>
+<%@page import="com.playscent.model.ReviewDAO"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -105,8 +107,18 @@
 
 </div>
 
+<%
+	String user_id = (String) session.getAttribute("user_id");
+	System.out.println(user_id);
+	ReviewDAO userDAO = new ReviewDAO();
+	String PF_NAME = (String) session.getAttribute("PF_NAME"); 
+	
+	%>
+
+
 <input type = "text" name = "contents" class="star_box" placeholder = "리뷰내용을 입력해주세요"><br>
-<input type = "hidden" name = "MEM_ID" VALUE = "Ef-8R3fBQ9V7oNLNfOv7gHjUqXb9k7pn6QkITa77XvE">
+<input type = "hidden" name = "MEM_ID" VALUE = "<%= user_id %>">
+<input type = "hidden" name = "PF_IDX" VALUE = "<%= PF_NAME %>">
 <input type="submit" class="btn02" value="리뷰 등록">
 
 
