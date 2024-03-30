@@ -1,3 +1,4 @@
+<%@page import="java.util.ArrayList"%>
 <%@page import="com.playscent.model.PerfumeDTO"%>
 <%@page import="java.util.List"%>
 <%@page import="com.playscent.model.PerfumeDAO"%>
@@ -111,7 +112,7 @@ a {
 <body>
 <!-- -----------------------------------------------------------------------------------  -->
 <%						
-						List<PerfumeDTO> perfumes = new PerfumeDAO().WoodyDAO();						
+						ArrayList<PerfumeDTO> perfumes = new PerfumeDAO().WoodyDAO();						
 							%>
 <table class="review-table">
     <thead>

@@ -1,4 +1,3 @@
-<%@page import="java.util.ArrayList"%>
 <%@page import="com.playscent.model.PerfumeDTO"%>
 <%@page import="java.util.List"%>
 <%@page import="com.playscent.model.PerfumeDAO"%>
@@ -110,17 +109,20 @@ a {
 </style>
 </head>
 <body>
+
+
 <%						
-ArrayList<PerfumeDTO> perfumes = new PerfumeDAO().CitrusDAO();						
+						List<PerfumeDTO> perfumes = new PerfumeDAO().summerDAO();						
 							%>
 <table class="review-table">
     <thead>
     <tr>
-        <th>향수향수</th>
+        <th>향수향수 <%= perfumes.get(1).getPF_IDX() %></th>
         <th>향수브랜드</th>
         <th>향수가격</th>
         <th>향수향기</th>
         <th colspan='2'>이미지</th>
+        
     </tr>
     </thead>
     <tbody>
@@ -136,11 +138,6 @@ ArrayList<PerfumeDTO> perfumes = new PerfumeDAO().CitrusDAO();
 							<%} %>					
     </tbody>
 </table>
-
-
-
-
-
 
 </body>
 </html>

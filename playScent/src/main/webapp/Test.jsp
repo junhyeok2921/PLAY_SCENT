@@ -117,6 +117,9 @@ PerfumeDAO dao = new PerfumeDAO();
 ArrayList<PerfumeDTO> list  = (ArrayList)request.getAttribute("myperfume");
 System.out.println("LIST "+ list);
 
+
+
+
 %>
 
 

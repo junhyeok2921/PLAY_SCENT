@@ -67,13 +67,12 @@
    <nav>
       <!--최상단의 배너-->
       <div class="menu">
-         <a href="#" class="logo">PLAY SCENT</a>
+         <a href="Main.jsp" class="logo">PLAY SCENT</a>
          <ul>
-            <li><a href="" class="li">LOGIN |</a></li>
-            <li><a href="" class="li">JOIN |</a></li>
-            <li><a href="" class="li">마이페이지 |</a></li>
-            <li><a href="" class="li">고객센터 |</a></li>
-            <li><a href="" class="li">장바구니</a></li>
+            <li><a href="Login.jsp" class="li">LOGIN |</a></li>
+            <li><a href="Login.jsp" class="li">JOIN |</a></li>
+            <li><a href="Mypage.jsp" class="li">마이페이지 |</a></li>
+            <li><a href="Cart.jsp" class="li">장바구니</a></li>
          </ul>
       </div>
    </nav>

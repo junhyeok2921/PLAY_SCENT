@@ -1,5 +1,10 @@
 package com.playscent.model;
 
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
+@Data
+@NoArgsConstructor
 public class UserInfoDTO {
 	// 회원 아이디 회원 아이디
     private String mem_id;

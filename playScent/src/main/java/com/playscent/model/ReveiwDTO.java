@@ -11,6 +11,7 @@ import lombok.NoArgsConstructor;
 public class ReveiwDTO {
 	private int REVIEW_IDX;
 	private int PF_IDX;
+	private String PF_NAME;
 	private String MEM_ID;
 	private String REVIEW_CONTENT;
 	private String REVIEWED_AT;

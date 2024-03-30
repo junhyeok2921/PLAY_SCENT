@@ -15,7 +15,7 @@ img {
 
     width: 150px;
 
-}
+}}
 body {
   padding:1.5em;
   background: #f5f5f5
@@ -111,7 +111,10 @@ a {
 </head>
 <body>
 <%						
-ArrayList<PerfumeDTO> perfumes = new PerfumeDAO().CitrusDAO();						
+
+
+ArrayList<PerfumeDTO> perfumes = new PerfumeDAO().womanDAO();
+											
 							%>
 <table class="review-table">
     <thead>
@@ -136,11 +139,6 @@ ArrayList<PerfumeDTO> perfumes = new PerfumeDAO().CitrusDAO();
 							<%} %>					
     </tbody>
 </table>
-
-
-
-
-
 
 </body>
 </html>

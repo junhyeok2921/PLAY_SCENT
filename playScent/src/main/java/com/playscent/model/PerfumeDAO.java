@@ -142,13 +142,41 @@ public class PerfumeDAO {
 
 	   }
 
-	public ArrayList<PerfumeDTO> Myperfumes() {
+		/*
+		 * public ArrayList<PerfumeDTO> Myperfumes() { SqlSession sqlSession =
+		 * sqlSessionFactory.openSession(true);
+		 * 
+		 * ArrayList<PerfumeDTO> Myperfumes = null;
+		 * 
+		 * try { womanperfume = sqlSession.selectList("womanperfume"); } catch
+		 * (Exception e) { e.printStackTrace(); } finally { sqlSession.close(); } return
+		 * womanperfume;
+		 * 
+		 * }
+		 */
+	
+	public List<PerfumeDTO> summerDAO() {
 		SqlSession sqlSession = sqlSessionFactory.openSession(true);
-
-		ArrayList<PerfumeDTO> Myperfumes = null;
+		List<PerfumeDTO> summerperfume = null;
 
 		try {
-			Myperfumes = (ArrayList)sqlSession.selectList("Myperfume");
+			summerperfume = sqlSession.selectList("summerperfume");
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			sqlSession.close();
+		}
+		return summerperfume;
+
+	}
+
+	public List<PerfumeDTO> Myperfumes() {
+		SqlSession sqlSession = sqlSessionFactory.openSession(true);
+		List<PerfumeDTO> Myperfumes = null;
+
+		try {
+			Myperfumes = sqlSession.selectList("Myperfume");
+
 		} catch (Exception e) {
 			e.printStackTrace();
 		} finally {
