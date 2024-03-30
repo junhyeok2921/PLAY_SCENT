@@ -140,7 +140,7 @@
                         <span>전체카테고리</span>
                     </div>     
                     <ul class="semi_nav">
-                        <li><a href="surveyt.html" target='_blank' >향수 테스트</a></li>
+                        <li><a href="newneoSurvey.jsp" target='_blank' >향수 테스트</a></li>
                         <li><a href="#none">여성</a></li>
                         <li><a href="#none">남성</a></li>
                         <li><a href="#none">브랜드</a></li>
