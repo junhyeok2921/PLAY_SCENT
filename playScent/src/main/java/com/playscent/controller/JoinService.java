@@ -36,7 +36,8 @@ public class JoinService implements command {
 	    String redirectURI = "";
 	    
 		try {
-			redirectURI = URLEncoder.encode("http://localhost:8081/playScent/JoinService.do", "UTF-8");
+			redirectURI = URLEncoder.encode("http://localhost:8082/playScent/JoinService.do", "UTF-8");  // 지니주소.
+		  //	redirectURI = URLEncoder.encode("http://localhost:8081/playScent/JoinService.do", "UTF-8");  // 준혁주소
 		} catch (UnsupportedEncodingException e) {
 			e.printStackTrace();
 		}

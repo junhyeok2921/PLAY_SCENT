@@ -1,3 +1,4 @@
+<%@page import="java.util.ArrayList"%>
 <%@page import="java.util.Random"%>
 <%@page import="java.text.DecimalFormat"%>
 <%@page import="com.playscent.model.PerfumeDTO"%>
@@ -74,13 +75,13 @@
  
 <body>
 <%
-   List<PerfumeDTO> perfumes = new PerfumeDAO().SweetsDAO();
+   ArrayList<PerfumeDTO> perfumes = new PerfumeDAO().SweetsDAO();
 //   System.out.println(perfumes.size()+"TEstset");
    System.out.println(perfumes.get(0).getPF_IDX());
    DecimalFormat df = new DecimalFormat("###,###");
-   List<PerfumeDTO> manperfume = new PerfumeDAO().manDAO(); /* 남자향수 */
-   List<PerfumeDTO> womanperfume = new PerfumeDAO().womanDAO(); /* 여자향수 */
-   List<PerfumeDTO> allperfume = new PerfumeDAO().allPerfumes(); /* 모든향수 */
+   ArrayList<PerfumeDTO> manperfume = new PerfumeDAO().manDAO(); /* 남자향수 */
+   ArrayList<PerfumeDTO> womanperfume = new PerfumeDAO().womanDAO(); /* 여자향수 */
+   ArrayList<PerfumeDTO> allperfume = new PerfumeDAO().allPerfumes(); /* 모든향수 */
    List<PerfumeDTO> summerperfume = new PerfumeDAO().summerDAO();/* 여름향수 */ 
    Random rdm = new Random();
 
@@ -146,6 +147,7 @@
                         <li><a href="Man.jsp">남성</a></li>
                         <li><a href="summer.jsp">여름추천</a></li>
                         <li><a href="Scent4cut.jsp">향기네컷</a></li>
+
                     </ul>
                 </nav>
         </div>
@@ -187,31 +189,31 @@
                             <div class="img_exh">
                                 <img src="https://www.herbnoori.com/shopimages/herbnoori/0150060000212.jpg?1463021372" alt="">
                             </div>
-                            <a href="PERFUMES/FLORAL.jsp">플로럴</a>
+                            <a href="FLORAL.jsp">플로럴</a>
                         </li>
                         <li>
                             <div class="img_exh">
                                 <img src="https://d2gfz7wkiigkmv.cloudfront.net/pickin/2/1/2/sOBOdnVUSsWNegw74VOTsQ" alt="">
                             </div>
-                            <a href="http://localhost:8081/playScent/Citrus.jsp">시트러스</a>    
+                            <a href="Citrus.jsp">시트러스</a>    
                         </li>
                         <li>
                             <div class="img_exh">
                                 <img src="https://dimg.donga.com/ugc/CDB/SHINDONGA/Article/5c/7e/18/31/5c7e18310a00d2738de6.jpg" alt="">
                             </div>
-                            <a href="PERFUMES/Woody.jsp">우디</a>
+                            <a href="Woody.jsp">우디</a>
                         </li>
                         <li>
                             <div class="img_exh">
                                 <img src="https://p16-va.lemon8cdn.com/tos-maliva-v-ac5634-us/ooQhIseeAzJHXxpQBAnDQiKWtRlQkCB1AEDIbc~tplv-tej9nj120t-origin.webp" alt="">
                             </div>
-                            <a href="PERFUMES/Sweets.jsp">스위트</a>
+                            <a href="Sweets.jsp">스위트</a>
                         </li>
                         <li>
                             <div class="img_exh">
                                 <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTnysVjqH3Z360ovLduazJ5M-yyoAACWV0eWuWp6o0iS5BiP0yMtKYEu__iB548I3VrxPE&usqp=CAU" alt="">
                             </div>
-                            <a href="PERFUMES/Musk.jsp">머스크</a>
+                            <a href="Musk.jsp">머스크</a>
                         </li>
 
                         <li>

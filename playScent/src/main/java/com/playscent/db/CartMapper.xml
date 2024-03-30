@@ -47,7 +47,10 @@
 	</delete>
 
 
-
+	<!-- 현재 회원의 선택한 진짜 결제할 상품 목록들 가져오기. -->
+	<select id="allUserOrderList" parameterType="String" resultType="OrderPfDTO">
+		select * from ORDER_INFO where MEM_ID=#{user_id}
+	</select>
 
 
 
