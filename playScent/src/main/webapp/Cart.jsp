@@ -187,6 +187,7 @@ td p {
 	font-size: 16px;
 	margin: auto;
 	border-radius: 5px;
+	cursor: pointer;
 }
 
 .cart__bigorderbtn.left {
@@ -446,6 +447,11 @@ li {
 			}
 
 		} */
+		
+		
+		
+		
+		
 		
 	</script>
 
