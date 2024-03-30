@@ -14,7 +14,6 @@
 	<%
 	String user_id = (String) session.getAttribute("user_id");
 	System.out.println(user_id);
-	
 	UserDAO userDAO = new UserDAO();
 	UserInfoDTO userData = userDAO.getUserInfo(user_id);
 

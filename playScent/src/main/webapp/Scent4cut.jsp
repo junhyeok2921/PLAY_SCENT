@@ -24,6 +24,7 @@
     background-color: rgb(30, 59, 74);
     color: white;
     cursor: pointer;
+    margin-top: 20px;
     border-radius: 10px;
 }
 
@@ -42,7 +43,9 @@
     top: 101%; /* 하단 여백 조절 */	
   }
   
-
+  .date{
+  	z-index: 45678;
+  }
 
 </style>
 </head>
@@ -54,38 +57,46 @@
             <h3 class="title">PLAY SCENT</h3>
             <ul class="sc_imgFrame">
                 <li>
+                  <div class="jinhee_scent">
                     <div id="box">
                         <label for="img1">IMG</label>
                     </div>
                     <input type="file" id="img1" onchange="previewImage(event, 'preview1')">
                     <img id="preview1" class="img-size">
-                    <span class="ll">KEEP YOUR SCENT</span>
+                  </div>
+                  <span class="ll">KEEP YOUR SCENT</span>
                 </li>
                 <li> 
+                  <div class="jinhee_scent">
                     <h3 class="date">2024.4.2</h3>
                     <div id="box">
                         <label for="img2">IMG</label>
                     </div>
                     <img id="preview2" class="img-size">
                     <input type="file" id="img2" name="scentImg2" onchange="previewImage(event, 'preview2')"/>
-                    <span class="ll">KEEP YOUR SCENT</span>
+                  </div>
+                  <span class="ll">KEEP YOUR SCENT</span>
                 </li>
                 <li> 
+                  <div class="jinhee_scent">
                     <h3 class="date">2024.4.2</h3>
                     <div id="box">
                         <label for="img3">IMG</label>
                     </div>
                     <img id="preview3" class="img-size">
                     <input type="file" id="img3" name="scentImg3" onchange="previewImage(event, 'preview3')"/>
-                    <span class="ll">KEEP YOUR SCENT</span>
+                  </div>
+                  <span class="ll">KEEP YOUR SCENT</span>
                 </li>
                 <li>
+                  <div class="jinhee_scent">
                     <div id="box">
                         <label for="img4">IMG</label>
                     </div>
                     <img id="preview4" class="img-size">
                     <input type="file" id="img4" name="scentImg4" onchange="previewImage(event, 'preview4')" placeholder="IMG"/>
-                    <span class="ll">KEEP YOUR SCENT</span>
+                  </div>
+                  <span class="ll">KEEP YOUR SCENT</span>
                 </li>
             </ul>
         </div>

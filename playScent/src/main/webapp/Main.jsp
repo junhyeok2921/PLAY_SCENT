@@ -91,8 +91,8 @@
                         <img src="imges/n9.png" alt=""> <span class="jine1">지갑</span></a></li> -->
                     <li><a href="Login.jsp">LOGIN</a></li>
                     <li><a href="Login.jsp">JOIN</a></li>
-                    <li><a href="#none"><span class="jine2">마이페이지</span><img class="np2" src="" alt=""></a></li>
-                    <li><a href="#none"><span class="jine2">고객센터</span><img class="np2" src="" alt=""></a></li>
+                    <li><a href="Mypage.jsp"><span class="jine2">마이페이지</span></a></li>
+                    <li><a href="#none"><span class="jine2">고객센터</span></a></li>
                     <li><a href="Cart.jsp"><img src="imges/nm4.png" alt=""><span class="jine1">장바구니</span></a></li>
                 </ul>
 
@@ -187,7 +187,7 @@
                             <div class="img_exh">
                                 <img src="https://www.herbnoori.com/shopimages/herbnoori/0150060000212.jpg?1463021372" alt="">
                             </div>
-                            <a href="http://localhost:8081/playScent/FLORAL.jsp">플로럴</a>    
+                            <a href="PERFUMES/FLORAL.jsp">플로럴</a>
                         </li>
                         <li>
                             <div class="img_exh">
@@ -199,19 +199,19 @@
                             <div class="img_exh">
                                 <img src="https://dimg.donga.com/ugc/CDB/SHINDONGA/Article/5c/7e/18/31/5c7e18310a00d2738de6.jpg" alt="">
                             </div>
-                            <a href="http://localhost:8081/playScent/Woody.jsp">우디</a>    
+                            <a href="PERFUMES/Woody.jsp">우디</a>
                         </li>
                         <li>
                             <div class="img_exh">
                                 <img src="https://p16-va.lemon8cdn.com/tos-maliva-v-ac5634-us/ooQhIseeAzJHXxpQBAnDQiKWtRlQkCB1AEDIbc~tplv-tej9nj120t-origin.webp" alt="">
                             </div>
-                            <a href="http://localhost:8081/playScent/Sweets.jsp">스위트</a>    
+                            <a href="PERFUMES/Sweets.jsp">스위트</a>
                         </li>
                         <li>
                             <div class="img_exh">
                                 <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTnysVjqH3Z360ovLduazJ5M-yyoAACWV0eWuWp6o0iS5BiP0yMtKYEu__iB548I3VrxPE&usqp=CAU" alt="">
                             </div>
-                            <a href="http://localhost:8081/playScent/Musk.jsp">머스크</a>    
+                            <a href="PERFUMES/Musk.jsp">머스크</a>
                         </li>
 
                         <li>
@@ -396,13 +396,9 @@
             </div> 
        
         </div>
-
-
         <a href="#none" class="top_but">
             <img src="imges/up1.png" alt="">
         </a>
-
-
         <footer>
             <ul class="footer_up">
                 <li><a href="#none">1:1문의</a></li>
