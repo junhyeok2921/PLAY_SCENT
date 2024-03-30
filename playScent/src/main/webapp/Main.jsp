@@ -1,3 +1,4 @@
+<%@page import="java.util.ArrayList"%>
 <%@page import="java.util.Random"%>
 <%@page import="java.text.DecimalFormat"%>
 <%@page import="com.playscent.model.PerfumeDTO"%>
@@ -74,13 +75,13 @@
  
 <body>
 <%
-   List<PerfumeDTO> perfumes = new PerfumeDAO().SweetsDAO();
+   ArrayList<PerfumeDTO> perfumes = new PerfumeDAO().SweetsDAO();
 //   System.out.println(perfumes.size()+"TEstset");
    System.out.println(perfumes.get(0).getPF_IDX());
    DecimalFormat df = new DecimalFormat("###,###");
-   List<PerfumeDTO> manperfume = new PerfumeDAO().manDAO(); /* 남자향수 */
-   List<PerfumeDTO> womanperfume = new PerfumeDAO().womanDAO(); /* 여자향수 */
-   List<PerfumeDTO> allperfume = new PerfumeDAO().allPerfumes(); /* 모든향수 */
+   ArrayList<PerfumeDTO> manperfume = new PerfumeDAO().manDAO(); /* 남자향수 */
+   ArrayList<PerfumeDTO> womanperfume = new PerfumeDAO().womanDAO(); /* 여자향수 */
+   ArrayList<PerfumeDTO> allperfume = new PerfumeDAO().allPerfumes(); /* 모든향수 */
    Random rdm = new Random();
 
 %>
@@ -140,7 +141,7 @@
                         <span>전체카테고리</span>
                     </div>     
                     <ul class="semi_nav">
-                        <li><a href="surveyt.html" target='_blank' >향수 테스트</a></li>
+                        <li><a href="newneoSurvey.jsp" target='_blank' >향수 테스트</a></li>
                         <li><a href="#none">여성</a></li>
                         <li><a href="#none">남성</a></li>
                         <li><a href="#none">브랜드</a></li>

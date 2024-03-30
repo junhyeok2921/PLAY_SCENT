@@ -10,3 +10,5 @@ select * from PERFUME_INFO WHERE PF_GENDERS = 'woman';
 
 
 select * from PERFUME_INFO WHERE PF_BRAND = 'Chanel'
+
+select * from PERFUME_INFO WHERE PF_GENDERS = 'woman';

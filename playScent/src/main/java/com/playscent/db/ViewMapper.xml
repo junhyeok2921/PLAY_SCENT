@@ -88,6 +88,7 @@ select * from PERFUME_INFO WHERE PF_GENDERS = 'woman'
 
 
 
+
 <!-- 브랜드별 향수 출력 - 디올 -->
 
 <select id="Dior" resultType="com.playscent.model.PerfumeDTO">

@@ -1,3 +1,8 @@
+<%@page import="com.playscent.model.OrderPfDTO"%>
+<%@page import="java.util.ArrayList"%>
+<%@page import="com.playscent.model.OrderDAO"%>
+<%@page import="com.playscent.model.UserInfoDTO"%>
+<%@page import="com.playscent.model.UserDAO"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -7,8 +12,149 @@
 <script type="text/javascript"
 	src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
 <!-- iamport.payment.js -->
-<script type="text/javascript" src="https://cdn.iamport.kr/js/iamport.payment-1.2.0.js"></script>
+<script type="text/javascript"
+	src="https://cdn.iamport.kr/js/iamport.payment-1.2.0.js"></script>
 <link rel="stylesheet" href="css/orderPay.css" type="text/css">
+<style>
+ul, li {
+	list-style: none;
+}
+
+#wrapper {
+	width: 1100px;
+}
+
+.box3 {
+	display: block;
+	width: 800px;
+	box-sizing: border-box;
+	border-radius: 10px;
+	padding: 10px 20px;
+}
+
+.box4 {
+	width: 300px;
+	height: 330px;
+	padding:0 10px 10px 10px;
+	box-sizing: border-box;
+	border-radius: 10px;
+	position: relative !important;
+}
+.th2{
+	width: 100%;	
+	border: 1.8px solid rgb(42 103 67 / 80%);
+	color: #365A2D;
+	font-weight: bold;
+	font-size: 16px;
+	height: 50px;
+	position: relative;
+	margin-top: 40px;
+}
+
+
+
+.box5 {
+	width: 800px;
+	box-sizing: border-box;
+	border-radius: 10px;
+}
+
+.userInfo_box {
+	width: 100%;
+	padding: 15px 0;
+	box-sizing: border-box;
+}
+
+h2 {
+	width: 100%; color : #053D5C;
+	margin-bottom: 10px;
+	font-weight: bold;
+	font-size: 21px;
+	color: #053D5C;
+}
+
+.userInfo_box .user {
+	width: 800px;
+	margin-top: 20px;
+	padding: 10px;
+	box-sizing: border-box;
+	background-color: rgb(207, 226, 215, .3);
+	border-radius: 10px;
+}
+
+.userInfo_box .user h3 {
+	margin: 0;
+	width: 500px; font-size : 16.5px;
+	height: 40px;
+	line-height: 40px;
+	font-size: 16.5px;
+	margin-bottom: 10px;
+}
+
+.userInfo_box .user h3 span {
+	width: auto;
+	margin-left: 40px;
+	font-size: 18px;
+	color: #053D5C;
+}
+
+.order {
+	padding: 0;
+	margin-top: 35px;
+}
+
+.order li {
+	width:  100%;
+	display: flex;
+	justify-content: space-between;
+	padding: 18px 0;
+	border-bottom: 1px solid rgb(169, 198, 162, .3);
+}
+
+.order .pf_img {
+	width:20%;
+}
+
+.order .pf_img img{
+ 	display: inline-block;
+	width:90%; 
+	margin: 0 auto;
+}
+
+.orerInfo{
+ 	width: 77%;
+ }
+ 
+ .orerInfo  table {
+	width: 100%;
+}
+  .orerInfo  table tr{
+  	height: 28px;
+  	line-height: 28px;
+  }
+  
+   .orerInfo  table tr td {
+  	font-size: 16px;  
+   }
+  .jin{
+	margin-left: 10px;
+	font-size: 17px;
+	color: #053D5C;
+	font-weight: bold;
+  }
+  
+  .jin_pfg{
+  	height: 50px;
+  	line-height: 50px;
+  	font-size: 20px;
+	color: #053D5C;
+	font-weight: bold;
+  }
+ .th2 .orderpr{
+	font-size: 18px;
+	color: #365A2D;
+}
+</style>
 <script>
 	var IMP = window.IMP;
 	IMP.init("imp26780202");
@@ -75,102 +221,74 @@
 </head>
 
 <body>
+	<%
+		String user_id = (String) session.getAttribute("user_id");
+		System.out.println(user_id);
+		// 로그인한 회원정보 가져오기.
+		UserDAO udao = new UserDAO();
+		UserInfoDTO userInfo = udao.getUserInfo(user_id);
+		
+		// 현재 회원의 선택한 진짜 결제할 상품 목록들 가져오기.
+		OrderDAO odao = new OrderDAO();
+		ArrayList<OrderPfDTO> UserOrderList = odao.allUserOrderList(user_id);
+		
+		// 총 상품 결제 금액.
+		Double totalOrerPrice = 0.0;
+		
+	%>
+
+
 	<div id="wrapper">
-		<div class="box box1">
-			<div class="item1-1">
-				<h4>주문고객</h4>
-			</div>
-			<div class="item1-2">
-				<div style="width: 150px">오진희</div>
-				<div>
-					<button>
-						<b>본인인증</b>
-					</button>
-				</div>
-			</div>
-			<div class="item1-3">
-				<div class="num">010</div>
-				<span class="hyphen"> - </span>
-				<div class="num">1234</div>
-				<span class="hyphen"> - </span>
-				<div class="num">4578</div>
+		<div class="userInfo_box">
+			<h2>주문고객 정보</h2>
+			<div class="user">
+				<h3>
+					이름 : <span><%=userInfo.getMemName()%></span>
+				</h3>
+				<h3>
+					이메일 : <span><%=userInfo.getMemEmail()%></span>
+				</h3>
+				<h3>
+					휴대전화 : <span><%=userInfo.getMemPhone()%></span>
+				</h3>
 			</div>
 		</div>
 
-		<div class="box box2">
+		<!-- 	<div class="box box2">
 			<b>입력된 휴대폰번호로 주문정보를 보내드립니다.</b>
-		</div>
+		</div> -->
+
 
 		<div class="box box3">
-			<div class="item3-1">
-				<h4>주문상품</h4>
-			</div>
-			<div class="item3-2">
-				<div>
-					<img
-						src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQUPhgSw6UUlAd9i4uhEpFvNlbCmBfgBNNSAA&usqp=CAU"
-						alt="">
-				</div>
-				<div class="name">
-					<table>
-						<tr>
-							<td>GOUTAL PARIS</td>
-						</tr>
-						<tr>
-							<td>모 드 아드리앙 EDP</td>
-						</tr>
-						<tr>
-							<td>태양 아래 레몬 과실을 바구니에 톡 담아</td>
-						</tr>
-						<tr>
-							<td><b>148,800원</b></td>
-						</tr>
-					</table>
-				</div>
-			</div>
-			<div class="item3-3">
-				<table>
-					<tr>
-						<th colspan="2" class="th1">결제정보</th>
-					</tr>
-					<tr>
-						<td></td>
-						<td></td>
-					</tr>
-					<tr>
-						<td class="left-align">상품금액</td>
-						<td class="right-align">148,800원</td>
-					</tr>
-					<tr>
-						<td class="left-align">배송비</td>
-						<td class="right-align">0원</td>
-					</tr>
-					<tr>
-						<td class="left-align">쿠폰할인</td>
-						<td class="right-align">0원</td>
-					</tr>
-					<tr>
-						<td class="left-align">결제상세</td>
-						<td class="right-align">148,800원</td>
-					</tr>
-				</table>
-				<hr>
-				<table class="item3-3-table">
-					<tr>
-						<td class="left-align">카드간편결제</td>
-						<td class="right-align">148,800원</td>
-					</tr>
-				</table>
-			</div>
+			<h2>주문 하실 상품수 (<%= UserOrderList.size()%>)</h2>
+				<ul class="order">
+				  <% for(OrderPfDTO item : UserOrderList){ 
+				  	 int quan = item.getPF_QUANTITY();
+				  	 Double price = item.getPF_PRICE();
+				  	 // 수량 * 상품 금액 
+				  	 Double sum = quan * price;
+				  	 totalOrerPrice += sum;
+				  %>
+					<li>
+						<div class="pf_img">
+							<img src="<%= item.getPF_IMAGE()%>" />
+						</div>
+						<div class="orerInfo">
+							<table>
+								<tr><td>브랜드 : <span class="jin"><%= item.getPF_BRAND()%></span></td></tr>
+								<tr><td>향수명 : <span class="jin"><%= item.getPF_NAME() %></span></td></tr>
+								<tr><td>수량 : <span class="jin"><%= item.getPF_QUANTITY() %></span>개</td></tr>
+								<tr class="last_pr"><td><b class="jin_pfg"><%= sum %></b>원</td></tr>
+							</table>
+						</div>
+					</li>
+				  <%}%>
+				</ul>
 		</div>
 		<div class="box box4">
 			<table>
 				<tr>
-					<th colspan="2" class="th1">결제금액</th>
-				</tr>
-				<tr>
-					<td class="left-align">상품금액</td>
-					<td class="right-align">148,800원</td>
+					<th colspan="2" class="th1"><h2>결제금액</h2></th>
 				</tr>
 				<tr>
 					<td class="left-align">배송비</td>
@@ -182,12 +300,13 @@
 				</tr>
 				<tr>
 					<td class="left-align">최종결제금액</td>
-					<td class="right-align">148,800원</td>
-				</tr>
-				<tr>
-					<th colspan="2" class="th2">148,800원 결제금액</th>
+					<td class="right-align"><%= totalOrerPrice %>원</td>
 				</tr>
 			</table>
+				
+			<button class="th2"><span class="orderpr"><%= totalOrerPrice %><span>원 결제금액</button>
+			
+		
 		</div>
 		<div class="box box5">
 			<form action="OrderSheetServlet" method="post"></form>
