@@ -68,6 +68,36 @@ select * from PERFUME_INFO WHERE PF_BRAND = 'Bvlgari'
 
 </select>
 
+
+<!-- 남자 베스트 향수 출력 -->
+
+<select id="manperfume" resultType="com.playscent.model.PerfumeDTO">
+
+select * from PERFUME_INFO WHERE PF_GENDERS = 'man'
+
+</select>
+
+
+<!-- 여자 베스트 향수 출력 -->
+
+<select id="womanperfume" resultType="com.playscent.model.PerfumeDTO">
+
+select * from PERFUME_INFO WHERE PF_GENDERS = 'woman'
+
+</select>
+
+<!-- 여름 향수 출력  -->
+
+
+<select id="summerperfume" resultType="com.playscent.model.PerfumeDTO">
+
+select * from PERFUME_INFO WHERE PF_IDX in (316,317,318,319,320,321,322,323)
+
+</select>
+
+
+
+
 <!-- 브랜드별 향수 출력 - 디올 -->
 
 <select id="Dior" resultType="com.playscent.model.PerfumeDTO">

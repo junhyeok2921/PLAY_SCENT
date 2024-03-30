@@ -1,3 +1,4 @@
+<%@page import="java.util.ArrayList"%>
 <%@page import="com.playscent.model.PerfumeDTO"%>
 <%@page import="java.util.List"%>
 <%@page import="com.playscent.model.PerfumeDAO"%>
@@ -11,9 +12,9 @@
 <title>Perfume List</title>
 <style>
 img {
-  width: 300px;
-  height: 150px;
-  object-fit: cover;
+
+    width: 150px;
+
 }
 body {
   padding:1.5em;
@@ -109,18 +110,20 @@ a {
 </style>
 </head>
 <body>
-<!-- -----------------------------------------------------------------------------------  -->
+
+
 <%						
-						List<PerfumeDTO> perfumes = new PerfumeDAO().MuskDAO();						
+						ArrayList<PerfumeDTO> perfumes = new PerfumeDAO().SweetsDAO();						
 							%>
 <table class="review-table">
     <thead>
     <tr>
-        <th>향수향수</th>
+        <th>향수향수 <%= perfumes.get(1).getPF_IDX() %></th>
         <th>향수브랜드</th>
         <th>향수가격</th>
         <th>향수향기</th>
         <th colspan='2'>이미지</th>
+        
     </tr>
     </thead>
     <tbody>
@@ -131,7 +134,7 @@ a {
 								<td><%=per.getPF_BRAND()%></td>
 								<td><%=per.getPF_PRICE() %></td>
 								<td><%=per.getPF_Accords() %></td>	
-								<td><img src=<%=per.getPF_Image()%>></td>					
+								<td onClick="location.href='PerfumeDetail.jsp?pfIdx=<%= per.getPF_IDX()%>'" style="cursor:pointer;"><img src=<%=per.getPF_Image()%>></td>					
 							</tr>
 							<%} %>					
     </tbody>

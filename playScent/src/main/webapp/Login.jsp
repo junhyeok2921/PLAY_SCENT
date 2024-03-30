@@ -16,7 +16,7 @@
 	height: auto;
 	margin: 0 auto;
 	position: absolute;
-	top: 16%;
+	top: 25%;
 	transform: translateY(-50%);
 	left: 50%;
 	transform : translateX(-50%);
@@ -74,7 +74,8 @@
 <body>
 	<%
 		String clientId = "xoUly1_dRlwHdjv5nQa7";//애플리케이션 클라이언트 아이디값";
-		String redirectURI = URLEncoder.encode("http://localhost:8082/playScent/JoinService.do", "UTF-8");
+		String redirectURI = URLEncoder.encode("http://localhost:8082/playScent/JoinService.do", "UTF-8");  // 지니주소
+		// String redirectURI2 = URLEncoder.encode("http://localhost:8081/playScent/JoinService.do", "UTF-8");  // 준혁주소
 		SecureRandom random = new SecureRandom();
 		String state = new BigInteger(130, random).toString();
 		String apiURL = "https://nid.naver.com/oauth2.0/authorize?response_type=code" + "&client_id=" + clientId
@@ -94,7 +95,7 @@
 				src="http://static.nid.naver.com/oauth/small_g_in.PNG" /></a>
 		</div>
 
-		<button class="play_join">회원가입</button>
+		<!-- <button class="play_join">회원가입</button> -->
 	</div>
 
 

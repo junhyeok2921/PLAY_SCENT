@@ -56,6 +56,10 @@ a {
 	width: 100%;
 	margin: 0 auto;
 	font-family: "Noto Sans KR", sans-serif;
+	position: relative;
+	top: 0;
+	left: 0;
+	overflow: hidden;
 }
 
 .moblie_wrap {
@@ -74,14 +78,14 @@ header {
 }
 
 header .jin_up {
-	width: 46%;
+	width: 38%;
 	margin-left: auto;
 	display: flex;
 	justify-content: space-between;
 }
 
 header .jin_up li {
-	width: 16.6666%;
+	width: 23.6666%;
 }
 
 header .jin_up li a {
@@ -295,10 +299,10 @@ header #jin_medium .ranking_slide {
 }
 
 #jinhee_pcnav #pc_nav .semi_nav {
-	width: 51%;
+	width: 70%;
 	display: flex;
 	justify-content: space-around;
-	margin-left: auto;
+	margin: 0 auto;
 }
 
 #jinhee_pcnav #pc_nav .semi_nav li {
@@ -317,7 +321,7 @@ header #jin_medium .ranking_slide {
 
 #main_slider {
 	width: 100%;
-	height: 610px;
+	height: 600px;
 	position: relative;
 }
 
@@ -505,13 +509,15 @@ header #jin_medium .ranking_slide {
 	margin-top: 32px;
 }
 
-#ex_container #product_jin li {
-	width: 23.5%;
-	height: 475px;
-}
+/*#ex_container #product_jin li {
+	width: 100%;
+    height: 500px;
+}*/
 
 #ex_container #product_jin li a {
 	width: 100%;
+	padding: 0 10px;
+    box-sizing: border-box;
 }
 
 #ex_container #product_jin li a .per_brand{
@@ -557,12 +563,13 @@ header #jin_medium .ranking_slide {
 	margin-top: 7px;
 	position: relative;
 	color: #1E5878;
-	font-size: 25px !important;
+	font-size: 22px !important;
 }
 
 #ex_container #product_jin li a .ohjinhee_point .per_price span {
 	margin-left: 5px;
 	color: rgba(30, 88, 120, 0.75);
+	font-size: 14px;
 }
 
 #ex_container #product_jin li a h3 .hart {
@@ -600,10 +607,10 @@ header #jin_medium .ranking_slide {
 }
 
 #product_jin li a .product_price .sale {
-	width: 26%;
+	width: 23%;
 	color: #e22757;
 	font-weight: bold;
-	font-size: 1.7rem;
+	font-size: 1.4rem;
 	position: absolute;
 	margin-top: -6px;
 	right: -10px;
@@ -881,7 +888,7 @@ footer .footer_up li a {
 }
 
 footer #footer_content .footer_meddle .f_logo {
-	width: 45%;
+	width: 31%;
 	margin-top: 6px;
 }
 
