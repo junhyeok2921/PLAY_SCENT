@@ -35,7 +35,6 @@ public class ReviewDelete implements command {
 		}else {System.out.println("리뷰삭제실패");}
 		
 		return "Reviewlist.jsp";
-//	여기서만 정수로 받으면 됨  int  변수 = Integer.parseInt(request.getParameter("파라미터이름"));
 	}
 	}
 
