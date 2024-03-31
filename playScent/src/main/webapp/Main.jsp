@@ -40,7 +40,7 @@
        }
        
        .mySwiper2 swiper-slide img{
-         height: 600px;   
+         height: 615px;   
        }
        swiper-slide {
          background-position: center;
@@ -69,6 +69,10 @@
       .swiper-button-next svg, .swiper-button-prev svg {
           width: 60%;
        }
+       
+       .swiper-pagination-bullet-active {
+        background: var(--swiper-pagination-color, #49a728);
+       }
       footer #footer_content .footer_meddle .f_logo {
 		width: 38%;
 	  }
@@ -85,7 +89,7 @@
 <%
 	ArrayList<PerfumeDTO> perfumes = new PerfumeDAO().SweetsDAO();
 	//System.out.println(perfumes.size()+"TEstset");
-	System.out.println(perfumes.get(0).getPF_IDX());
+	// System.out.println(perfumes.get(0).getPF_IDX());
 	DecimalFormat df = new DecimalFormat("###,###");
 	ArrayList<PerfumeDTO> manperfume = new PerfumeDAO().manDAO(); /* 남자향수 */
 	ArrayList<PerfumeDTO> womanperfume = new PerfumeDAO().womanDAO(); /* 여자향수 */
@@ -94,52 +98,20 @@
 	Random rdm = new Random();
 
 %>
+
+	<%-- <%
+		// 로그인한 유저인지 확인하기 위해.
+		String user_id = (String) session.getAttribute("user_id");  
+	    System.out.println(user_id);
+	    String check_user = user_id != "" ? "Mypage.jsp" : "Main.jsp";
+	    System.out.println(check_user+ "지금");
+	    String check_userPage = user_id != "" ? "마이페이지" : "고객 전용";
+	%>
+ --%>
+	
     <div id="jinheewrap">
-        <header class="pc_header">
-                <ul class="jin_up">
-                    <!-- <li><a href="#none">
-                        <img src="imges/n9.png" alt=""> <span class="jine1">지갑</span></a></li> -->
-                    <li><a href="Login.jsp">LOGIN</a></li>
-                    <li><a href="Login.jsp">JOIN</a></li>
-                    <li><a href="Mypage.jsp"><span class="jine2">마이페이지</span></a></li>
-                    <!-- <li><a href="#none"><span class="jine2">고객센터</span></a></li> -->
-                    <li><a href="Cart.jsp"><img src="imges/nm4.png" alt=""><span class="jine1">장바구니</span></a></li>
-                </ul>
-
-                <div id="jin_medium">
-                        <div class="naunlogo">
-                            <img src="imges/playScent_logo.png" alt="logo">
-                        </div>
-
-                        <div class="jin_search">
-                            <form action="" class="search cf">
-                                <input type="text" id="naum_search" placeholder="검색어를 입력하세요.">
-                                <div class="naum_button">
-                                    <img src="imges/nm55.png" alt="">
-                                </div>
-                            </form>    
-                        </div>
-
-                        <div class="ranking_slide">
-                           <!--  <div class="slide_title">이슈머 랭킹</div>
-
-                            <div class="rank_box cf">
-                                <span class="r_number">1</span>                         
-                                
-                                <div class="ranker_info_box cf">
-                                    <span class="ranker_info">유**</span>
-                                    <span class="ranker_info"> 01031****50</span>
-                                    <span class="ranker_info op1">P</span>
-                                    <span class="ranker_info">56,103</span>
-                                </div>
-                                <div class="n_arrow">
-                                    <img src="imges/nm77.png" style="width: 13px; height: 9px;" alt="">
-                                </div>
-                            </div>    -->
-                        </div>                         
-
-                </div>
-        </header>   
+        <%@include file="Header2.jsp" %>  <!-- 우리 사이트 HEADER 파일 입니다. -->
+        
 
         <!----------------------------header end--------------------------->
 
@@ -161,10 +133,10 @@
         <div id="main_slider">
            <swiper-container class="mySwiper2" pagination="true" speed="800" loop="true" pagination-clickable="true" navigation="true" space-between="0"
               centered-slides="true" autoplay-delay="2500" autoplay-disable-on-interaction="false">
-             <swiper-slide><a href="#none"><img src="https://cdn2.galleria.co.kr/cmd/RL_0x0/src/https://image.galleria.co.kr/C00001/dspl/banner/90/444/2403081928773.jpg" alt=""> </a></swiper-slide>
-             <swiper-slide><a href="#none"><img src="https://cdn2.galleria.co.kr/cmd/RL_0x0/src/https://image.galleria.co.kr/C00001/dspl/banner/90/444/2403081928773.jpg" alt=""> </a></swiper-slide>
-             <swiper-slide><a href="#none"><img src="https://cdn2.galleria.co.kr/cmd/RL_0x0/src/https://image.galleria.co.kr/C00001/dspl/banner/90/444/2403081928773.jpg" alt=""> </a></swiper-slide>
-             <swiper-slide><a href="#none"><img src="https://cdn2.galleria.co.kr/cmd/RL_0x0/src/https://image.galleria.co.kr/C00001/dspl/banner/90/444/2403081928773.jpg" alt=""> </a></swiper-slide>
+             <swiper-slide><a href="#none"><img src="https://image.sivillage.com/upload/C00001/dspl/banner/8820/740/240100000426740.jpg" alt=""> </a></swiper-slide>
+             <swiper-slide><a href="#none"><img src="https://image.sivillage.com/upload/C00001/dspl/banner/8820/738/240100000426738.jpg" alt=""> </a></swiper-slide>
+             <swiper-slide><a href="#none"><img src="https://cdn2.galleria.co.kr/cmd/RL_0x0/src/https://image.galleria.co.kr/C00001/dspl/banner/90/919/2402151902139.jpg" alt=""> </a></swiper-slide>
+             <swiper-slide><a href="#none"><img src="https://image.thehyundai.com/HM/HM039/20240306/183520/ban20240319113532.jpg" alt=""> </a></swiper-slide>
           </swiper-container>
           
            <!--  <ul class="jinhee_naum">
@@ -398,284 +370,15 @@
         <a href="#none" class="top_but">
             <img src="imges/up1.png" alt="">
         </a>
-        <footer>
-            <ul class="footer_up">
-                <li><a href="#none">1:1문의</a></li>
-                <li><a href="#none">이용안내</a></li>
-                <li><a href="#none">개인정보처리방침</a></li>
-                <li><a href="#none">FAQ</a></li>
-                <li><a href="#none"></a></li>
-            </ul>
-
-             <div id="footer_content">                  
-                    <div class="footer_meddle">
-                         <div class="f_logo tt1">
-                             <img src="imges/playscentLogo.png" alt="">
-                         </div>
-
-                         <ul class="foo_intro tt1">
-                             <li><a href="#none">PLAY SCENT</a></li>
-                             <li><a href="#none">대표자명: 오진희   문의전화: 010-3907-5987   팩스: 061-111-2222</a></li>
-                             <li><a href="#none">전남 목포시 산정로212번길 13 AI메타버스센터</a></li>
-                             <li><a href="#none">개인정보관리책임자: 김준혁 (junhyeok2921@gmail.com)</a></li>
-                             <li><a href="#none">경기 성남시 분당구 판교로256번길 7(넥슨)</a></li>
-                         </ul>
-
-                         <div class="sevice_naumjin tt1">
-                                <img src="imges/bheb.png" alt="">
-
-                                <ul class="scro_naum">
-                                    <li><span class="oh_jin">[INICIS]</span>  구매안전(에스크로)서비스</li>
-                                    <li>고객님의 안전거래를 위해 현금 등으로 결제 시, 저희 사이트에서 <br>
-                                        가입한 구매안전 서비스를 이용하실 수 있습니다.
-                                    </li>
-
-                                    <a href="#none">서비스가입확인</a>
-                                </ul>
-                         </div>
-                    </div>
-
-                    <div class="footer_lower">
-                         <h5>COPYRIGHT ⓒ BY PLAY SCENT ALL RIGHTS RESERVED.</h5>
-                    </div>
-             </div>
-        </footer>
+        
+        <!-- footer 페이지 입니다~!.  -->
+        <%@include file="Footer.jsp" %>
         
 
         <!-------------------------------------footer end------------------------------------>
           
         <div id="jin_navwrawp">
-            <div id="ohjinhee_ca">
-                <ul class="jin_mainmenu">
-                    <li>
-                        <a href="#none" class="opop5">패션의류 · 잡화</a>
-                        <div id="sub_nav" class="hi_jin1 jinhee_oh">
-                                <ul class="sub_sub">
-                                    <li><a href="none">여성패션</a>
-                                            <ul class="hi_4nav">
-                                                <li><a href="#none">아우터</a></li>
-                                                <li><a href="#none">상의/탑</a></li>
-                                                <li><a href="#none">드레스/스커트</a></li>
-                                                <li><a href="#none">하의/팬츠</a></li>
-                                                <li><a href="#none">파자마</a></li>
-                                                <li><a href="#none">스포츠의류</a></li>
-                                            </ul>                                    
-                                    </li>
-                                    <li><a href="none">남성패션</a>
-                                            <ul class="hi_4nav">
-                                                <li><a href="#none">아우터</a></li>
-                                                <li><a href="#none">상의/탑</a></li>                                  
-                                                <li><a href="#none">하의/팬츠</a></li>
-                                                <li><a href="#none">수트/정장</a></li>
-                                                <li><a href="#none">스포츠의류</a></li>
-                                                <li><a href="#none">커플룩</a></li>
-                                            </ul> 
-                                    </li>
-                                    <li><a href="none">잡화</a>
-                                            <ul class="hi_4nav">
-                                                <li><a href="#none">가방</a></li>
-                                                <li><a href="#none">지갑</a></li>                                  
-                                                <li><a href="#none">주얼리/시계</a></li>
-                                                <li><a href="#none">선글라스/안경테</a></li>
-                                                <li><a href="#none">양말/속옷</a></li>
-                                                <li><a href="#none">벨트/넥타이</a></li>
-                                                <li><a href="#none">장갑/머플러</a></li>
-                                                <li><a href="#none">신발</a></li>                                           
-                                            </ul> 
-                                    </li>
-                                    <li><a href="none">유아동패션</a>
-                                            <ul class="hi_4nav">
-                                                <li><a href="#none">아우터</a></li>
-                                                <li><a href="#none">상하세트</a></li>                                  
-                                                <li><a href="#none">티셔츠</a></li>
-                                                <li><a href="#none">바지</a></li>
-                                                <li><a href="#none">원피스</a></li>
-                                                <li><a href="#none">셔츠/블라우스</a></li>
-                                                <li><a href="#none">아동내의</a></li>
-                                                <li><a href="#none">우비</a></li>                                                  
-                                                <li><a href="#none">한복</a></li>
-                                                <li><a href="#none">수영복</a></li>
-                                                <li><a href="#none">발레복</a></li>
-                                                <li><a href="#none">스키복</a></li> 
-                                                <li><a href="#none">매장용품</a></li>       
-                                                <li><a href="#none">잡화</a></li>
-                                                <li><a href="#none">유아복(돌/백일)</a></li>
-                                                <li><a href="#none">엄마/아빠</a></li>                            
-                                            </ul> 
-                                    </li>
-                                </ul>                            
-                        </div>                    
-                    </li>
-
-                    <li><a href="#none" class="opop5">디지털 · 가전</a>
-                        <div id="sub_nav" class="jinhee_oh">
-                            <ul class="sub_sub">
-                                <li><a href="#none">디지털</a>
-                                        <ul class="hi_4nav">
-                                            <li><a href="#none">자동차기기</a></li>
-                                            <li><a href="#none">태블릿PC</a></li>
-                                            <li><a href="#none">워치/웨어러블</a></li>
-                                            <li><a href="#none">휴대폰악세서리</a></li>
-                                        </ul>
-                                </li>
-                                <li><a href="#none">가전</a>
-                                        <ul class="hi_4nav">
-                                            <li><a href="#none">생활가전</a></li>
-                                            <li><a href="#none">주방가전</a></li>
-                                            <li><a href="#none">계절가전</a></li>
-                                            <li><a href="#none">이미용가전</a></li>
-                                            <li><a href="#none">음향가전</a></li>
-                                            <li><a href="#none">영상가전</a></li>
-                                        </ul>
-                                </li>
-                            </ul>                        
-                        </div>            
-                    </li>
-
-                    <li><a href="#none" class="opop5"> 생활 · 건강 · 식품 </a>
-                        <div id="sub_nav" class="jinhee_oh">
-                                <ul class="sub_sub">
-                                    <li><a href="#none">생활</a>
-                                        <ul class="hi_4nav">
-                                            <li><a href="#none">생활용품</a></li>
-                                            <li><a href="#none">욕실용품</a></li>
-                                            <li><a href="#none">주방용품</a></li>
-                                            <li><a href="#none">문구/사무용품</a></li>
-                                            <li><a href="#none">세탁용품</a></li>
-                                            <li><a href="#none">실버용품</a></li>
-                                            <li><a href="#none">수납/정리용품</a></li>
-                                            <li><a href="#none">청소용품</a></li>
-                                            <li><a href="#none">파티용품</a></li>
-                                            <li><a href="#none">수조용품</a></li>
-                                            <li><a href="#none">공구</a></li>
-                                        </ul>
-                                    </li>
-                                    <li><a href="#none">건강</a>
-                                        <ul class="hi_4nav">
-                                            <li><a href="#none">건강관리용품</a></li>
-                                            <li><a href="#none">안마용품</a></li>
-                                            <li><a href="#none">스포츠/레저용품</a></li>
-                                            <li><a href="#none">건강측정용품</a></li>
-                                            <li><a href="#none">물리치료/저주파</a></li>
-                                            <li><a href="#none">냉온/찜질용품</a></li>
-                                            <li><a href="#none">수납/정리용품</a></li>
-                                            <li><a href="#none">구강위생용품</a></li>
-                                            <li><a href="#none">발건강용품</a></li>
-                                            <li><a href="#none">좌욕/좌훈용품</a></li>                               
-                                        </ul>
-                                    </li>
-
-                                    <li><a href="#none">식품</a>
-                                        <ul class="hi_4nav">
-                                            <li><a href="#none">즉석식품</a></li>
-                                            <li><a href="#none">건강식품</a></li>
-                                            <li><a href="#none">수산</a></li>
-                                            <li><a href="#none">다이어트</a></li>
-                                            <li><a href="#none">가공식품</a></li>
-                                            <li><a href="#none">농산물</a></li>
-                                            <li><a href="#none">축산</a></li>
-                                            <li><a href="#none">과자</a></li>
-                                            <li><a href="#none">음료</a></li>
-                                            <li><a href="#none">냉동/간편조리식품</a></li>
-                                            <li><a href="#none">김치</a></li>
-                                        </ul>                                    
-                                    </li>
-                                </ul>
-
-                        </div>
-                    </li>
-
-                    <li><a href="#none" class="opop5">가구 · 인테리어</a>
-                        <div id="sub_nav" class="jinhee_oh">
-                                <ul class="sub_sub">
-                                    <li><a href="#none">가구</a>
-                                            <ul class="hi_4nav">
-                                                <li><a href="#none">안방가구</a></li>
-                                                <li><a href="#none">거실가구</a></li>
-                                                <li><a href="#none">서재/사무용가구</a></li>
-                                                <li><a href="#none">수납가구</a></li>
-                                                <li><a href="#none">주방가구</a></li>                                           
-                                            </ul>                              
-                                    </li>
-                                    <li><a href="#none">인테리어</a>
-                                            <ul class="hi_4nav">
-                                                <li><a href="#none">침구</a></li>
-                                                <li><a href="#none">홈데코</a></li>
-                                                <li><a href="#none">페브릭/잡화</a></li>                                            
-                                            </ul>                              
-                                    </li>
-                                </ul>
-                        </div>                                    
-                    </li>
-
-                    <li><a href="#none" class="opop5">출산 · 육아 · 유아</a>
-                        <div id="sub_nav" class="jinhee_oh">
-                                <ul class="sub_sub">
-                                    <li><a href="#none">스킨바디용품</a></li>
-                                    <li><a href="#none">유아</a>
-                                            <ul class="hi_4nav">
-                                                <li><a href="#none">완구</a></li>
-                                                <li><a href="#none">키즈키친</a></li>
-                                                <li><a href="#none">키즈침구</a></li>       
-                                                <li><a href="#none">키즈기타</a></li>                                        
-                                            </ul>                                 
-                                    </li>
-                                </ul>
-                        </div>                
-                    </li>
-
-                    <li><a href="#none" class="opop5">뷰티</a>
-                        <div id="sub_nav" class="jinhee_oh">
-                                <ul class="sub_sub">
-                                    <li><a href="#none">화장품 · 미용</a>
-                                            <ul class="hi_4nav">
-                                                <li><a href="#none">기초케어</a></li>
-                                                <li><a href="#none">색조메이크업</a></li>
-                                                <li><a href="#none">스킨케어</a></li>
-                                                <li><a href="#none">바디케어</a></li>
-                                                <li><a href="#none">헤어케어</a></li>   
-                                                <li><a href="#none">선케어</a></li>    
-                                                <li><a href="#none">향수</a></li>       
-                                                <li><a href="#none">립밤</a></li> 
-                                                <li><a href="#none">남성화장품</a></li>                               
-                                            </ul>                                 
-                                    </li>
-                                </ul>
-                        </div>
-                    </li>       
-
-                    <li><a href="#none" class="opop5">브랜드관</a>
-                        <div id="sub_nav" class="jinhee_oh">
-                            <ul class="sub_sub">
-                                <li><a href="#none">삼성전자</a>
-                                        <ul class="hi_4nav">
-                                            <li><a href="#none">생활가전</a></li>
-                                            <li><a href="#none">주방가전</a></li>
-                                            <li><a href="#none">IT제품</a></li>
-                                            <li><a href="#none">음향기기</a></li>
-                                            <li><a href="#none">B2B전용</a></li>                                                  
-                                        </ul>                                 
-                                </li>
-                                <li><a href="#none">전남생협</a>
-                                        <ul class="hi_4nav">
-                                            <li><a href="#none">신선식품</a></li>
-                                            <li><a href="#none">가공식품</a></li>
-                                            <li><a href="#none">커피/음료</a></li>
-                                            <li><a href="#none">꽃/이벤트용품</a></li>
-                                            <li><a href="#none">생필품</a></li>    
-                                            <li><a href="#none">명절세트</a></li>                                               
-                                        </ul>                      
-                                </li>
-                            </ul>
-                        </div>                    
-                    </li>
-                </ul>
-
-                <div class="sub_menubox">
-                        <img src="imges/nm92.png" alt="">
-                </div>
-
-            </div>                
+                      
         </div>
     </div>
 

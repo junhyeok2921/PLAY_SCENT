@@ -6,8 +6,9 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="UTF-8">
-<title>장바구니</title>
+ <meta charset="UTF-8">
+ <link rel="stylesheet" href="css/main_style.css" type="text/css">
+ <title>장바구니</title>
 <style>
 @font-face {
 	font-family: 'Tenada';
@@ -20,6 +21,8 @@
 
 body {
 	margin: 0;
+	/* overflow: hidden; */
+	min-height: 100vh;
 }
 
 * {
@@ -42,9 +45,10 @@ img {
 }
 
 .cart {
-	width: 80%;
+	max-width:1220px;
 	margin: auto;
 	padding: 30px;
+	margin-top: 5px;
 }
 
 .cart ul {
@@ -267,16 +271,20 @@ li {
 <body>
 
 	<%
-	String user_id = (String) session.getAttribute("user_id");
-	System.out.println("장바구니창에서 " + user_id); // 회원 id
-	CartDAO Cdao = new CartDAO();
-	System.out.println("장바구니창에서 DAO" + Cdao);
-	// 회원의 장바구니 모든 내역.
-	ArrayList<CartDTO> AllCartList = Cdao.allCartList(user_id);
-	System.out.println("장바구니목록 " + AllCartList);
-	request.setAttribute("AllCartList", AllCartList); // 전달 안됨.
+		String user_id = (String) session.getAttribute("user_id");
+		System.out.println("장바구니창에서 " + user_id); // 회원 id
+		CartDAO Cdao = new CartDAO();
+		System.out.println("장바구니창에서 DAO" + Cdao);
+		// 회원의 장바구니 모든 내역.
+		ArrayList<CartDTO> AllCartList = Cdao.allCartList(user_id);
+		System.out.println("장바구니목록 " + AllCartList);
+		request.setAttribute("AllCartList", AllCartList); // 전달 안됨.
 	%>
-
+		
+	
+	
+  <div id="jinheewrap">	
+	<%@include file="Header2.jsp" %>  <!-- 우리 사이트 HEADER 파일 입니다. -->	
 
 	<section class="cart">
 		<div class="cart__information"></div>
@@ -345,6 +353,13 @@ li {
 		   </li>
 		</ul>
 	</section>
+
+
+	<!-- footer 페이지 입니다~!.  -->
+    <%@include file="Footer.jsp" %>
+    
+
+ </div>
 
 
 

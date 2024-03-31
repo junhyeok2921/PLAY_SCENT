@@ -41,28 +41,7 @@ $(".naum_menu2").on("click",function(){
 });
 
 
-let loding_screen = document.querySelector(".loding_screen");
-let moblie_wrap = document.querySelector(".moblie_wrap");
-let loding_img = document.querySelector(".loding_screen img");
 
-    window.addEventListener('load', show_action);
-
-    function show_action (){            
-          loding_img.animate([
-                {opacity: "0"},
-                {opacity: "1"}
-          ], 700);
-         
-          setTimeout(change, 800);
-    }
-
-    function change (){   
-          loding_screen.style.display = "none";         
-          moblie_wrap.animate([
-                      {opacity: "0"},
-                      {opacity: "1"}
-          ], 600);
-    }
 
  
     $(".moblie_best_button li a").click(
@@ -75,16 +54,6 @@ let loding_img = document.querySelector(".loding_screen img");
     );
 
 
- let calendar_jinbox = document.querySelector(".calendar_jinbox");
-   window.addEventListener('load', moving);
-
-      function moving (){
-            setTimeout(moving2, 800);      
-      }
-
-       function moving2(){
-            calendar_jinbox.style.transform = "translateX(0)";
-       }
 
 
   
@@ -114,11 +83,7 @@ let loding_img = document.querySelector(".loding_screen img");
      }
  );
 
-$('.hee1 img').click(
-      function(){
-           window.history.go(-1);
-      }
-);
+
 
 $('.moblie_home_bu li a').click(
       function(){
