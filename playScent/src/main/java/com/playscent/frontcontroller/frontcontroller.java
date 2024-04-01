@@ -14,6 +14,7 @@ import com.playscent.cartController.AddCart;
 import com.playscent.cartController.DeleteCart;
 import com.playscent.cartController.OrderCart;
 import com.playscent.controller.JoinService;
+import com.playscent.controller.LogoutService;
 import com.playscent.viewController.perfumeList;
 
 @WebServlet("*.do")
@@ -64,12 +65,19 @@ public class frontcontroller extends HttpServlet {
 			service = new DeleteCart();
 		} else if (result.equals("/OrderCart.do")) {
 			service = new OrderCart();
+		} else if (result.equals("/LogoutService.do")) { 
+		 //	System.out.println("로그아웃 되냐?");
+		   service = new LogoutService();
 		}
+		
+		
+		
 
 		// 새로 추가된 서블릿파일이 있다면 여기 .equals("") 안에 서블릿 url 넣으세요!.
 		/*
 		 * 
-		 * else if (result.equals("/LogoutService.do")) { service = new LogoutService();
+		 * else if (result.equals("/LogoutService.do")) { 
+		 * service = new LogoutService();
 		 * } else if (result.equals("/UpdateService.do")) { service = new
 		 * UpdateService(); } else if (result.equals("/DeleteService.do")) { service =
 		 * new DeleteService(); } else if (result.equals("/DelMessageAllService.do")) {
