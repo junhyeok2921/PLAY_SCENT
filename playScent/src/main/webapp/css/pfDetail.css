@@ -37,8 +37,8 @@
         display: flex;
         justify-content: space-between;
         align-items: center;
-        height: 50px;
-        width: 1000px;
+        height: 100px;
+        width: 100vw; /* 이걸 삭제하면 메인바 가 길어진다*/
         margin: 10px auto;
         background-color: #f4f4f2;
     }
@@ -75,6 +75,7 @@
 
     .second {
         width: 50%;
+        
     }
 
     /* 화면을 이분할하기 위해 width에 50% 적용 */
@@ -105,7 +106,11 @@
         font-size: 12px;
         font-style: bold;
     }
-
+	
+		
+	
+    
+    
     /* .coffeename {
         font-size: 20px;
         font-weight: bold;
@@ -202,7 +207,8 @@
         font-weight: bold;
         /* border-bottom: 1px solid lightgray; */
         padding-top: -3%;
-        padding-bottom: 2px;
+        padding-bottom: 5px;
+        
         }
 
     .id {
@@ -213,6 +219,8 @@
     .ment {
         font-size: 13px;
         margin-left: 5px;
+       
+        
     }
 
     /* .reviewcomment {
@@ -285,14 +293,21 @@
         /* 마우스 호버 시 배경색 변경 */
     /* } */
 
+	.perfume>option{
+		padding:5px 0;
+		
+	}
     .perfume1 {
-
-        padding-inline-end: 50PX;
+	padding: 3px 0 0;
+    margin: 0 !important;
+    font-size: 24px;
+    
+    
     }
 
     .perfume1>p {
         margin: 0 !important;
-
+	
 
     }
 
@@ -407,3 +422,13 @@
         text-align: right; /* 텍스트를 오른쪽으로 정렬합니다. */
     /* } */
 
+#order>div>div{
+	padding: 5px 0;
+	}
+	
+#priceSpan{
+	font-size: 30px;
+	margin: 10px 0;
+	color: #e35c61;
+	font-weight: bold;
+}	
