@@ -1,3 +1,4 @@
+<%@page import="java.text.DecimalFormat"%>
 <%@page import="java.util.ArrayList"%>
 <%@page import="com.playscent.model.PerfumeDTO"%>
 <%@page import="java.util.List"%>
@@ -55,57 +56,9 @@ a {
   color: #73685d;
 }
 
-
-
-
-  
- @media all and (max-width: 768px) {
-    
-  table, thead, tbody, th, td, tr {
-    display: block;
-  }
-  
-  th {
-    text-align: right;
-  }
-  
-  table {
-    position: relative; 
-    padding-bottom: 0;
-    border: none;
-    box-shadow: 0 0 10px rgba(0,0,0,.2);
-  }
-  
-  thead {
-    float: left;
-    white-space: nowrap;
-  }
-  
-  tbody {
-    overflow-x: auto;
-    overflow-y: hidden;
-    position: relative;
-    white-space: nowrap;
-  }
-  
-  tr {
-    display: inline-block;
-    vertical-align: top;
-  }
-  
-  th {
-    border-bottom: 1px solid #a39485;
-  }
-  
-  td {
-    border-bottom: 1px solid #e5e5e5;
-  }
-  
-  
-
-  
-  
-  }
+th, td {
+  text-align: center;
+}
 
 </style>
 </head>
@@ -114,25 +67,26 @@ a {
 
 
 ArrayList<PerfumeDTO> perfumes = new PerfumeDAO().manDAO();
-											
+DecimalFormat df = new DecimalFormat("###,###");											
 							%>
 <table class="review-table">
     <thead>
     <tr>
-        <th>향수향수</th>
-        <th>향수브랜드</th>
-        <th>향수가격</th>
-        <th>향수향기</th>
+        <th>향수</th>
+        <th>브랜드</th>
+        <th>가격</th>
+        <th>향기</th>
         <th colspan='2'>이미지</th>
     </tr>
     </thead>
     <tbody>
-   <%for(PerfumeDTO per: perfumes){ %>
+   <%for(PerfumeDTO per: perfumes){
+	   String money = df.format(per.getPF_PRICE()); %>
 							<tr>
 							
 							<td><%=per.getPF_NAME()%></td>
 								<td><%=per.getPF_BRAND()%></td>
-								<td><%=per.getPF_PRICE() %></td>
+								<td><%=money %></td>
 								<td><%=per.getPF_Accords() %></td>	
 								<td onClick="location.href='PerfumeDetail.jsp?pfIdx=<%= per.getPF_IDX()%>'" style="cursor:pointer;"><img src=<%=per.getPF_Image()%>></td>					
 							</tr>

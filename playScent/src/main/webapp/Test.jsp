@@ -1,3 +1,4 @@
+<%@page import="java.text.DecimalFormat"%>
 <%@page import="java.util.List"%>
 <%@page import="com.playscent.model.PerfumeDAO"%>
 <%@page import="com.playscent.model.PerfumeDTO"%>
@@ -54,7 +55,9 @@ a {
   color: #73685d;
 }
 
-
+th, td {
+  text-align: center;
+}
 
 
   
@@ -116,7 +119,7 @@ request.setCharacterEncoding("utf-8");
 PerfumeDAO dao = new PerfumeDAO();
 ArrayList<PerfumeDTO> list  = (ArrayList)request.getAttribute("myperfume");
 System.out.println("LIST "+ list);
-
+DecimalFormat df = new DecimalFormat("###,###");
 
 
 
@@ -127,21 +130,22 @@ System.out.println("LIST "+ list);
 <table class="review-table">
     <thead>
     <tr>
-        <th>향수향수</th>
-        <th>향수브랜드</th>
-        <th>향수가격</th>
-        <th>향수향기</th>
+        <th>향수</th>
+        <th>브랜드</th>
+        <th>가격</th>
+        <th>향기</th>
         <th colspan='2'>이미지</th>
 
     </tr>
     </thead>
     <tbody>
-   <%for(PerfumeDTO per: list){ %>
+   <%for(PerfumeDTO per: list){
+	   String money = df.format(per.getPF_PRICE());%>
 
 							<tr>
 							<td><%=per.getPF_NAME()%></td>
 								<td><%=per.getPF_BRAND()%></td>
-								<td><%=per.getPF_PRICE() %></td>
+								<td><%=money %></td>
 								<td><%=per.getPF_Accords() %></td>	
 								
 								<td onClick="location.href='PerfumeDetail.jsp?pfIdx=<%= per.getPF_IDX()%>'" style="cursor:pointer;"><img src=<%=per.getPF_Image()%>></td>

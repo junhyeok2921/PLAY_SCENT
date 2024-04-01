@@ -124,6 +124,4 @@ select * from PERFUME_INFO WHERE PF_BRAND = 'Giorgio Armani'
 </select>
 
 
-
-
 </mapper>
