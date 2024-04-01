@@ -119,10 +119,10 @@
                 <nav id="pc_nav">    
                     <ul class="semi_nav">
                         <li><a href="newneoSurvey.jsp" target='_blank' >향수 테스트</a></li>
-                        <li><a href="#none">여성</a></li>
-                        <li><a href="#none">남성</a></li>
-                        <li><a href="#none">브랜드</a></li>
-                        <li><a href="#none">선물용</a></li>
+                        <li><a href="Woman.jsp">여성</a></li>
+                        <li><a href="Man.jsp">남성</a></li>
+                        <li><a href="summer.jsp">여름추천향수</a></li>
+                        <!-- <li><a href="#none">선물용</a></li> -->
                         <li><a href="Scent4cut.jsp">향기네컷</a></li>
                     </ul>
                 </nav>
