@@ -35,7 +35,14 @@
     
      .pf_img{
       width: 72%;
-     }    
+     }
+     
+     #review_modal{
+     margin-right : auto;}   
+     
+     #button{
+     text-align : right;
+     margin-right : 190px;} 
    </style>
 
 </head>
@@ -187,7 +194,7 @@
 
                   
             <div >      
-                  
+                  <div id="button"><button class="modal-Btn">글쓰기</button></div>
                   <table class="review-table" >
     <thead>
     <tr>
@@ -223,7 +230,7 @@
                   
                   
 <div id="review_modal">
-    <button class="modal-Btn">글쓰기</button>
+    
     <dialog class="modal">
         
    <h2>향수리뷰리뷰리뷰</h2>
