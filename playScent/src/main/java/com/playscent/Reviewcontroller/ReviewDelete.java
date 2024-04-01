@@ -27,8 +27,9 @@ public class ReviewDelete implements command {
 			e.printStackTrace();
 		}
 		String MEM_ID = request.getParameter("MEM_ID");
-		System.out.println("삭제메소드 테스트 출력" + MEM_ID);
-		int cnt = new ReviewDAO().deleteReviewAll(MEM_ID);
+		String REVIEW_CONTENT = request.getParameter("REVIEW_CONTENT");
+		System.out.println("삭제메소드 테스트 출력" + REVIEW_CONTENT);
+		int cnt = new ReviewDAO().deleteReviewAll(REVIEW_CONTENT);
 		if(cnt>0) {
 			System.out.println("리뷰삭제성공");
 			

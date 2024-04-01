@@ -203,11 +203,11 @@
    <%for(ReveiwDTO rev:reviews){ %>
                      <tr>
                      
-                     <td><%=perfumes.getPf_name()%></td>
+                     <td><%=rev.getPF_NAME()%></td>
                         <td><%=rev.getREVIEW_STAR()%></td>
                         <td><%=rev.getREVIEW_CONTENT() %></td>
                         <td><%=rev.getREVIEWED_AT() %></td>   
-                        <td><a href = "ReviewDelete.do?MEM_ID=<%=rev.getMEM_ID()%>">삭제</a></td>
+                        <td><a href = "ReviewDelete.do?REVIEW_CONTENT=<%=rev.getREVIEW_CONTENT()%>">삭제</a></td>
                                        
                      </tr>
                      <%} %>
@@ -245,9 +245,11 @@
                             
 
 </div>
-
+<%System.out.println(perfumes.getPf_name()); %>
 <input type = "text" name = "contents" class="star_box" placeholder = "리뷰내용을 입력해주세요"><br>
-<input type = "hidden" name = "MEM_ID" VALUE = "Ef-8R3fBQ9V7oNLNfOv7gHjUqXb9k7pn6QkITa77XvE">
+<input type = "hidden" name = "MEM_ID" VALUE = "<%= user_id %>">
+<input type = "hidden" name = "PF_IDX" VALUE = "<%= PF_IDX %>>">
+<input type = "hidden" name = "PF_NAME" VALUE = "<%= perfumes.getPf_name() %>">
 <input type="submit" class="btn02" value="리뷰 등록">
 
 

@@ -58,9 +58,9 @@ SqlSessionFactory sqlSessionFactory = SqlSessionManager.getSqlSession();
 
 	}
 
-	public int deleteReviewAll(String MEM_ID) {
+	public int deleteReviewAll(String REVIEW_CONTENT) {
 		SqlSession sqlSession = sqlSessionFactory.openSession(true);
-		int cnt = sqlSession.delete("deleteReviewAll", MEM_ID);
+		int cnt = sqlSession.delete("deleteReviewAll", REVIEW_CONTENT);
 		sqlSession.close();
 		return cnt;
 	}

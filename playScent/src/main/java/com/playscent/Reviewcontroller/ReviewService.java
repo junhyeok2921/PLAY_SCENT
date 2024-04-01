@@ -24,10 +24,13 @@ public class ReviewService implements command  {
 		String REVIEW_STAR = request.getParameter("rating");
 		String REVIEW_CONTENT = request.getParameter("contents");
 		String MEM_ID = request.getParameter("MEM_ID");
+		String PF_NAME = request.getParameter("PF_NAME");
+		
 		/* int REVIEW_IDX = Integer.parseInt(request.getParameter("REVIEW_IDX")); */
 		System.out.println(REVIEW_STAR);
 		System.out.println(REVIEW_CONTENT);
 		System.out.println(MEM_ID);
+		System.out.println("리뷰 향수이름"+PF_NAME);
 		//3. 데이터베이스에 해당 내용 전달하기! DAO 클래스
 		
 		ReviewDAO dao = new ReviewDAO();
@@ -38,7 +41,7 @@ public class ReviewService implements command  {
 		dto.setREVIEW_STAR(REVIEW_STAR);
 		dto.setREVIEW_CONTENT(REVIEW_CONTENT);
 		dto.setMEM_ID(MEM_ID);
-		/* dto.setREVIEW_IDX(REVIEW_IDX); */
+		dto.setPF_NAME(PF_NAME);
 		int result = dao.sendReview(dto);
 		
 		

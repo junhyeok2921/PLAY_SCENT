@@ -31,7 +31,7 @@
 
 		<!-- insert into REVIEW_INFO values(num_message.nextval,"123","testtest@naver.com",#{contents},sysdate,#{rate}) -->
 
-		insert into REVIEW_INFO values(REVIEW_INFO_SEQ.NEXTVAL,#{PF_IDX},#{MEM_ID},#{REVIEW_CONTENT},sysdate,#{REVIEW_STAR})
+		insert into REVIEW_INFO values(REVIEW_INFO_SEQ.NEXTVAL, #{PF_IDX}, #{MEM_ID}, #{REVIEW_CONTENT}, sysdate, #{REVIEW_STAR}, #{PF_NAME})
 
 	</insert>
 
@@ -39,7 +39,7 @@
 	<select id="showReview" parameterType="String"
 		resultType="com.playscent.model.ReveiwDTO">
 
-		select * from REVIEW_INFO
+		select * from REVIEW_INFO ORDER BY REVIEWED_AT DESC
 
 	</select>
 
@@ -48,7 +48,7 @@
 	</delete>
 
 	<delete id="deleteReviewAll" parameterType="String">
-		delete from REVIEW_INFO where MEM_ID=#{MEM_ID}
+		delete from REVIEW_INFO where REVIEW_CONTENT= #{REVIEW_CONTENT}
 	</delete>
 
 
