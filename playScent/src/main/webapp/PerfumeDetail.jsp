@@ -32,7 +32,6 @@
     padding-left: 50px;
 }
   
-    
      .pf_img{
       width: 72%;
      }
@@ -44,6 +43,7 @@
      text-align : right;
      margin-right : 190px;} 
    </style>
+
 
 </head>
 <body>
@@ -111,25 +111,28 @@
             <div id="fifth">
                <div class="perfume">
                   <p class="perfume1"><%=perfumes.getPf_brand() %></p>
+                  <hr>
                   <p class="perfume1"><%=perfumes.getPf_name() %></p>
 
                   <!-- <tr heigh="35px" bgcolor="whitesmoke"> -->
 
                   <td>
-                     <option value="">사이즈: 30ml</option> <!-- </select> -->
+                     <option >사이즈: 30ml</option> <!-- </select> -->
                   </td>
+                 
                   </tr>
+                  
                   <form action="AddCart.do?pfIdx=<%=PFIDX%>" method="post" id="order">
 
-         <div>가격 :
-            <span id="priceSpan"><%= price %></span>
+         <div> 
+            <span id="priceSpan" ><%= price %></span> 원<div>
             
          </div>
          <div>수량 : 
             <input type="number" class="my-input" name="quantity" value="1" min="1" max="10">
          </div>
          <div>총 가격 : 
-         <span id="totalPriceSpan"><%= price %></span></div>
+         <span id="totalPriceSpan"><%=price%></span></div>
          <!-- 총 가격 어떻게 보낼지 고민중   -->
          <input type="hidden" name="price" value="<%=money%>">
          <div>
@@ -233,7 +236,7 @@
     
     <dialog class="modal">
         
-   <h2>향수리뷰리뷰리뷰</h2>
+   <h2>향수리뷰</h2>
    <form action= "ReviewService.do" method= "POST">
    <div class ="star_rating">
     <fieldset class="rate">
@@ -364,4 +367,5 @@ modalBtn.addEventListener("click", () => {
 
 
 </script>
+
 </html>
