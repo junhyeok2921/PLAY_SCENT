@@ -303,7 +303,10 @@ li {
 					</tr>
 				</thead>
 				<tbody>
-					<% for (int i = 0; i < AllCartList.size(); i++) {%>
+					<% for (int i = 0; i < AllCartList.size(); i++) {
+						Double sumPF_PRICE = 0.0;
+						sumPF_PRICE = AllCartList.get(i).getPF_COUNT() * AllCartList.get(i).getPF_PRICE();
+					%>
 					<tr class="cart__list__detail">
 						<td style="width: 2%;"><input type="checkbox" name="favIdx"
 							value="<%=AllCartList.get(i).getFAV_IDX()%>"></td>
@@ -315,12 +318,11 @@ li {
 							<p class="ps_pfName"><%=AllCartList.get(i).getPF_NAME()%></p></td>
 						<td class="cart__list__option ">
 							<div style="text-align: center; padding: 10px;">
-								수량 : <input type="number" name="quan" value="1" min="1" max="10"
-									class="quan" />
+								수량 : <input type="number" name="quan" value="<%=AllCartList.get(i).getPF_COUNT()%>" min="1" max="10" class="quan" onchange="Price_summation(event,<%= AllCartList.get(i).getPF_PRICE()%>,<%= i%>)"/>
 							</div>
 
 						</td>
-						<td style="width:13%; font-size: 16px;"><span class="price"><%= AllCartList.get(i).getPF_PRICE()%>원</span><br></td>
+						<td style="width:13%; font-size: 16px;"><span class="price"><%= sumPF_PRICE %></span>원</td>
 						<td style="width: 11%; font-size: 16px;">무료</td>
 						<td class="cart__list__option" style="font-size: 16px;">
 						  <a class="delete" href="DeleteCart.do?fav_idx=<%=AllCartList.get(i).getFAV_IDX()%>">삭제</a>
@@ -357,7 +359,6 @@ li {
 
 	<!-- footer 페이지 입니다~!.  -->
     <%@include file="Footer.jsp" %>
-    
 
  </div>
 
@@ -366,107 +367,39 @@ li {
 
 	<script>
 	
-	/* 	let price;
-		let ref_price = 0;
-
-		function changeQuantity(itemId, operation) {
-			price = document.querySelector(`.price${itemId}`);
-			ref_price = Number(price.textContent);
-			const ref_price2 = ref_price;
-			var quantityElement = document
-					.querySelector('.cart__list__detail:nth-child(' + itemId
-							+ ') .cart__list__quantity');
-			var currentQuantity = parseInt(quantityElement.textContent);
-			var newQuantity;
-
-			if (operation === 'increment') {
-				newQuantity = currentQuantity + 1;
-				price.innerHTML = ref_price2 * newQuantity;
-
-			} else if (operation === 'decrement') {
-				newQuantity = Math.max(1, currentQuantity - 1);
-
-			}
-
-			quantityElement.textContent = newQuantity + '개';
-			priceElement.textContent = newPrice.toLocaleString() + '원';
-
-		} */
-		
 		const quantity = document.querySelectorAll(".cart__list__quantity");
-		
-		// 수량변경시 db저장된 수량도 변경 되는 메서드.
-	/* 	let countUP = async (e, i) => {
-			let cartinx = e.target.getAttribute('cartinx');
-			console.log(cartinx);
-			let now_quan = quantity[i].textContent;
-			console.log(cartinx);
-			const response = await fetch("QuantityUpdate.do?");
-			const jsonData = await response.json();
-			// res :서블릿에서 반환 받은 데이터.
-			if (jsonData == 1) {
-			//	alert("아이디 사용불가 합니다!.");
-			} else {
-			//	alert("아이디 사용가능 합니다!.");
-			}
-		}; */
-		
 		
 		const finalOrder = () => { 
 			const quantity = document.querySelectorAll(".cart__list__quantity").textContent;
 		};
 		
 		
+		const priceList = document.querySelectorAll(".price");
+		const quanList = document.querySelectorAll(".quan");
+		const total_j = document.querySelector(".total_j");
 		
-	//  버튼 클릭시 Ajax 사용.
-		/* const id_doubleCK = () => {
-			$.ajax({
-				url: "IdCheck",
-				data: {"inputId": idinp.value},
-				dataType: "json",
-				success: function (res){
-					// res :서블릿에서 반환 받은 데이터.
-					console.log(res);
-					if (res == 1) {
-						alert("아이디 사용불가 합니다!.");
-					} else {
-						alert("아이디 사용가능 합니다!.");
-					}
-				},
-				error: function () {
-
-				}
-
-			});
-
-		}; */
-		
-		
-	    // 다른 ajax방식
-	/* 	const id_doubleCK2 = async () => {
-
-			const data = {
-				method: 'POST',
-				body:JSON.stringify({"inputId": idinp.value}),
-			};
-
-			const response = await fetch("IdCheck", data);
-			console.log(response);
+		// 장바구니 금액 계산 함수.
+		const Price_summation = (event, price, i) => {
+			console.log(event.target.value);
+			console.log(priceList[1].innerText);
+			let sum = 0;
+			sum = event.target.value * price;
+			priceList[i].innerText = sum;
 			
-			const jsonData = await response.json();
-			// res :서블릿에서 반환 받은 데이터.
-			if (jsonData == 1) {
-				alert("아이디 사용불가 합니다!.");
-			} else {
-				alert("아이디 사용가능 합니다!.");
-			}
-
-		} */
+			let CartTotalSUMprice = quanList.reduece((prev, curr, i)=>{
+				 return prev + (curr.value * priceList[i].textContent);
+			}, 0);
+			
+			total_j.innerText = CartTotalSUMprice;
+		};		
+		
+		
+		
 
 		const modalBtn = document.querySelector(".modal-Btn");
 		const modal = document.querySelector(".modal");
 
-		modalBtn.addEventListener("click", () => {
+		 modalBtn.addEventListener("click", () => {
 		    modal.showModal()
 		})
 

@@ -337,13 +337,14 @@ modalBtn.addEventListener("click", () => {
     //keyup
    //keypress
    //keydown
-   putCntInput.addEventListener('change',function(){
+   putCntInput.addEventListener('change', function(){
       const priceTag = document.querySelector('#priceSpan').innerText;//선택한 태그의 innerText 가격값을 가져온다.
       //alert(priceTag.innerText);
       const putCnt = document.querySelector('input[type="number"]').value;
       const result = priceTag * putCnt;
        document.querySelector('#totalPriceSpan').innerText = result;
    });
+   
     putCntInput.addEventListener('keyup',function(){
       //총가격 변경시키기
       //1.가격정보 가져온다.
