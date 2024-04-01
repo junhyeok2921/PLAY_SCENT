@@ -7,9 +7,14 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
+<link rel="stylesheet" href="css/main_style.css" type="text/css">
 <link rel="stylesheet" href="css/mypage.css" type="text/css">
 </head>
 <body>
+<div id="jinheewrap">
+		<%@include file="Header2.jsp"%>
+		<!-- 우리 사이트 HEADER 파일 입니다. -->
+		</div>
 
 	<%
 	String user_id = (String) session.getAttribute("user_id");
@@ -105,6 +110,7 @@
 		</div>
 	</div>
 
-
+<!-- footer 페이지 입니다~!.  -->
+		<%@include file="Footer.jsp"%>
 </body>
 </html>
