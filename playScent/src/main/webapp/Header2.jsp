@@ -13,10 +13,10 @@
 	<%
 		// 로그인한 유저인지 확인하기 위해.
 		String user_id2 = (String) session.getAttribute("user_id");  
-	    System.out.println(user_id2);
-	    String check_user = user_id2 != "" ? "Mypage.jsp" : "Main.jsp";
+	    System.out.println("userid 있나요? "+user_id2);
+	    String check_user = user_id2 != null ? "Mypage.jsp" : "Main.jsp";
 	    System.out.println(check_user+ "지금");
-	    String check_userPage = user_id2 != "" ? "마이페이지" : "고객 전용";
+	    String check_userPage = user_id2 != null ? "마이페이지" : "고객 전용";
 	%>
   	
   

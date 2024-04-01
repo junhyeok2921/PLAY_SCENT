@@ -34,6 +34,7 @@ public class JoinService implements command {
 	    String code = request.getParameter("code");
 	    String state = request.getParameter("state");
 	    String redirectURI = "";
+	    HttpSession session = request.getSession();
 	    
 		try {
 			redirectURI = URLEncoder.encode("http://localhost:8082/playScent/JoinService.do", "UTF-8");  // 지니주소.
@@ -47,6 +48,7 @@ public class JoinService implements command {
 	        + "&redirect_uri=" + redirectURI
 	        + "&code=" + code
 	        + "&state=" + state;
+	    
 	    String accessToken = "";
 	    String refresh_token = "";
 	    
@@ -77,6 +79,7 @@ public class JoinService implements command {
 	        int startIndex = resStr.indexOf("access_token\":\"") + "access_token\":\"".length();
 	        int endIndex = resStr.indexOf("\"", startIndex);
 	        accessToken = resStr.substring(startIndex, endIndex);
+	        session.setAttribute("accessToken", accessToken);
 	      //  out.println("액세스 토큰: " + accessToken); // 프로트 화면에 accessToken등 정보 보여줌.
 	      //  out.println(res.toString());  // 프로트 화면에 accessToken등 정보 보여줌.
 	      }
@@ -94,6 +97,8 @@ public class JoinService implements command {
 	    String header = "Bearer " + token; // Bearer 다음에 공백 추가
 	    StringBuffer response2 = null;  // 전역으로 빼줌.
 	    PrintWriter out = null;
+	    
+	    System.out.println("acc2 나오니?"+ token);
 	    
 		try { out = response.getWriter();
 		} catch (IOException e){ e.printStackTrace(); }
@@ -144,8 +149,7 @@ public class JoinService implements command {
 	        UserDAO dao = new UserDAO();
 	        int checkE = dao.checkId(user_id); // db,에 저장된 네이버id값이 있는지 체크.
 	        
-
-	        HttpSession session = request.getSession();
+	      
 		    if(checkE == 0){ // false일 경우 db에 저장된 아이디가 없으므로 이 조건에서 db에 네이버유저 정보를 저장시킨다.
 		    	//NaverUserInfo DTO객체 생성해서 넣어준다.
 		        NaverUserInfo userDto = new NaverUserInfo(user_age,user_email,user_gender,user_id,user_mobile,user_name,user_nick,user_profile);

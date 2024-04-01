@@ -35,6 +35,14 @@
          margin-top: 15px;
        }
 
+	   header .jin_up {
+	      width: 38%;
+	   }
+	   
+	   header .jin_up li {
+		 width: 23.6666%;
+	   }
+	   
        .mySwiper2{
          margin-top: 0;
        }

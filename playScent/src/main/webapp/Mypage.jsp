@@ -12,24 +12,29 @@
 <body>
 
 	<%
-	String user_id = (String) session.getAttribute("user_id");
-	System.out.println(user_id);
-	UserDAO userDAO = new UserDAO();
-	UserInfoDTO userData = userDAO.getUserInfo(user_id);
-
-	String userGrade = "GOLD"; // 사용자 등급을 가져오는 로직이 필요합니다. 여기서는 예시로 "GOLD"를 직접 할당하였습니다.
+		String user_id = (String) session.getAttribute("user_id");
+		System.out.println(user_id);
+		UserDAO userDAO = new UserDAO();
+		UserInfoDTO userData = userDAO.getUserInfo(user_id);
 	
+		String userGrade = "GOLD"; // 사용자 등급을 가져오는 로직이 필요합니다. 여기서는 예시로 "GOLD"를 직접 할당하였습니다.
+	%>
+	
+	<%  //모든 경로 cors허용!.
+		response.setHeader("Access-Control-Allow-Origin", "*");
 	%>
 
 	<div class="wrap">
 		<div class="greenContainer">
 			<div>
 				<div class="grade">
-					<% if(userData != null) {
-	    out.println("<div class='grade'><H3>" + userData.getMemName() + " 님은 " + userGrade + "등급 입니다</H3></div>");
-	} else {
-	    out.println("사용자 정보를 찾을 수 없습니다.");
-	}%>
+					<%
+					if (userData != null) {
+						out.println("<div class='grade'><H3>" + userData.getMemName() + " 님은 " + userGrade + "등급 입니다</H3></div>");
+					} else {
+						out.println("사용자 정보를 찾을 수 없습니다.");
+					}
+					%>
 				</div>
 				<!-- <div class="name">김경민</div> -->
 			</div>
@@ -100,11 +105,38 @@
 				<div>이용안내</div>
 			</a> <a href="#" class="item">
 				<div>😄</div>
-				<div>고객센터</div>
+				<button onclick="logout()">로그아웃</button>
 			</a>
 		</div>
 	</div>
+	
+	<%
+	  // 로그인할때 받은 accessToken
+	  String accessToken = (String)session.getAttribute("accessToken");
+	%>
 
+
+
+
+	<script type="text/javascript">
+		// 로그아웃 cors에러가 남.
+	  	let logout = async () => {
+	  		try {	  			
+	  			window.location.replace("LogoutService.do");
+	  			
+	  			<%-- const response = await fetch("https://nid.naver.com/oauth2.0/token?grant_type=delete&client_id=xoUly1_dRlwHdjv5nQa7&client_secret=xoUly1_dRlwHdjv5nQa7&access_token=<%=accessToken%>&service_provider=NAVER");
+				console.log(response);				
+				const jsonData = await response.json();
+				console.log(jsonData);	
+		  		window.location.replace("Main.jsp"); --%>
+	  			
+	  		} catch (e) {
+				console.log("로그아웃 실패 입니다.");
+			}	  		
+	  
+	  	}; 
+	
+	</script>
 
 </body>
 </html>
