@@ -3,7 +3,7 @@
 #wrapper {
     width: 1100px;
     display: grid;
-    gap: 10px;
+    gap: 15px;
     margin: 0 auto;
 }
 
@@ -127,7 +127,6 @@ img {
 
 .box4 .left-align {
     text-align: left;
-    font-size: 13px;
 }
 
 .box4 .right-align {
@@ -141,7 +140,6 @@ img {
 
 .box4 .th2 {
     text-align: center;
-    background-color: rgb(200, 229, 212, 0.8);
     position: relative;
     top: 40px; /* 원하는 값으로 조정 */
     padding: 10px 20px; /* 상하 좌우 패딩 조정, 필요에 따라 조정하세요 */

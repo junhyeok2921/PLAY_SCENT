@@ -30,33 +30,60 @@ ul, li {
 	box-sizing: border-box;
 	border-radius: 10px;
 	padding: 10px 20px;
+	box-shadow: 0 10px 12px rgba(33, 32, 32, 0.45);
 }
 
 .box4 {
 	width: 300px;
-	height: 330px;
+	height: 425px;
 	padding:0 10px 10px 10px;
 	box-sizing: border-box;
 	border-radius: 10px;
 	position: relative !important;
+	box-shadow: 0 10px 12px rgba(33, 32, 32, 0.45);
+	margin-left: 27px;
 }
+
+
 .th2{
 	width: 100%;	
 	border: 1.8px solid rgb(42 103 67 / 80%);
-	color: #365A2D;
+	background-color: #FFF455;
+	color: black;
 	font-weight: bold;
 	font-size: 16px;
 	height: 50px;
 	position: relative;
 	margin-top: 40px;
+	box-shadow: 0 7px 8px rgba(0,0,0,.4);
+	cursor: pointer;
 }
 
 
+
+.box4 .left-align {
+	font-size: 15px;
+}
+.box4 .row:last-child .left-align {
+	font-size: 17px;
+	font-weight: bold;
+	color: #365A2D;
+}
+
+.box4 .right-align{
+	font-size: 17px;
+	font-weight: bold;
+}
+.box4 .row:last-child .right-align{
+    font-size: 19px;
+	color: #365A2D;
+}
 
 .box5 {
 	width: 800px;
 	box-sizing: border-box;
 	border-radius: 10px;
+	box-shadow: 0 10px 12px rgba(33, 32, 32, 0.45);
 }
 
 .userInfo_box {
@@ -80,6 +107,7 @@ h2 {
 	box-sizing: border-box;
 	background-color: rgb(207, 226, 215, .3);
 	border-radius: 10px;
+	box-shadow: 0 10px 12px rgba(33, 32, 32, 0.45);
 }
 
 .userInfo_box .user h3 {
@@ -136,6 +164,7 @@ h2 {
    .orerInfo  table tr td {
   	font-size: 16px;  
    }
+   
   .jin{
 	margin-left: 10px;
 	font-size: 17px;
@@ -146,76 +175,22 @@ h2 {
   .jin_pfg{
   	height: 50px;
   	line-height: 50px;
-  	font-size: 20px;
-	color: #053D5C;
+  	font-size: 20px;  	
+	color: #365A2D;
 	font-weight: bold;
   }
+  
  .th2 .orderpr{
 	font-size: 18px;
 	color: #365A2D;
 }
+
+.kgpay{
+	margin-top: 15px;
+	background-color: #D04848;
+}
 </style>
-<script>
-	var IMP = window.IMP;
-	IMP.init("imp26780202");
 
-	// 카카오페이 결제
-	var today = new Date();
-	var hours = today.getHours(); // 시
-	var minutes = today.getMinutes(); // 분
-	var seconds = today.getSeconds(); // 초
-	var milliseconds = today.getMilliseconds();
-	var makeMerchantUid = hours + minutes + seconds + milliseconds;
-
-	function requestPay() {
-		IMP.request_pay({
-			pg : 'kakaopay',
-			merchant_uid : "IMP" + makeMerchantUid,
-			name : '조말론',
-			amount : 14,
-			buyer_email : 'Iamport@chai.finance',
-			buyer_name : '아임포트 기술지원팀',
-			buyer_tel : '010-1234-5678',
-			buyer_addr : '서울특별시 강남구 삼성동',
-			buyer_postcode : '123-456'
-		}, function(rsp) { // callback
-			if (rsp.success) {
-				console.log(rsp);
-			} else {
-				console.log(rsp);
-			}
-		});
-	}
-
-	// kg이니시스 결제
-	/*  var today = new Date();   
-	 var hours = today.getHours(); // 시
-	 var minutes = today.getMinutes();  // 분
-	 var seconds = today.getSeconds();  // 초
-	 var milliseconds = today.getMilliseconds();
-	 var makeMerchantUid = hours +  minutes + seconds + milliseconds; */
-
-	function requestPay2() {
-		IMP.request_pay({
-			pg : 'html5_inicis',
-			pay_method : 'card',
-			merchant_uid : "IMP" + makeMerchantUid,
-			name : '구딸파리',
-			amount : 15,
-			buyer_email : 'Iamport@chai.finance',
-			buyer_name : '아임포트 기술지원팀',
-			buyer_tel : '010-1234-5678',
-			buyer_addr : '서울특별시 강남구 삼성동',
-			buyer_postcode : '123-456'
-		}, function(rsp) { // callback
-			if (rsp.success) {
-				console.log(rsp);
-			} else {
-				console.log(rsp);
-			}
-		});
-	}
-</script>
 <meta charset="UTF-8">
 <title>주문 결제</title>
 </head>
@@ -237,6 +212,68 @@ h2 {
 		
 	%>
 
+
+	<script>
+		var IMP = window.IMP;
+		IMP.init("imp26780202");
+	
+		// 카카오페이 결제
+		var today = new Date();
+		var hours = today.getHours(); // 시
+		var minutes = today.getMinutes(); // 분
+		var seconds = today.getSeconds(); // 초
+		var milliseconds = today.getMilliseconds();
+		var makeMerchantUid = hours + minutes + seconds + milliseconds;
+	
+		function requestPay() {
+			IMP.request_pay({
+				pg : 'kakaopay',
+				merchant_uid : "IMP" + makeMerchantUid,
+				name : '<%=UserOrderList.get(0).getPF_NAME()%>외 <%= UserOrderList.size()-1%>개',
+				amount : 14,
+				buyer_email : '<%=userInfo.getMemEmail()%>',
+				buyer_name : '<%=userInfo.getMemName()%>',
+				buyer_tel : '<%=userInfo.getMemPhone()%>',
+				buyer_addr : '서울특별시 강남구 삼성동',
+				buyer_postcode : '123-456'
+			}, function(rsp) { // callback
+				if (rsp.success) {
+					console.log(rsp);
+				} else {
+					console.log(rsp);
+				}
+			});
+		}
+	
+		// kg이니시스 결제
+		/*  var today = new Date();   
+		 var hours = today.getHours(); // 시
+		 var minutes = today.getMinutes();  // 분
+		 var seconds = today.getSeconds();  // 초
+		 var milliseconds = today.getMilliseconds();
+		 var makeMerchantUid = hours +  minutes + seconds + milliseconds; */
+	
+		function requestPay2() {
+			IMP.request_pay({
+				pg : 'html5_inicis',
+				pay_method : 'card',
+				merchant_uid : "IMP" + makeMerchantUid,
+				name : '<%=UserOrderList.get(0).getPF_NAME()%>외 <%= UserOrderList.size()-1%>개',
+				amount : 15,
+				buyer_email : '<%=userInfo.getMemEmail()%>',
+				buyer_name : '<%=userInfo.getMemName()%>',
+				buyer_tel : '<%=userInfo.getMemPhone()%>',
+				buyer_addr : '서울특별시 강남구 삼성동',
+				buyer_postcode : '123-456'
+			}, function(rsp) { // callback
+				if (rsp.success) {
+					console.log(rsp);
+				} else {
+					console.log(rsp);
+				}
+			});
+		}
+	</script>
 
 	<div id="wrapper">
 		<div class="userInfo_box">
@@ -290,21 +327,22 @@ h2 {
 				<tr>
 					<th colspan="2" class="th1"><h2>결제금액</h2></th>
 				</tr>
-				<tr>
-					<td class="left-align">배송비</td>
+				<tr class="row">
+					<td class="left-align">배송비 : </td>
 					<td class="right-align">0원</td>
 				</tr>
-				<tr>
-					<td class="left-align">할인금액</td>
+				<tr class="row">
+					<td class="left-align">할인금액 : </td>
 					<td class="right-align">0원</td>
 				</tr>
-				<tr>
-					<td class="left-align">최종결제금액</td>
+				<tr class="row">
+					<td class="left-align">최종결제금액 : </td>
 					<td class="right-align"><%= totalOrerPrice %>원</td>
 				</tr>
 			</table>
 				
-			<button class="th2"><span class="orderpr"><%= totalOrerPrice %><span>원 결제금액</button>
+			<button class="th2" onclick="requestPay()">카카오페이 결제하기</button>
+			<button class="th2 kgpay" onclick="requestPay2()">kg이니시스 결제하기</button>
 			
 		
 		</div>

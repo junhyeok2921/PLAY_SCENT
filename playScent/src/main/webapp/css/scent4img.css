@@ -1,28 +1,138 @@
 @charset "UTF-8";
+
 @font-face {
-    font-family: 'Tenada';
-    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2210-2@1.0/Tenada.woff2') format('woff2');
-    font-weight: normal;
-    font-style: normal;
-  }
+	font-family: 'Tenada';
+	src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2210-2@1.0/Tenada.woff2') format('woff2');
+	font-weight: normal;
+	font-style: normal;
+}
 
 ul,
 li {
 	list-style: none;
 }
 
-#scent_wrap {
-    position: absolute;
-    top: 0;
-    left: 0;
-	width: 100%;
-	height: 100vh;
-	background-color: #EBEFE8;
+
+
+body {
+	--t: .5;
+	--scale: 3;
 }
 
-form{
-    position: relative;
-    top: 48%;
+svg.root {
+	width: 1px;
+	height: 1px;
+	position: absolute;
+	left: -100em;
+}
+
+svg {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100vw;
+	height: 100vh;
+	background: #EBEFE8;
+	fill-opacity: 0.75;
+}
+
+symbol {
+	overflow: visible
+}
+
+svg use {
+	transform: rotate(0deg));
+	transition: transform calc(var(--t) * 1s);
+}
+
+svg g.a {
+	transition: transform calc(var(--t) * 1s);
+}
+
+svg g.a {
+	transform: scale(var(--scale)) rotate(-90deg);
+	filter: url('#f')
+}
+
+
+._2 {
+	--n: 2;
+}
+
+._3 {
+	--n: 3;
+}
+
+._4 {
+	--n: 4;
+}
+
+._5 {
+	--n: 5;
+}
+
+svg .a g:nth-of-type(1) {
+	transform: rotate(calc(-.5 * 180deg / var(--n)));
+}
+
+svg .a g:nth-of-type(2) {
+	transform: rotate(calc(.5 * 180deg / var(--n)));
+}
+
+svg .a g:nth-of-type(1) use:nth-of-type(2) {
+	transform: rotate(calc(-1deg * 180 / var(--n)));
+}
+
+svg .a g:nth-of-type(1) use:nth-of-type(3) {
+	transform: rotate(calc(-2deg * 180 / var(--n)));
+}
+
+svg .a g:nth-of-type(1) use:nth-of-type(4) {
+	transform: rotate(calc(-3deg * 180 / var(--n)));
+}
+
+svg .a g:nth-of-type(1) use:nth-of-type(5) {
+	transform: rotate(calc(-4deg * 180 / var(--n)));
+}
+
+svg .a g:nth-of-type(2) use:nth-of-type(2) {
+	transform: rotate(calc(1deg * 180 / var(--n)));
+}
+
+svg .a g:nth-of-type(2) use:nth-of-type(3) {
+	transform: rotate(calc(2deg * 180 / var(--n)));
+}
+
+svg .a g:nth-of-type(2) use:nth-of-type(4) {
+	transform: rotate(calc(3deg * 180 / var(--n)));
+}
+
+svg .a g:nth-of-type(2) use:nth-of-type(5) {
+	transform: rotate(calc(4deg * 180 / var(--n)));
+}
+
+
+
+
+
+
+
+
+
+
+#scent_wrap {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100vh;
+	/*background-color: #EBEFE8;*/
+	overflow: hidden;
+}
+
+form {
+	position: relative;
+	top: 48%;
 	transform: translateY(-50%);
 }
 
@@ -32,10 +142,10 @@ form{
 	line-height: 30px;
 	color: white;
 	font-size: 22px;
-    letter-spacing: 7px;
-    position: relative;
-    top: 15px;
-    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+	letter-spacing: 7px;
+	position: relative;
+	top: 15px;
+	font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
 }
 
 #scent_wrap #scentIMGbox {
@@ -47,93 +157,92 @@ form{
 	border-radius: 15px;
 }
 
-#scentIMGbox .sc_imgFrame{
-    display: block;
+#scentIMGbox .sc_imgFrame {
+	display: block;
 	width: 91%;
-    height: 90%;
+	height: 90%;
 	/* background: darkgray; */
 	display: flex;
 	flex-wrap: wrap;
 	justify-content: space-between;
-    align-content: space-around;
-	margin: 0 auto;	
+	align-content: space-around;
+	margin: 0 auto;
 	padding: 0;
 }
-#scentIMGbox ul li{
-    display: block;
+
+#scentIMGbox ul li {
+	display: block;
 	width: 48%;
 	height: 46%;
-    background-color: rgb(251 249 249 / 64%);
-    border-radius: 13px;
-    position: relative;
+	background-color: rgb(251 249 249 / 64%);
+	border-radius: 13px;
+	position: relative;
 }
 
-#scentIMGbox ul li .jinhee_scent{
+#scentIMGbox ul li .jinhee_scent {
 	width: 100%;
 	height: 100%;
 	position: relative;
-    overflow: hidden;
-    border-radius: 13px;
+	overflow: hidden;
+	border-radius: 13px;
 }
 
-#scentIMGbox ul li .ll{
-    font-size: 6.5px;
-    color: #FBEA8F;
-     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-     letter-spacing: 2px;
-    position: absolute;
-    right: 0;
-    z-index: 5656;
-    bottom: -14px;
+#scentIMGbox ul li .ll {
+	font-size: 6.5px;
+	color: #FBEA8F;
+	font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+	letter-spacing: 2px;
+	position: absolute;
+	right: 0;
+	z-index: 5656;
+	bottom: -14px;
 
 }
-.date{
-    width: 5px;
-    height: auto;
-    padding: 0 3px;
-    word-break: break-all;
-    word-wrap: break-word;
-    font-size: 14px;
-    font-family: Tenad;
-    letter-spacing: -3.2px;
-    color: rgb(251, 234, 143, .6);
-    position: absolute;
-    top: 40%;
-    transform: translateY(-38%);
-    margin-left: 20px;
-    z-index: 45678;
+
+.date {
+	width: 5px;
+	height: auto;
+	padding: 0 3px;
+	word-break: break-all;
+	word-wrap: break-word;
+	font-size: 14px;
+	font-family: Tenad;
+	letter-spacing: -3.2px;
+	color: rgb(251, 234, 143, .6);
+	position: absolute;
+	top: 40%;
+	transform: translateY(-38%);
+	margin-left: 20px;
+	z-index: 45678;
 }
 
-.sc_imgFrame #box{
+.sc_imgFrame #box {
 	width: 100%;
-	height:30px;
-    line-height: 30px;
-    overflow: hidden;
-    text-align: center;
-    position: relative;
-    top: 50%;
-    transform: translateY(-50%);
-    letter-spacing: 2px;
+	height: 30px;
+	line-height: 30px;
+	overflow: hidden;
+	text-align: center;
+	position: relative;
+	top: 50%;
+	transform: translateY(-50%);
+	letter-spacing: 2px;
 }
 
-.sc_imgFrame li label{
-    width: 100%;   
-    cursor: pointer;
-    height: 46%;
-    width: 70px;
-    text-align: center;
-    font-family: Tenada;
-    color: #053D5C;
-    font-size: 22px;
+.sc_imgFrame li label {
+	width: 100%;
+	cursor: pointer;
+	height: 46%;
+	width: 70px;
+	text-align: center;
+	font-family: Tenada;
+	color: #053D5C;
+	font-size: 22px;
 }
 
-#scentIMGbox .sc_imgFrame li input{
-	width: 100% ;
+#scentIMGbox .sc_imgFrame li input {
+	width: 100%;
 	height: 100% !important;
 	background-color: rgb(0, 255, 255);
-    display: none;
-    visibility: hidden;
+	display: none;
+	visibility: hidden;
 }
-
-
-

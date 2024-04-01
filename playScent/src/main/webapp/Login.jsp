@@ -16,7 +16,7 @@
 	height: auto;
 	margin: 0 auto;
 	position: absolute;
-	top: 16%;
+	top: 25%;
 	transform: translateY(-50%);
 	left: 50%;
 	transform : translateX(-50%);

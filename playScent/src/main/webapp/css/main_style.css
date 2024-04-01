@@ -56,6 +56,10 @@ a {
 	width: 100%;
 	margin: 0 auto;
 	font-family: "Noto Sans KR", sans-serif;
+	position: relative;
+	top: 0;
+	left: 0;
+	overflow: hidden;
 }
 
 .moblie_wrap {
@@ -74,14 +78,14 @@ header {
 }
 
 header .jin_up {
-	width: 46%;
+	width: 38%;
 	margin-left: auto;
 	display: flex;
 	justify-content: space-between;
 }
 
 header .jin_up li {
-	width: 16.6666%;
+	width: 23.6666%;
 }
 
 header .jin_up li a {
@@ -295,10 +299,10 @@ header #jin_medium .ranking_slide {
 }
 
 #jinhee_pcnav #pc_nav .semi_nav {
-	width: 51%;
+	width: 70%;
 	display: flex;
 	justify-content: space-around;
-	margin-left: auto;
+	margin: 0 auto;
 }
 
 #jinhee_pcnav #pc_nav .semi_nav li {
@@ -845,7 +849,7 @@ header #jin_medium .ranking_slide {
 
 /* ------------------------------카데고리별 베스트 상품 추천  end----------------------------------- */
 
-#jinheewrap footer {
+ footer {
 	width: 100%;
 	background: #eeeeee;
 	padding: 10px 0;
@@ -871,20 +875,20 @@ footer .footer_up li a {
 	font-size: 1rem;
 }
 
-#jinheewrap footer #footer_content {
+ footer #footer_content {
 	max-width: 1200px;
 	margin: 0 auto;
 	padding: 35px 0 15px 0;
 	box-sizing: border-box;
 }
 
-#jinheewrap footer #footer_content .footer_meddle {
+ footer #footer_content .footer_meddle {
 	width: 100%;
 	display: flex;
 }
 
 footer #footer_content .footer_meddle .f_logo {
-	width: 45%;
+	width: 31%;
 	margin-top: 6px;
 }
 
@@ -965,6 +969,19 @@ footer #footer_content .footer_lower {
 	font-weight: 500;
 	margin-left: 300px;
 }
+
+footer #footer_content .footer_meddle .f_logo {
+		width: 38%;
+	  }
+	  
+  footer #footer_content .footer_meddle .f_logo img{
+    display:block;
+    width:210px;
+  	margin-top: 5px;
+  	margin: 0 auto;
+  }
+
+
 
 /* ---------------------------------------footer end----------------------------------- */
 
