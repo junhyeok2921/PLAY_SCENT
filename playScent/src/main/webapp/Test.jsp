@@ -9,12 +9,13 @@
 <!DOCTYPE html>
 <html>
 <head>
+<link rel="stylesheet" href="css/main_style.css" type="text/css">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 <style>
 img {
-  width: 300px;
-  height: 150px;
-  object-fit: cover;
+
+    width: 150px;
+
 }
 body {
   padding:1.5em;
@@ -22,13 +23,14 @@ body {
 }
 
 table {
-  border: 1px #a39485 solid;
-  font-size: .9em;
-  box-shadow: 0 2px 5px rgba(0,0,0,.25);
-  width: 80%;
-  border-collapse: collapse;
-  border-radius: 5px;
-  overflow: hidden;
+    margin: auto;
+    border: 1px #a39485 solid;
+    font-size: .9em;
+    box-shadow: 0 2px 5px rgba(0,0,0,.25);
+    width: 80%;
+    border-collapse: collapse;
+    border-radius: 5px;
+    overflow: hidden;
 }
 
 th {
@@ -60,51 +62,7 @@ th, td {
 }
 
 
-  
- @media all and (max-width: 768px) {
-    
-  table, thead, tbody, th, td, tr {
-    display: block;
-  }
-  
-  th {
-    text-align: right;
-  }
-  
-  table {
-    position: relative; 
-    padding-bottom: 0;
-    border: none;
-    box-shadow: 0 0 10px rgba(0,0,0,.2);
-  }
-  
-  thead {
-    float: left;
-    white-space: nowrap;
-  }
-  
-  tbody {
-    overflow-x: auto;
-    overflow-y: hidden;
-    position: relative;
-    white-space: nowrap;
-  }
-  
-  tr {
-    display: inline-block;
-    vertical-align: top;
-  }
-  
-  th {
-    border-bottom: 1px solid #a39485;
-  }
-  
-  td {
-    border-bottom: 1px solid #e5e5e5;
-  }
-  
-  
-
+ 
   
   
   }
@@ -114,6 +72,10 @@ th, td {
 <title>Insert title here</title>
 </head>
 <body>
+<div id="jinheewrap">
+		<%@include file="Header2.jsp"%>
+		<!-- 우리 사이트 HEADER 파일 입니다. -->
+		</div>
 <%  
 request.setCharacterEncoding("utf-8");
 PerfumeDAO dao = new PerfumeDAO();
@@ -156,6 +118,8 @@ DecimalFormat df = new DecimalFormat("###,###");
 						
     </tbody>
 </table>
+<!-- footer 페이지 입니다~!.  -->
+		<%@include file="Footer.jsp"%>
 
 
 

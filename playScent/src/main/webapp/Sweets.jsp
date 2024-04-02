@@ -9,6 +9,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
+<link rel="stylesheet" href="css/main_style.css" type="text/css">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 <title>Perfume List</title>
 <style>
@@ -23,13 +24,14 @@ body {
 }
 
 table {
-  border: 1px #a39485 solid;
-  font-size: .9em;
-  box-shadow: 0 2px 5px rgba(0,0,0,.25);
-  width: 80%;
-  border-collapse: collapse;
-  border-radius: 5px;
-  overflow: hidden;
+    margin: auto;
+    border: 1px #a39485 solid;
+    font-size: .9em;
+    box-shadow: 0 2px 5px rgba(0,0,0,.25);
+    width: 80%;
+    border-collapse: collapse;
+    border-radius: 5px;
+    overflow: hidden;
 }
 
 th {
@@ -56,6 +58,7 @@ a {
   color: #73685d;
 }
 
+
 th, td {
   text-align: center;
 }
@@ -70,9 +73,6 @@ th, td {
     display: block;
   }
   
-  th {
-    text-align: right;
-  }
   
   table {
     position: relative; 
@@ -115,36 +115,45 @@ th, td {
 </style>
 </head>
 <body>
-
-
-<%						
-						ArrayList<PerfumeDTO> perfumes = new PerfumeDAO().SweetsDAO();						
-DecimalFormat df = new DecimalFormat("###,###");%>
+<%                  
+ArrayList<PerfumeDTO> perfumes = new PerfumeDAO().SweetsDAO();                  
+                     %>
+                     <%DecimalFormat df = new DecimalFormat("###,###"); %>
+<div id="jinheewrap">
+		<%@include file="Header2.jsp"%>
+		<!-- 우리 사이트 HEADER 파일 입니다. -->
+		</div>
 <table class="review-table">
     <thead>
     <tr>
         <th>향수</th>
         <th>브랜드</th>
         <th>가격</th>
-        <th>향기</th>
+        <th>향수향기</th>
         <th colspan='2'>이미지</th>
-        
     </tr>
     </thead>
     <tbody>
    <%for(PerfumeDTO per: perfumes){
-	   String money = df.format(per.getPF_PRICE());%>
-							<tr>
-							
-							<td><%=per.getPF_NAME()%></td>
-								<td><%=per.getPF_BRAND()%></td>
-								<td><%=money %></td>
-								<td><%=per.getPF_Accords() %></td>	
-								<td onClick="location.href='PerfumeDetail.jsp?pfIdx=<%= per.getPF_IDX()%>'" style="cursor:pointer;"><img src=<%=per.getPF_Image()%>></td>					
-							</tr>
-							<%} %>					
+      String money = df.format(per.getPF_PRICE());%>
+                     <tr>
+                     
+                     <td><%=per.getPF_NAME()%></td>
+                        <td><%=per.getPF_BRAND()%></td>
+                        <td><%=money%></td>
+                        <td><%=per.getPF_Accords() %></td>   
+                        <td onClick="location.href='PerfumeDetail.jsp?pfIdx=<%= per.getPF_IDX()%>'" style="cursor:pointer;"><img src=<%=per.getPF_Image()%>></td>               
+                     </tr>
+                     <%} %>               
     </tbody>
 </table>
+<!-- footer 페이지 입니다~!.  -->
+		<%@include file="Footer.jsp"%>
+
+
+
+
+
 
 </body>
 </html>

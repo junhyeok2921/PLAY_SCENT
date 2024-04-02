@@ -303,9 +303,12 @@ li {
 					</tr>
 				</thead>
 				<tbody>
-					<% for (int i = 0; i < AllCartList.size(); i++) {
-						Double sumPF_PRICE = 0.0;
-						sumPF_PRICE = AllCartList.get(i).getPF_COUNT() * AllCartList.get(i).getPF_PRICE();
+					<% 
+					  Double total_Price = 0.0;								
+					  for (int i = 0; i < AllCartList.size(); i++) {
+					 	 Double sumPF_PRICE = 0.0;
+						 sumPF_PRICE = AllCartList.get(i).getPF_COUNT() * AllCartList.get(i).getPF_PRICE();
+						 total_Price += AllCartList.get(i).getPF_COUNT() * AllCartList.get(i).getPF_PRICE();
 					%>
 					<tr class="cart__list__detail">
 						<td style="width: 2%;"><input type="checkbox" name="favIdx"
@@ -322,7 +325,10 @@ li {
 							</div>
 
 						</td>
-						<td style="width:13%; font-size: 16px;"><span class="price"><%= sumPF_PRICE %></span>원</td>
+						<td style="width:13%; font-size: 16px;">
+						 <input type="hidden" class="base_price" value="<%=AllCartList.get(i).getPF_PRICE()%>"/>
+						 <span class="price"><%= sumPF_PRICE %></span>원
+						</td>
 						<td style="width: 11%; font-size: 16px;">무료</td>
 						<td class="cart__list__option" style="font-size: 16px;">
 						  <a class="delete" href="DeleteCart.do?fav_idx=<%=AllCartList.get(i).getFAV_IDX()%>">삭제</a>
@@ -337,7 +343,7 @@ li {
 				style="text-align: right; margin-top: 15px; font-size: 20px;">상품수량: <span class="count"><%= AllCartList.size()%></span>개</div>
 			<br>
 			<div class="bigtext right-align box blue summoney" id="sum_p_price"
-				style="text-align: right; font-size: 28px;">결제 금액: <span class="total_j">205,520</span>원</div>
+				style="text-align: right; font-size: 28px;">결제 금액 : <span class="total_j"><%= total_Price %></span>원</div>
 			<hr>
 			<div class="cart__mainbtns">
 				<button class="cart__bigorderbtn left">쇼핑 계속하기</button>
@@ -374,23 +380,33 @@ li {
 		};
 		
 		
-		const priceList = document.querySelectorAll(".price");
+		const priceList = document.querySelectorAll(".base_price"); // 각제품 가격 초기값
+		const priceINList = document.querySelectorAll(".price"); // 각 상품 더해준 가격 넣어줄 입력칸.
 		const quanList = document.querySelectorAll(".quan");
 		const total_j = document.querySelector(".total_j");
+		let newPrice_arr = [];
+		
 		
 		// 장바구니 금액 계산 함수.
 		const Price_summation = (event, price, i) => {
-			console.log(event.target.value);
-			console.log(priceList[1].innerText);
+			//console.log(event.target.value);
+			//console.log(priceList[1].innerText);
 			let sum = 0;
 			sum = event.target.value * price;
-			priceList[i].innerText = sum;
+			priceINList[i].innerText = sum;
 			
-			let CartTotalSUMprice = quanList.reduece((prev, curr, i)=>{
+			let TotalSUMprice = 0;
+			for(let i =0; i< quanList.length; i++){
+				TotalSUMprice += (quanList[i].value * priceList[i].value);
+			}
+			/* let CartTotalSUMprice = quanList.reduece((prev, curr, i) => {
+				newPrice_arr.push(priceList[i].textContent);
+				console.log(i);
 				 return prev + (curr.value * priceList[i].textContent);
-			}, 0);
+			}, 0); */
+			console.log(TotalSUMprice);
 			
-			total_j.innerText = CartTotalSUMprice;
+			total_j.innerText = TotalSUMprice; // 합산 완료!!!!!!!!!!!.
 		};		
 		
 		

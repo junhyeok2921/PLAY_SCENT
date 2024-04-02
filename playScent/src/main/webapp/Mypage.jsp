@@ -7,6 +7,7 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
+<link rel="stylesheet" href="css/main_style.css" type="text/css">
 <link rel="stylesheet" href="css/mypage.css" type="text/css">
 <style>
  .wrap{
@@ -79,6 +80,10 @@
 
 </head>
 <body>
+<div id="jinheewrap">
+		<%@include file="Header2.jsp"%>
+		<!-- 우리 사이트 HEADER 파일 입니다. -->
+		</div>
 
 	<%
 	String user_id = (String) session.getAttribute("user_id");
@@ -187,6 +192,10 @@
 		</div>
 	</div>
 
+<<<<<<< HEAD
+<!-- footer 페이지 입니다~!.  -->
+		<%@include file="Footer.jsp"%>
+=======
 	<%
 	// 로그인할때 받은 accessToken
 	String accessToken = (String) session.getAttribute("accessToken");
@@ -215,5 +224,6 @@
 	
 	</script>
 
+>>>>>>> branch 'main' of https://github.com/2023-SMHRD-KDT-AI-16/PLAY_SCENT.git
 </body>
 </html>

@@ -20,7 +20,7 @@ import com.playscent.model.NaverUserInfo;
 import com.playscent.model.UserDAO;
 
 
-/*@WebServlet("/JoinService")*/
+//@WebServlet("/JoinService")
 public class JoinService implements command {
 	
 	@Override
