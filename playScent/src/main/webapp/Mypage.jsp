@@ -14,6 +14,8 @@
     background-color: #F8F8F8;  
     position: relative;
 	top: 40px;
+	max-width: 1220px;
+	margin: 0 auto;
   }
 .greenContainer {
 	display: block;
@@ -58,10 +60,19 @@
 }
 
 .shippingStatusContainer {
-	padding: 25px 30px;
+	padding: 25px 40px;
 	box-sizing: border-box;
+	width: 100%;
 }
 
+.listContainer{
+	width: 100%;
+	padding: 0 40px;
+}
+
+.infoContainer{
+	width: 100%;
+}
 .logout_btn{
 	width: 100px;
 	height: 42px;
@@ -192,10 +203,11 @@
 		</div>
 	</div>
 
-<<<<<<< HEAD
-<!-- footer 페이지 입니다~!.  -->
+
+
+	<!-- footer 페이지 입니다~!.  -->
 		<%@include file="Footer.jsp"%>
-=======
+
 	<%
 	// 로그인할때 받은 accessToken
 	String accessToken = (String) session.getAttribute("accessToken");
@@ -224,6 +236,5 @@
 	
 	</script>
 
->>>>>>> branch 'main' of https://github.com/2023-SMHRD-KDT-AI-16/PLAY_SCENT.git
 </body>
 </html>

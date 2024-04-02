@@ -9,11 +9,10 @@
 <html lang="en">
 <head>
 <!-- jQuery -->
-<script type="text/javascript"
-	src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+<script type="text/javascript" src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+<link rel="stylesheet" href="css/main_style.css" type="text/css">
 <!-- iamport.payment.js -->
-<script type="text/javascript"
-	src="https://cdn.iamport.kr/js/iamport.payment-1.2.0.js"></script>
+<script type="text/javascript" src="https://cdn.iamport.kr/js/iamport.payment-1.2.0.js"></script>
 <link rel="stylesheet" href="css/orderPay.css" type="text/css">
 <style>
 ul, li {
@@ -27,6 +26,7 @@ ul, li {
 .box3 {
 	display: block;
 	width: 800px;
+	height: auto !important;
 	box-sizing: border-box;
 	border-radius: 10px;
 	padding: 10px 20px;
@@ -84,6 +84,7 @@ ul, li {
 	box-sizing: border-box;
 	border-radius: 10px;
 	box-shadow: 0 10px 12px rgba(33, 32, 32, 0.45);
+	margin-top: 15px;
 }
 
 .userInfo_box {
@@ -147,6 +148,7 @@ h2 {
  	display: inline-block;
 	width:90%; 
 	margin: 0 auto;
+	border-radius: 10px;
 }
 
 .orerInfo{
@@ -212,6 +214,9 @@ h2 {
 		
 	%>
 	
+
+ <div id="jinheewrap">
+        <%@include file="Header2.jsp" %>  <!-- 우리 사이트 HEADER 파일 입니다. -->
 
 	<div id="wrapper">
 		<div class="userInfo_box">
@@ -318,6 +323,11 @@ h2 {
 			</form>
 		</div>
 	</div>
+	
+	
+	<!-- footer 페이지 입니다~!.  -->
+        <%@include file="Footer.jsp" %>
+  </div>      
 	
 	
 	
