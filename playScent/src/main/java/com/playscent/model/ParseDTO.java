@@ -7,11 +7,18 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 public class ParseDTO {	
-	int Parse1;
-	int Parse2;
-	int Parse3;
-	int Parse4;
-	int Parse5;
+	private int PF_IDX;
+	private String PF_NAME;
+	private String PF_BRAND;
+	private String PF_GENDERS;
+	private String PF_Accords;
+	private String PF_top;
+	private String PF_mid;
+	private String PF_bottom;
+	private int PF_PRICE;
+	private String PF_Image; 
+	private String keyword;
+	private String keybrand;
 	
 	
 	

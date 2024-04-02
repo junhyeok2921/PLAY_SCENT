@@ -25,6 +25,8 @@ public class PerfumeDTO {
 	private int Parse3;
 	private int Parse4;
 	private int Parse5;
+	private String keyword;
+	private String keybrand;
 	
 	
 
