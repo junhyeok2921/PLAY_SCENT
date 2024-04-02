@@ -13,6 +13,10 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 <title>Perfume List</title>
 <style>
+
+.pc_header {
+	border-bottom: 1px solid rgba(151, 151, 151, 0.3) !important;
+}
 img {
 
     width: 150px;
@@ -75,11 +79,15 @@ th, td {
   
   
   table {
-  	
     position: relative; 
     padding-bottom: 0;
     border: none;
-    box-shadow: 0 0 10px rgba(0,0,0,.2);
+    margin-top:30px;
+    box-shadow: 0 0 10px rgba(0,0,0,.2);   
+  }
+  
+  .review-table{
+    width: 1220px !important;
   }
   
   thead {
@@ -116,10 +124,9 @@ th, td {
 </style>
 </head>
 <body>
-<%                  
-ArrayList<PerfumeDTO> perfumes = new PerfumeDAO().CitrusDAO();                  
-                     %>
-                     <%DecimalFormat df = new DecimalFormat("###,###"); %>
+<%  ArrayList<PerfumeDTO> perfumes = new PerfumeDAO().CitrusDAO();  %>
+<%DecimalFormat df = new DecimalFormat("###,###"); %>
+
 <div id="jinheewrap">
 		<%@include file="Header2.jsp"%>
 		<!-- 우리 사이트 HEADER 파일 입니다. -->

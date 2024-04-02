@@ -15,12 +15,7 @@ import com.playscent.model.PerfumeDTO;
 public class Search extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
-    /**
-     * @see HttpServlet#HttpServlet()
-     */
-    public Search() {
-
-    }
+   
 	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
 		 String keyword =  request.getParameter("keyword");
@@ -33,7 +28,6 @@ public class Search extends HttpServlet {
 	        request.setAttribute("searchResults", searchResults);
 	        request.getRequestDispatcher("searchtest.jsp").forward(request, response);
 
-		
 		
 		
 	}

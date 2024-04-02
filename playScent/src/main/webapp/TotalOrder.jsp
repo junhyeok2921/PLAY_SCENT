@@ -1,3 +1,4 @@
+<%@page import="java.text.DecimalFormat"%>
 <%@page import="com.playscent.model.OrderPfDTO"%>
 <%@page import="java.util.ArrayList"%>
 <%@page import="com.playscent.model.OrderDAO"%>
@@ -18,8 +19,11 @@
 ul, li {
 	list-style: none;
 }
-
+.pc_header {
+	border-bottom: 1px solid rgba(151, 151, 151, 0.3) !important;
+}
 #wrapper {
+    margin-top: 30px;
 	width: 1100px;
 }
 
@@ -29,7 +33,7 @@ ul, li {
 	height: auto !important;
 	box-sizing: border-box;
 	border-radius: 10px;
-	padding: 10px 20px;
+	padding: 15px 20px;
 	box-shadow: 0 10px 12px rgba(33, 32, 32, 0.45);
 }
 
@@ -199,6 +203,7 @@ h2 {
 
 <body>
 	<%
+	    DecimalFormat df = new DecimalFormat("###,###");
 		String user_id = (String) session.getAttribute("user_id");
 		System.out.println(user_id);
 		// 로그인한 회원정보 가져오기.
@@ -280,7 +285,12 @@ h2 {
 				</tr>
 				<tr class="row">
 					<td class="left-align">최종결제금액 : </td>
-					<td class="right-align"><%= totalOrerPrice %>원</td>
+					<% 
+					 //금액 ,찍어서 여기서 변수 저장
+                     int toOrerPrice = (int)Math.round(totalOrerPrice);//double -> 정수형으로
+                     String money = df.format(toOrerPrice); // .찍어줌 
+					%>
+					<td class="right-align"><%= money %>원</td>
 				</tr>
 			</table>
 				
@@ -301,10 +311,10 @@ h2 {
 						class="input">
 				</div>
 
-				<div>
+				<!-- <div>
 					<label for="phone">휴 &nbsp 대 &nbsp 폰 : </label><input type="text"
 						name="number" id="phone" placeholder="전화번호을 입력하세요" class="input">
-				</div>
+				</div> -->
 
 				<div>
 					<label for="addr">주 &nbsp 소 &nbsp 지 : </label><input type="text"

@@ -5,6 +5,12 @@
 <head>
 <meta charset="UTF-8">
 <title>header</title>
+<style>
+	#jin_medium .jin_search .naum_button {
+		border: none;
+	}
+	
+</style>
 </head>
 <body>
 
@@ -37,12 +43,12 @@
                         </a>
 
                         <div class="jin_search">
-                            <form action="" class="search cf">
-                                <input type="text" id="naum_search" placeholder="검색어를 입력하세요.">
-                                <div class="naum_button">
+                            <form action="Search" method="get" class="search cf">
+                                <input type="text" id="naum_search" name="keyword" placeholder="검색어를 입력하세요.">
+                                <button class="naum_button" type="submit">
                                     <img src="imges/nm55.png" alt="">
-                                </div>
-                            </form>    
+                                </button>
+                            </form>
                         </div>
 
                         <div class="ranking_slide">

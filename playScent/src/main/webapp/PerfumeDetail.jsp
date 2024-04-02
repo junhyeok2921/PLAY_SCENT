@@ -44,13 +44,78 @@
 .pf_img {
 	width: 72%;
 }
-
-#review_modal {
-	margin-right: auto;
+ .perfume1 {
+	padding: 3px 0 0;
+    font-size: 29px;
+    font-weight: bold; 
+    margin-bottom: 20px;
+    color: #1E3B4A;
 }
 
+.perfume2{
+  font-size: 21px;
+  line-height: 29px;
+  margin-bottom: 30px;
+  margin-top: 15px;
+}
+
+.product_price {
+	font-size: 17.5px;
+	margin-bottom: 20px;
+	margin-top: 9px;
+}
+
+.product_quan{
+	font-size: 17.5px;
+}
+
+#priceSpan {
+	margin-left: 33px;
+	font-size: 31px;
+}
+.product_quan .my-input{
+	position:relative;
+	top: -3px;
+	height:25px;
+	margin-left: 10px;
+}
+
+.total_price{
+	margin-top: 13px;
+    font-size: 17.5px;
+}
+
+#totalPriceSpan{
+	margin-left: 11px;
+	font-size: 31px;
+	font-weight: bold;
+}
+#review_modal {
+	width: 100%;
+	position: relative;
+}
+
+#review_modal .modal{
+position: absolute;
+top: 50%;
+left: 36%;
+transform: translateX(-50%);
+transform: translateY(-50%);
+}
 #content {
+    margin-top: 30px;
     margin-bottom: 100px;
+}
+
+.final_cart{
+	display: flex;
+	margin-bottom: 20px;
+}
+
+#review_tavleBox{
+	width: 1200px;
+	position: relative;
+	margin: 0 auto;
 }
 
 .foo_intro {
@@ -61,19 +126,61 @@
 	width: 1200px !important;
 	margin-top: 50px !important;
 	position: relative;
-
+	overflow: visible;
 }
 
+.gocart {
+	display: block;
+	width: 100px;
+    height: 30px;
+    line-height: 30px;
+    border-radius: 50px;
+    background-color: #F2EFE5;
+    color: #436850;
+    font-size: 15px;
+    font-weight: bold;
+    border: 1.8px solid #436850;
+    cursor: pointer;
+    margin-top: 30px;
+    margin-bottom: 15px;
+}
+
+.testSC{
+	height: 35px;
+	line-height: 35px;
+	margin-left: 25px;
+	position: relative;
+	top: 22px;
+}
 #button {
 	position: absolute; 
 	right:0;
 	top: -30px;
-	margin-right: 190px;
 	text-align: right;
 }
 
+#button .buttonwr{
+	display: block;
+	width: 100px;
+    height: 30px;
+    line-height: 30px;
+    border-radius: 50px;
+    background-color: #F2EFE5;
+    color: #436850;
+    font-size: 15px;
+    font-weight: bold;
+    border: 1.8px solid #436850;
+    cursor: pointer;
+    position: relative;
+    right: 0;
+	top: -15px;
+}
 .scro_naum {
 	display: block !important;
+}
+
+.star_box{
+	width: 100%;
 }
 </style>
 </head>
@@ -131,35 +238,27 @@
 					<div id="fifth">
 						<div class="perfume">
 							<p class="perfume1"><%=perfumes.getPf_brand()%></p>
-							<p class="perfume1"><%=perfumes.getPf_name()%></p>
+							<p class="perfume2"><%=perfumes.getPf_name()%></p>
 
 							<!-- <tr heigh="35px" bgcolor="whitesmoke"> -->
 
 							<td>
-								<option value="">사이즈: 30ml</option> <!-- </select> -->
+								<option value="">사이즈: 50ml</option> <!-- </select> -->
 							</td>
 							</tr>
-							<form action="AddCart.do?pfIdx=<%=PFIDX%>" method="post"
-								id="order">
-
-								<div>
-									가격 : <span id="priceSpan"><%=price%></span>
-
-								</div>
-								<div>
-									수량 : <input type="number" class="my-input" name="quantity"
-										value="1" min="1" max="10">
-								</div>
-								<div>
-									총 가격 : <span id="totalPriceSpan"><%=price%></span>
-								</div>
+							<form action="AddCart.do?pfIdx=<%=PFIDX%>" method="post" id="order">
+								<div class="product_price"> 가격 : <span id="priceSpan"><%=price%></span>원</div>
+								<div class="product_quan">수량 : <input type="number" class="my-input" name="quantity" value="1" min="1" max="10"> </div>
+								<div class="total_price"> 총 가격 : <span id="totalPriceSpan"><%=price%></span>원</div>
 								<!-- 총 가격 어떻게 보낼지 고민중   -->
 								<input type="hidden" name="price" value="<%=money%>">
-								<div>
-									<div class="btnDiv">
-										<input type="submit" class="btn" value="장바구니">
+								<div class="final_cart">
+									<button class="gocart" type="submit">장바구니</button>
+									<div class="testSC">
+										시향페이퍼 신청 : <input type="checkbox" />
 									</div>
-								</div>
+								</div>				
+							
 							</form>
 						</div>
 					</div>
@@ -209,53 +308,41 @@
 		</section>
 		<!---------------------------------------------- 리뷰댓글칸-------------------------------------------------------------->
 
-		<%
-		List<ReveiwDTO> reviews = new ReviewDAO().allReviews();
-		%>
+		<% List<ReveiwDTO> reviews = new ReviewDAO().allReviews();%>
 
 
-		<div>
-
+		<div id="review_tavleBox">
+			<div id="button">
+				<button class="buttonwr">글쓰기</button>
+			</div>
 			<table class="review-table">
-				<div id="button">
-					<button class="modal-Btn">글쓰기</button>
-				</div>
+				
 				<thead>
 					<tr>
 						<th>향수</th>
 						<th>평점(1/10)</th>
 						<th>후기</th>
-						<th>등록일자</th>
-						<th></th>
-
+						<th colspan="2">등록일자</th>
+					
 					</tr>
 				</thead>
 				<tbody>
-					<%
-					for (ReveiwDTO rev : reviews) {
-					%>
-					<tr>
-
-						<td><%=rev.getPF_NAME()%></td>
-						<td><%=rev.getREVIEW_STAR()%></td>
-						<td><%=rev.getREVIEW_CONTENT()%></td>
-						<td><%=rev.getREVIEWED_AT()%></td>
-						<td><a
-							href="ReviewDelete.do?REVIEW_CONTENT=<%=rev.getREVIEW_CONTENT()%>">삭제</a></td>
-
-					</tr>
-					<%
-					}
-					%>
-
-
+					<%for (ReveiwDTO rev : reviews) {%>
+						<tr>
+							<td><%=rev.getPF_NAME()%></td>
+							<td><%=rev.getREVIEW_STAR()%></td>
+							<td><%=rev.getREVIEW_CONTENT()%></td>
+							<td><%=rev.getREVIEWED_AT()%></td>
+							<td><a href="ReviewDelete.do?REVIEW_CONTENT=<%=rev.getREVIEW_CONTENT()%>">삭제</a></td>
+						</tr>
+					<% }%>
 				</tbody>
 			</table>
 		</div>
 
 
 
-		<!-- 구분선                             -->
+		<!-- 구분선   -->
 
 
 		<div id="review_modal">
@@ -322,11 +409,11 @@
 
 <script>
 
-const modalBtn = document.querySelector(".modal-Btn");
+const modalBtn = document.querySelector(".buttonwr");
 const modal = document.querySelector(".modal");
 
 modalBtn.addEventListener("click", () => {
-    modal.showModal()
+    modal.showModal();
 })
 
 //수량 input 태그 선택 

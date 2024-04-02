@@ -32,6 +32,9 @@ body {
 p, span {
 	margin: 0;
 }
+.pc_header {
+	border-bottom: 1px solid rgba(151, 151, 151, 0.3) !important;
+}
 
 a {
 	text-decoration: none;
@@ -47,7 +50,8 @@ img {
 .cart {
 	max-width:1220px;
 	margin: auto;
-	padding: 30px;
+	padding: 30px 0;
+	box-sizing: border-box;
 	margin-top: 5px;
 }
 
@@ -311,10 +315,8 @@ li {
 						 total_Price += AllCartList.get(i).getPF_COUNT() * AllCartList.get(i).getPF_PRICE();
 					%>
 					<tr class="cart__list__detail">
-						<td style="width: 2%;"><input type="checkbox" name="favIdx"
-							value="<%=AllCartList.get(i).getFAV_IDX()%>"></td>
-						<td style="width: 12%;"><img
-							src="<%=AllCartList.get(i).getPF_IMAGE()%>" alt="향수 이미지"></td>
+						<td style="width: 2%;"><input type="checkbox" name="favIdx" value="<%=AllCartList.get(i).getFAV_IDX()%>"></td>
+						<td style="width: 12%;"><img src="<%=AllCartList.get(i).getPF_IMAGE()%>" alt="향수 이미지"></td>
 						<td style="width: 30%; font-size: 17px; text-align: center;"
 							class="pfBrand"><%=AllCartList.get(i).getPF_BRAND()%> <span
 							class="cart__list__smartstore"></span>
@@ -340,7 +342,7 @@ li {
 			</table>
 			<br>
 			<div class="bigtext right-align sumcount" id="sum_p_num"
-				style="text-align: right; margin-top: 15px; font-size: 20px;">상품수량: <span class="count"><%= AllCartList.size()%></span>개</div>
+				style="text-align: right; margin-top: 15px; font-size: 20px;">상품 총수량: <span class="count"><%= AllCartList.size()%></span>개</div>
 			<br>
 			<div class="bigtext right-align box blue summoney" id="sum_p_price"
 				style="text-align: right; font-size: 28px;">결제 금액 : <span class="total_j"><%= total_Price %></span>원</div>

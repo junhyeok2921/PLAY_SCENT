@@ -25,6 +25,11 @@ img {
    top: 3.5px;
 }
 
+.question img{
+ width: 9%;
+ margin-right: 15px;
+}
+
 .container {
    width: 300px;
    border: 2px solid #000;
@@ -100,7 +105,7 @@ img {
       <div class="mt-7 overflow-hidden">
          <img
             src="https://png.pngtree.com/png-clipart/20230405/original/pngtree-perfume-line-icon-png-image_9028785.png"
-            style="max-width: 70%; height: auto;">
+            style="max-width: 66%; height: auto;">
       </div>
 <br>
       <div class="question">
