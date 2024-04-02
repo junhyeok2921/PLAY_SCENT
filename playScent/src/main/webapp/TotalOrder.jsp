@@ -211,69 +211,7 @@ h2 {
 		Double totalOrerPrice = 0.0;
 		
 	%>
-
-
-	<script>
-		var IMP = window.IMP;
-		IMP.init("imp26780202");
 	
-		// 카카오페이 결제
-		var today = new Date();
-		var hours = today.getHours(); // 시
-		var minutes = today.getMinutes(); // 분
-		var seconds = today.getSeconds(); // 초
-		var milliseconds = today.getMilliseconds();
-		var makeMerchantUid = hours + minutes + seconds + milliseconds;
-	
-		function requestPay() {
-			IMP.request_pay({
-				pg : 'kakaopay',
-				merchant_uid : "IMP" + makeMerchantUid,
-				name : '<%=UserOrderList.get(0).getPF_NAME()%>외 <%= UserOrderList.size()-1%>개',
-				amount : 14,
-				buyer_email : '<%=userInfo.getMemEmail()%>',
-				buyer_name : '<%=userInfo.getMemName()%>',
-				buyer_tel : '<%=userInfo.getMemPhone()%>',
-				buyer_addr : '서울특별시 강남구 삼성동',
-				buyer_postcode : '123-456'
-			}, function(rsp) { // callback
-				if (rsp.success) {
-					console.log(rsp);
-				} else {
-					console.log(rsp);
-				}
-			});
-		}
-	
-		// kg이니시스 결제
-		/*  var today = new Date();   
-		 var hours = today.getHours(); // 시
-		 var minutes = today.getMinutes();  // 분
-		 var seconds = today.getSeconds();  // 초
-		 var milliseconds = today.getMilliseconds();
-		 var makeMerchantUid = hours +  minutes + seconds + milliseconds; */
-	
-		function requestPay2() {
-			IMP.request_pay({
-				pg : 'html5_inicis',
-				pay_method : 'card',
-				merchant_uid : "IMP" + makeMerchantUid,
-				name : '<%=UserOrderList.get(0).getPF_NAME()%>외 <%= UserOrderList.size()-1%>개',
-				amount : 15,
-				buyer_email : '<%=userInfo.getMemEmail()%>',
-				buyer_name : '<%=userInfo.getMemName()%>',
-				buyer_tel : '<%=userInfo.getMemPhone()%>',
-				buyer_addr : '서울특별시 강남구 삼성동',
-				buyer_postcode : '123-456'
-			}, function(rsp) { // callback
-				if (rsp.success) {
-					console.log(rsp);
-				} else {
-					console.log(rsp);
-				}
-			});
-		}
-	</script>
 
 	<div id="wrapper">
 		<div class="userInfo_box">
@@ -380,6 +318,70 @@ h2 {
 			</form>
 		</div>
 	</div>
+	
+	
+	
+	<script>
+		var IMP = window.IMP;
+		IMP.init("imp26780202");
+	
+		// 카카오페이 결제
+		var today = new Date();
+		var hours = today.getHours(); // 시
+		var minutes = today.getMinutes(); // 분
+		var seconds = today.getSeconds(); // 초
+		var milliseconds = today.getMilliseconds();
+		var makeMerchantUid = hours + minutes + seconds + milliseconds;
+	
+		function requestPay() {
+			IMP.request_pay({
+				pg : 'kakaopay',
+				merchant_uid : "IMP" + makeMerchantUid,
+				name : '<%=UserOrderList.get(0).getPF_NAME()%>외 <%= UserOrderList.size()-1%>개',
+				amount : <%= totalOrerPrice %>,
+				buyer_email : '<%=userInfo.getMemEmail()%>',
+				buyer_name : '<%=userInfo.getMemName()%>',
+				buyer_tel : '<%=userInfo.getMemPhone()%>',
+				buyer_addr : '서울특별시 강남구 삼성동',
+				buyer_postcode : '123-456'
+			}, function(rsp) { // callback
+				if (rsp.success) {
+					console.log(rsp);
+				} else {
+					console.log(rsp);
+				}
+			});
+		}
+	
+		// kg이니시스 결제
+		/*  var today = new Date();   
+		 var hours = today.getHours(); // 시
+		 var minutes = today.getMinutes();  // 분
+		 var seconds = today.getSeconds();  // 초
+		 var milliseconds = today.getMilliseconds();
+		 var makeMerchantUid = hours +  minutes + seconds + milliseconds; */
+	
+		function requestPay2() {
+			IMP.request_pay({
+				pg : 'html5_inicis',
+				pay_method : 'card',
+				merchant_uid : "IMP" + makeMerchantUid,
+				name : '<%=UserOrderList.get(0).getPF_NAME()%>외 <%= UserOrderList.size()-1%>개',
+				amount : <%= totalOrerPrice %>,
+				buyer_email : '<%=userInfo.getMemEmail()%>',
+				buyer_name : '<%=userInfo.getMemName()%>',
+				buyer_tel : '<%=userInfo.getMemPhone()%>',
+				buyer_addr : '서울특별시 강남구 삼성동',
+				buyer_postcode : '123-456'
+			}, function(rsp) { // callback
+				if (rsp.success) {
+					console.log(rsp);
+				} else {
+					console.log(rsp);
+				}
+			});
+		}
+	</script>
 
 	<!-- <button onclick="requestPay()">카카오페이 결제하기</button>
 	결제하기 버튼 생성
