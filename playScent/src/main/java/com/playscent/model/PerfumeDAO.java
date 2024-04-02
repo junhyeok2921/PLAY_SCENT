@@ -221,5 +221,24 @@ public class PerfumeDAO {
 		System.out.println("리스트 확인" + pf_list);
 		return pf_list;
 	}
+	
+	
+	
+	    public List<PerfumeDTO> searchByName(String keyword) {
+	    	SqlSession sqlSession = sqlSessionFactory.openSession(true);
+	        List<PerfumeDTO> searchResults = null;
+	        try {
+	            System.out.print("dao 키워드 테스트" + keyword);
+	            searchResults = sqlSession.selectList("searchResults", keyword);
+	        } finally {
+	            sqlSession.close();
+	        }
+	        return searchResults;
+	    }
+	
+
+	
+	
+	
 
 }

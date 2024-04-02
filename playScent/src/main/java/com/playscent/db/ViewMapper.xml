@@ -124,4 +124,12 @@ select * from PERFUME_INFO WHERE PF_BRAND = 'Giorgio Armani'
 </select>
 
 
+<!-- 검색테스트  -->
+
+<select id="searchResults" parameterType = "String" resultType="com.playscent.model.PerfumeDTO">
+
+select * from PERFUME_INFO WHERE PF_NAME LIKE '%' || '${value}' ||'%'
+</select>
+
+
 </mapper>
