@@ -202,7 +202,7 @@ transform: translateY(-50%);
 	System.out.print(perfumes.getPf_image());
 	System.out.print(perfumes.getPf_price());
 	//금액 .찍어서 여기서 변수 저장
-	int price = (int) Math.round(perfumes.getPf_price());//double -> 정수형으로
+	int price = (int) Math.round(perfumes.getPf_price() / 3);//double -> 정수형으로
 	String money = df.format(price); // .찍어줌
 
 	String pfIdx = request.getParameter("pfIdx");
@@ -243,7 +243,7 @@ transform: translateY(-50%);
 							<!-- <tr heigh="35px" bgcolor="whitesmoke"> -->
 
 							<td>
-								<option value="">사이즈: 50ml</option> <!-- </select> -->
+								<option value="">사이즈: 20ml</option> <!-- </select> -->
 							</td>
 							</tr>
 							<form action="AddCart.do?pfIdx=<%=PFIDX%>" method="post" id="order">

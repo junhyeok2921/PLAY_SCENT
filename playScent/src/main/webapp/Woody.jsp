@@ -13,13 +13,17 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 <title>Perfume List</title>
 <style>
+
+.pc_header {
+	border-bottom: 1px solid rgba(151, 151, 151, 0.3) !important;
+}
+
 img {
 
-    width: 150px;
+    width: 115px;
 
 }
 body {
-  padding:1.5em;
   background: #f5f5f5
 }
 
@@ -28,10 +32,11 @@ table {
     border: 1px #a39485 solid;
     font-size: .9em;
     box-shadow: 0 2px 5px rgba(0,0,0,.25);
-    width: 80%;
+    width: 1220px;
     border-collapse: collapse;
     border-radius: 5px;
     overflow: hidden;
+    margin-top: 30px;
 }
 
 th {
@@ -106,12 +111,9 @@ th, td {
     border-bottom: 1px solid #e5e5e5;
   }
   
-  
 
-  
   
   }
-
 </style>
 </head>
 <body>
@@ -122,7 +124,7 @@ ArrayList<PerfumeDTO> perfumes = new PerfumeDAO().WoodyDAO();
 <div id="jinheewrap">
 		<%@include file="Header2.jsp"%>
 		<!-- 우리 사이트 HEADER 파일 입니다. -->
-		</div>
+		
 <table class="review-table">
     <thead>
     <tr>
@@ -150,8 +152,7 @@ ArrayList<PerfumeDTO> perfumes = new PerfumeDAO().WoodyDAO();
 <!-- footer 페이지 입니다~!.  -->
 		<%@include file="Footer.jsp"%>
 
-
-
+</div>
 
 
 

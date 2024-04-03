@@ -235,7 +235,7 @@
                                  <div class="product_price">
                                      <div class="ohjinhee_point"><%
                                          //금액 ,찍어서 여기서 변수 저장
-                                          int price = (int)Math.round(allperfume.get(i).getPF_PRICE());//double -> 정수형으로
+                                          int price = (int)Math.round(allperfume.get(i).getPF_PRICE() / 3);//double -> 정수형으로
                                           String money = df.format(price); // .찍어줌 %>
                                         <h3 class="per_price"><%= money %>원<span></span></h3>
                                       </div>
@@ -279,7 +279,7 @@
                               <div class="product_price">
                                  <div class="ohjinhee_point"><%
                                         //금액 .찍어서 여기서 변수 저장
-                                          int price = (int)Math.round(womanperfume.get(rd).getPF_PRICE());//double -> 정수형으로
+                                          int price = (int)Math.round(womanperfume.get(rd).getPF_PRICE() / 3);//double -> 정수형으로
                                           String money = df.format(price); // .찍어줌 %>
                                         <h3 class="per_price"><%= money %>원<span></span></h3>
                                       </div>
@@ -322,7 +322,7 @@
                               <div class="product_price">
                                  <div class="ohjinhee_point"><%
                                         //금액 .찍어서 여기서 변수 저장
-                                          int price = (int)Math.round(manperfume.get(rd).getPF_PRICE());//double -> 정수형으로
+                                          int price = (int)Math.round(manperfume.get(rd).getPF_PRICE() / 3);//double -> 정수형으로
                                           String money = df.format(price); // .찍어줌 %>
                                         <h3 class="per_price"><%= money %>원<span></span></h3>
                                       </div>
@@ -363,7 +363,7 @@
 	                           <div class="product_price">
 	                               <div class="ohjinhee_point"><%
                                       //금액 .찍어서 여기서 변수 저장
-                                        int price = (int)Math.round(summerperfume.get(i).getPF_PRICE());//double -> 정수형으로
+                                        int price = (int)Math.round(summerperfume.get(i).getPF_PRICE() / 3);//double -> 정수형으로
                                         String money = df.format(price); // .찍어줌 %>
                                       <h3 class="per_price"><%= money %>원<span></span></h3>
                                     </div>

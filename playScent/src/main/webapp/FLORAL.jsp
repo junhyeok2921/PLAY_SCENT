@@ -20,11 +20,10 @@
 
 img {
 
-    width: 150px;
+    width: 115px;
 
 }
 body {
-  padding:1.5em;
   background: #f5f5f5
 }
 
@@ -128,7 +127,7 @@ ArrayList<PerfumeDTO> perfumes = new PerfumeDAO().FloralDAO();
 <div id="jinheewrap">
 		<%@include file="Header2.jsp"%>
 		<!-- 우리 사이트 HEADER 파일 입니다. -->
-		</div>
+		
 <table class="review-table">
     <thead>
     <tr>
@@ -156,7 +155,7 @@ ArrayList<PerfumeDTO> perfumes = new PerfumeDAO().FloralDAO();
 <!-- footer 페이지 입니다~!.  -->
 		<%@include file="Footer.jsp"%>
 
-
+</div>
 
 
 

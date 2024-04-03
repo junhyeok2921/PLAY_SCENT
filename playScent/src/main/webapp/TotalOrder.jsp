@@ -249,9 +249,9 @@ h2 {
 				<ul class="order">
 				  <% for(OrderPfDTO item : UserOrderList){ 
 				  	 int quan = item.getPF_QUANTITY();
-				  	 Double price = item.getPF_PRICE();
+				  	 int price = (int) Math.round(item.getPF_PRICE() / 3);
 				  	 // 수량 * 상품 금액 
-				  	 Double sum = quan * price;
+				  	 int sum = quan * price;
 				  	 totalOrerPrice += sum;
 				  %>
 					<li>
@@ -263,7 +263,13 @@ h2 {
 								<tr><td>브랜드 : <span class="jin"><%= item.getPF_BRAND()%></span></td></tr>
 								<tr><td>향수명 : <span class="jin"><%= item.getPF_NAME() %></span></td></tr>
 								<tr><td>수량 : <span class="jin"><%= item.getPF_QUANTITY() %></span>개</td></tr>
-								<tr class="last_pr"><td><b class="jin_pfg"><%= sum %></b>원</td></tr>
+								<tr class="last_pr"><td><b class="jin_pfg">
+									<% 
+									 //금액 ,찍어서 여기서 변수 저장
+				                     int sumCH = (int)Math.round(sum);//double -> 정수형으로
+				                     String money_sum = df.format(sumCH); // .찍어줌 
+									%>
+							    	<%= money_sum %></b>원</td></tr>
 							</table>
 						</div>
 					</li>

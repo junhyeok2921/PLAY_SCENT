@@ -311,8 +311,8 @@ li {
 					  Double total_Price = 0.0;								
 					  for (int i = 0; i < AllCartList.size(); i++) {
 					 	 Double sumPF_PRICE = 0.0;
-						 sumPF_PRICE = AllCartList.get(i).getPF_COUNT() * AllCartList.get(i).getPF_PRICE();
-						 total_Price += AllCartList.get(i).getPF_COUNT() * AllCartList.get(i).getPF_PRICE();
+						 sumPF_PRICE = (AllCartList.get(i).getPF_COUNT() * AllCartList.get(i).getPF_PRICE()) / 3;						 
+						 total_Price += (AllCartList.get(i).getPF_COUNT() * AllCartList.get(i).getPF_PRICE()) / 3;
 					%>
 					<tr class="cart__list__detail">
 						<td style="width: 2%;"><input type="checkbox" name="favIdx" value="<%=AllCartList.get(i).getFAV_IDX()%>"></td>
@@ -329,7 +329,7 @@ li {
 						</td>
 						<td style="width:13%; font-size: 16px;">
 						 <input type="hidden" class="base_price" value="<%=AllCartList.get(i).getPF_PRICE()%>"/>
-						 <span class="price"><%= sumPF_PRICE %></span>원
+						 <span class="price"><%= (int) Math.round(sumPF_PRICE) %></span>원
 						</td>
 						<td style="width: 11%; font-size: 16px;">무료</td>
 						<td class="cart__list__option" style="font-size: 16px;">
@@ -345,7 +345,7 @@ li {
 				style="text-align: right; margin-top: 15px; font-size: 20px;">상품 총수량: <span class="count"><%= AllCartList.size()%></span>개</div>
 			<br>
 			<div class="bigtext right-align box blue summoney" id="sum_p_price"
-				style="text-align: right; font-size: 28px;">결제 금액 : <span class="total_j"><%= total_Price %></span>원</div>
+				style="text-align: right; font-size: 28px;">결제 금액 : <span class="total_j"><%=(int) Math.round(total_Price)%></span>원</div>
 			<hr>
 			<div class="cart__mainbtns">
 				<button class="cart__bigorderbtn left">쇼핑 계속하기</button>
@@ -394,12 +394,12 @@ li {
 			//console.log(event.target.value);
 			//console.log(priceList[1].innerText);
 			let sum = 0;
-			sum = event.target.value * price;
+			sum = Math.floor((event.target.value * price) / 3);
 			priceINList[i].innerText = sum;
 			
 			let TotalSUMprice = 0;
 			for(let i =0; i< quanList.length; i++){
-				TotalSUMprice += (quanList[i].value * priceList[i].value);
+				TotalSUMprice += Math.floor((quanList[i].value * priceList[i].value) / 3);
 			}
 			/* let CartTotalSUMprice = quanList.reduece((prev, curr, i) => {
 				newPrice_arr.push(priceList[i].textContent);
