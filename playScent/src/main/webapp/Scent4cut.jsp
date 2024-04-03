@@ -152,7 +152,7 @@ element.style {
             </ul>
         </div>
         
-        <div class="upbtn"><button id="uploadButton" type="submit">Upload</button></div>
+        <div class="upbtn"><button id="uploadButton" type="button" onclick="window.print()">Print</button></div>
     </form>
 </div>
 
