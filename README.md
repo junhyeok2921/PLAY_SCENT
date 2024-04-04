@@ -19,11 +19,11 @@
 <img width="650" alt="mainps" src="https://github.com/2023-SMHRD-KDT-AI-16/PLAY_SCENT/assets/157596156/b2821843-255c-4d1a-b1f1-df3784b653f4">
 
 ----
-
+<br>
 
 ### 💻 ERD
 ![PSERD2](https://github.com/2023-SMHRD-KDT-AI-16/PLAY_SCENT/assets/157596156/5de04b42-13af-498d-b229-693e536662cd)
-
+<br>
 
 ### 🔖 game rules 설명 입니다.
 **상, 중, 하** 난이도의 넌센스 퀴즈를 맞추는 게임 입니다.
