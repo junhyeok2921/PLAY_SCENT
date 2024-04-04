@@ -3,13 +3,14 @@
 
 ### <진희팀>
 ### 👨🏻‍💻 팀원  
-- **오진희 (팀장)** :  (https://github.com/inhvee)
-- **김준혁**:  (https://github.com/krafjin56)
-- **김경민**:  (https://github.com/duggie27)
-- **장민중**:  (https://github.com/jong-won-oh)
+- **오진희 (팀장)** :  (https://github.com/krafjin56)
+- **김준혁**:  (https://github.com/junhyeok2921)
+- **김경민**:  (https://github.com/kyeong68)
+- **장민중**:  (https://github.com/Beyond-Boolean)
 
 ### 개발 기간 :  2024.01.30 ~ 2024.02.01
 ### 개발 스택 : JAVA, Javascript,python,HTML5,CSS3, JSP,Servlet, Flask, Apache,MyBatis, Oracle, Github
+![사용언어](https://github.com/2023-SMHRD-KDT-AI-16/PLAY_SCENT/assets/157596156/a1a14a35-aa8a-4892-ba1b-fdf7f38971e2)
 <br>
 
 ----
